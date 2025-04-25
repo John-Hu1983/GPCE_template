@@ -1,0 +1,236 @@
+Version: 3.0
+Options: tsk
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\Resource.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\system.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\BootCode_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\SACM_A34Pro_fptr_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\SACM_A1800_fptr_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\SACM_Mixer_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\VolCompress_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\SPI_Flash.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\ORAM_Arrangement.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\main.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\isr.obj"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\animals02_34K_sp4.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\animals03_34K_sp4.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\animals04_34K_sp4.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\animals08_34K_sp4.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\tailor3_16K_a18.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\them2_seekctrl_001_sp4.res"
+Obj: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\FileMerger_ROM_bin.res"
+Lib: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\..\Library\A3400Pro_fptr_V0.9.3.lib"
+Lib: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\..\Library\SACM_A1800_fptr_V0.9.2.lib"
+Lib: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\..\Library\GPCE_VolumeCompressor_V0.9.1.lib"
+Lib: "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\CMacro\CMacro1232.lib"
+Output: "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Debug\GPCE500A_DacSpk_SPI.bin"
+Define: CODE in "system.obj" with _CODE_SPI_SEC 
+Define: DATA in "system.obj" with _DATA_SPI_SEC 
+Define: CODE in "BootCode_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "BootCode_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_A34Pro_fptr_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_A34Pro_fptr_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_A1800_fptr_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_A1800_fptr_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_Mixer_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_Mixer_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "VolCompress_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "VolCompress_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SPI_Flash.obj" with _CODE_SPI_SEC 
+Define: DATA in "SPI_Flash.obj" with _DATA_SPI_SEC 
+Define: CODE in "ORAM_Arrangement.obj" with _CODE_SPI_SEC 
+Define: DATA in "ORAM_Arrangement.obj" with _DATA_SPI_SEC 
+Define: __sn_section_RES_ANIMALS02_34K_SP4 in "animals02_34K_sp4.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_ANIMALS03_34K_SP4 in "animals03_34K_sp4.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_ANIMALS04_34K_SP4 in "animals04_34K_sp4.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_ANIMALS08_34K_SP4 in "animals08_34K_sp4.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_TAILOR3_16K_A18 in "tailor3_16K_a18.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_THEM2_SEEKCTRL_001_SP4 in "them2_seekctrl_001_sp4.res" with _RESOURCE_SPI_SEC 
+Define: __sn_section_RES_FILEMERGER_ROM_BIN in "FileMerger_ROM_bin.res" with _RESOURCE_SPI_SEC 
+Locate: _CODE_SPI_SEC at 9800
+Locate: _DATA_SPI_SEC after _CODE_SPI_SEC
+Locate: _RESOURCE_SPI_SEC at 20000
+Locate: __sn_init_table at 11940
+Locate: IRAM after __sn_init_table linkat #RAM
+Locate: IRam_Bank0 after __sn_init_table linkat #RAM
+Locate: SleepCode_RAMCode_SEC in "system.obj" at 10000 linkat 1000
+;Align: SleepCode_RAMCode_SEC in "system.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" at 10 
+;Align: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" at 113 
+;Align: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 393 
+;Align: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 396 
+;Align: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" at 39B 
+;Align: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" at 3D9 
+;Align: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" at 48E 
+;Align: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 5DA 
+;Align: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 5F0 
+;Align: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" with 0 
+;Locate: TEXT in "isr.obj" at 9818 
+;Align: TEXT in "isr.obj" with 0 
+;Locate: IRAM in "SACM_Mixer_User.obj" at 11955  linkat 615 
+;Align: IRAM in "SACM_Mixer_User.obj" with 0 
+;Locate: IRAM in "main.obj" at 11959  linkat 619 
+;Align: IRAM in "main.obj" with 0 
+;Locate: IRAM in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at 11956  linkat 616 
+;Align: IRAM in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: IRAM in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at 11957  linkat 617 
+;Align: IRAM in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: IRAM in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  at 11958  linkat 618 
+;Align: IRAM in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: RAM in "system.obj" at 5F5 
+;Align: RAM in "system.obj" with 0 
+;Locate: RAM in "SACM_A34Pro_fptr_User.obj" at 5FC 
+;Align: RAM in "SACM_A34Pro_fptr_User.obj" with 0 
+;Locate: RAM in "SACM_A1800_fptr_User.obj" at 608 
+;Align: RAM in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: RAM in "SPI_Flash.obj" at 60D 
+;Align: RAM in "SPI_Flash.obj" with 0 
+;Locate: RAM in "main.obj" at 610 
+;Align: RAM in "main.obj" with 0 
+;Locate: RAM in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  at 611 
+;Align: RAM in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  with 0 
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "SACM_A1800_fptr_User.obj" at 113 
+;Align: OVERLAP_A18_DACOUT_RAM_BLOCK in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "SACM_Mixer_User.obj" at 10 
+;Align: OVERLAP_MIXER_RAM_BLOCK in "SACM_Mixer_User.obj" with 0 
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" at 10 
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" at 113 
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 393 
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 396 
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" at 39B 
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" at 3D9 
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" at 48E 
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 5DA 
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 5F0 
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at 5DA 
+;Align: OVERLAP_A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at 393 
+;Align: OVERLAP_A1800_fptr_API_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at 396 
+;Align: OVERLAP_A1800_fptr_EVENT_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  at 5F0 
+;Align: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  at 39B 
+;Align: OVERLAP_A1800_fptr_RAM_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at 3D9 
+;Align: OVERLAP_A1800_DM_BLOCK_Global in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at 48E 
+;Align: OVERLAP_A1800_DM_BLOCK_Local in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: CODE in "Resource.obj" at D0C7 
+;Align: CODE in "Resource.obj" with 0 
+;Locate: BootCode_SEC in "BootCode_User.obj" at 8100 
+;Align: BootCode_SEC in "BootCode_User.obj" with 0 
+;Locate: Mixer_ISR_Service_ROMBLOCK in "SACM_Mixer_User.obj" at CF19 
+;Align: Mixer_ISR_Service_ROMBLOCK in "SACM_Mixer_User.obj" with 0 
+;Locate: SPIFC_RAMCode_SEC in "SPI_Flash.obj" at BB0C 
+;Align: SPIFC_RAMCode_SEC in "SPI_Flash.obj" with 0 
+;Locate: CODE in "main.obj" at C8D7 
+;Align: CODE in "main.obj" with 0 
+;Locate: CODE in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at D147 
+;Align: CODE in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_Kernel_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at C237 
+;Align: A34Pro_fptr_Kernel_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at CADD 
+;Align: A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_ISR_Service_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at CF57 
+;Align: A34Pro_fptr_ISR_Service_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: CODE in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at D14F 
+;Align: CODE in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_API_IM_BLOCK_1_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at C9EA 
+;Align: A1800_fptr_API_IM_BLOCK_1_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_API_IM_BLOCK_2_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at CFCC 
+;Align: A1800_fptr_API_IM_BLOCK_2_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_API_IM_BLOCK_1_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at D137 
+;Align: A1800_fptr_API_IM_BLOCK_1_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_ISR_Service_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at CE44 
+;Align: A1800_fptr_ISR_Service_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_API_IM_BLOCK_2_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at D15F 
+;Align: A1800_fptr_API_IM_BLOCK_2_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: CODE in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  at CDAB 
+;Align: CODE in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  with 0 
+;Locate: A1800_fptr_Evt_IM_BLOCK_2_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at D121 
+;Align: A1800_fptr_Evt_IM_BLOCK_2_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_Evt_IM_BLOCK_1_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at D06E 
+;Align: A1800_fptr_Evt_IM_BLOCK_1_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_Evt_IM_BLOCK_2_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at CC64 
+;Align: A1800_fptr_Evt_IM_BLOCK_2_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_Evt_IM_BLOCK_1_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at D10A 
+;Align: A1800_fptr_Evt_IM_BLOCK_1_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_Event_ISR_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at D03B 
+;Align: A1800_fptr_Event_ISR_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_fptr_Evt_IM_BLOCK_1_3 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at D09D 
+;Align: A1800_fptr_Evt_IM_BLOCK_1_3 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A34Pro_fptr_Event_Kernel_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  at C7BA 
+;Align: A34Pro_fptr_Event_Kernel_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_Evt_API_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  at D0ED 
+;Align: A34Pro_fptr_Evt_API_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_Event_ISR_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  at D005 
+;Align: A34Pro_fptr_Event_ISR_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: A34Pro_fptr_StepTable_BLOCK in "A34Pro_fptr_StepTable" of "A3400Pro_fptr_V0.9.3.lib"  at B346 
+;Align: A34Pro_fptr_StepTable_BLOCK in "A34Pro_fptr_StepTable" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: SACM_A1800_fptr_DECODE_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  at C531 
+;Align: SACM_A1800_fptr_DECODE_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_3_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at CD0B 
+;Align: A1800_IM_BLOCK_3_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_3_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at CED6 
+;Align: A1800_IM_BLOCK_3_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_1_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at CF93 
+;Align: A1800_IM_BLOCK_1_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_2_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at B746 
+;Align: A1800_IM_BLOCK_2_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_2_3 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at BEC3 
+;Align: A1800_IM_BLOCK_2_3 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_2_4 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at CBB4 
+;Align: A1800_IM_BLOCK_2_4 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_IM_BLOCK_2_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at C690 
+;Align: A1800_IM_BLOCK_2_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: A1800_PM_OUT_BLOCK in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at 9E35 
+;Align: A1800_PM_OUT_BLOCK in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: CODE in "_GPTag" of "CMacro1232.lib"  at D157 
+;Align: CODE in "_GPTag" of "CMacro1232.lib"  with 0 
+;Locate: _CODE_SPI_SEC in "SPI_Flash.obj" at 9800 
+;Align: _CODE_SPI_SEC in "SPI_Flash.obj" with 0 
+;Locate: _CODE_SPI_SEC in "VolCompress_User.obj" at 9867 
+;Align: _CODE_SPI_SEC in "VolCompress_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "BootCode_User.obj" at 988D 
+;Align: _CODE_SPI_SEC in "BootCode_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_Mixer_User.obj" at 98DC 
+;Align: _CODE_SPI_SEC in "SACM_Mixer_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_A34Pro_fptr_User.obj" at 99C2 
+;Align: _CODE_SPI_SEC in "SACM_A34Pro_fptr_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_A1800_fptr_User.obj" at 9B0D 
+;Align: _CODE_SPI_SEC in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "system.obj" at 9C80 
+;Align: _CODE_SPI_SEC in "system.obj" with 0 
+;Locate: _RESOURCE_SPI_SEC in "animals03_34K_sp4.res" at 20000 
+;Align: _RESOURCE_SPI_SEC in "animals03_34K_sp4.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "animals08_34K_sp4.res" at 20D4B 
+;Align: _RESOURCE_SPI_SEC in "animals08_34K_sp4.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "animals02_34K_sp4.res" at 21EF8 
+;Align: _RESOURCE_SPI_SEC in "animals02_34K_sp4.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "animals04_34K_sp4.res" at 23675 
+;Align: _RESOURCE_SPI_SEC in "animals04_34K_sp4.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "them2_seekctrl_001_sp4.res" at 2793F 
+;Align: _RESOURCE_SPI_SEC in "them2_seekctrl_001_sp4.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "tailor3_16K_a18.res" at 2DE3F 
+;Align: _RESOURCE_SPI_SEC in "tailor3_16K_a18.res" with 0 
+;Locate: _RESOURCE_SPI_SEC in "FileMerger_ROM_bin.res" at 3B86C 
+;Align: _RESOURCE_SPI_SEC in "FileMerger_ROM_bin.res" with 0 
+;Locate: __sn_init_table in "<internal obj.>" of "<internal lib.>"  at 11940 
+;Align: __sn_init_table in "<internal obj.>" of "<internal lib.>"  with 0 
