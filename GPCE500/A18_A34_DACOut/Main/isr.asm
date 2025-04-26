@@ -32,6 +32,11 @@
 .external F_A1800_fptr_ISR_Event_Service
 .external F_ISR_Service_SACM_Mixer
 
+.external 	_callback_2048hz_service
+.external   _isr_cts_tma
+.external   _cb_ext_irq5
+.external   _cb_uart_irq7
+
 //**************************************************************************
 // Contant Defintion Area
 //**************************************************************************
@@ -107,13 +112,14 @@ L_FIQ_TimerA:
     //------------------------------------------------------------------
     // hook Timer A FIQ subroutine here and define it to be external
     // and returns as a flag to tell required process data or not   
+
     call F_ISR_Service_SACM_A1800_fptr
-	invb [P_IOB_Buffer], 0;
-	R2 = C_IRQ0_TMA;
-	[P_INT_Status] = R2;
-	
-	pop R1, R5 from [SP]
-	reti;
+
+		R2 = C_IRQ0_TMA;
+		[P_INT_Status] = R2;
+		
+		pop R1, R5 from [SP]
+		reti;
 	
 L_FIQ_TimerB:
     //------------------------------------------------------------------
@@ -194,6 +200,8 @@ _IRQ4:
 _IRQ5:
 	push R1, R5 to [SP]
 	
+	call _cb_ext_irq5
+
 	pop R1, R5 from [SP]
 	reti;
 
@@ -206,23 +214,43 @@ _IRQ6:
 	R1 = [P_INT2_Status];
 	test R1, C_IRQ6_2048Hz;
 	jnz ?L_IRQ6_2048Hz;
+	test R1, C_IRQ6_CTSTMA;
+	jnz L_IRQ_CTSTMA;	
+	test R1, C_IRQ6_CTSTMB;
+	jnz L_IRQ_CTSTMB;
 
 	pop R1, R5 from [SP];
 	reti;   
 
 ?L_IRQ6_2048Hz:
-
-
-    R1 = C_IRQ6_2048Hz;
-    [P_INT2_Status] = R1;	
+	call _callback_2048hz_service;
+	R1 = C_IRQ6_2048Hz;
+	[P_INT2_Status] = R1;	
 	pop R1, R5 from [SP]
 	reti;
+
+L_IRQ_CTSTMA:
+	call _isr_cts_tma;  
+	R1 = C_IRQ6_CTSTMA;
+	[P_INT2_Status] = R1;   
+	pop R1, R5 from [SP];
+	reti;
+
+L_IRQ_CTSTMB:    
+	nop;
+	nop;
+	R1 = C_IRQ6_CTSTMB;
+	[P_INT2_Status] = R1;    
+	pop R1, R5 from [SP];
+	reti;  
 
 //****************************************************************
 // _IRQ7
 //****************************************************************
 _IRQ7:
 	push R1, R5 to [SP]
+	
+	call _cb_uart_irq7
 	
 	pop R1, R5 from [SP]
 	reti;

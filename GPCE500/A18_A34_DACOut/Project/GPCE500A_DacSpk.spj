@@ -73,7 +73,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=986048
+EXPORT=3
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\system.asm
@@ -176,7 +176,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
+EXPORT=1968128833
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\A34Pro_fptr.inc
@@ -202,19 +202,171 @@ ID=
 EXPORT=3
 SPECIFICFLAG=0
 # End Source File
+# Begin Source File
+SOURCE=..\Inc\includes.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\typedef.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\usr_config.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_voice.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\System.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPI_Flash.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
 # End Group
 # Begin Group "Main"
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
 EXPORT=3
-SPECIFICFLAG=10
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Main\main.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=220211504
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -222,7 +374,132 @@ SOURCE=..\Main\isr.asm
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=0
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Phy"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Phy\phy_adc.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Dev"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Dev\board.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_voice.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_button.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_cap_touch.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Kernel"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Kernel\kernel.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -295,7 +572,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=986048
+EXPORT=3
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\system.asm
@@ -398,7 +675,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
+EXPORT=1968128833
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\A34Pro_fptr.inc
@@ -424,19 +701,171 @@ ID=
 EXPORT=3
 SPECIFICFLAG=0
 # End Source File
+# Begin Source File
+SOURCE=..\Inc\includes.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\typedef.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\usr_config.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_voice.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\System.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPI_Flash.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# End Source File
 # End Group
 # Begin Group "Main"
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
 EXPORT=3
-SPECIFICFLAG=10
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Main\main.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=220211504
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -444,7 +873,132 @@ SOURCE=..\Main\isr.asm
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=0
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Phy"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Phy\phy_adc.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Dev"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Dev\board.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_voice.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_button.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Dev\dev_cap_touch.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Kernel"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=1968128833
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Kernel\kernel.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group

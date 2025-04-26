@@ -1,6 +1,6 @@
 #####################################################################
 #																	 
-#	Created by u'nSP IDE V4.1.1		14:02:32	04/25/25
+#	Created by u'nSP IDE V4.1.1		08:52:15	04/26/25
 #
 #####################################################################
 
@@ -13,7 +13,7 @@ COMPILEDATE_ = %date:~0,4%-%date:~5,2%-%date:~8,2%
 
 COMPILETIME = %time:~0,2%%time:~3,2%%time:~6,2%
 
-PRJDIR	= D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project
+PRJDIR	= D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project
 
 APPDIR	= C:\PROGRA~2\GENERA~1\UNSPID~2.1
 
@@ -51,11 +51,11 @@ BOOTPACKER	= "$(APPDIR)\toolchain\BootPacker"
 
 LIKMODIFIER	= "$(APPDIR)\toolchain\unSP_LIKModifier" 
 
-INCLUDES	= -I"D:/JohnHu/Github_private/GPCE500_basecode/GPCE500A_A18_A34_DACOut/Project" -I"C:/Program Files (x86)/Generalplus/unSPIDE_4.1.1/library/include" -I"C:/Program Files (x86)/Generalplus/unSPIDE_4.1.1/library/include/sys" -I"../Include" -I"../Library"
+INCLUDES	= -I"D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Project" -I"C:/Program Files (x86)/Generalplus/unSPIDE_4.1.1/library/include" -I"C:/Program Files (x86)/Generalplus/unSPIDE_4.1.1/library/include/sys" -I"../Include" -I"../Library"
 
-BODY	= -body GPCE500A -nobdy -bfile "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\GPCE500A_DacSpk.bdy"
+BODY	= -body GPCE500A -nobdy -bfile "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\GPCE500A_DacSpk.bdy"
 
-BODYFILE	= "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\GPCE500A_DacSpk.bdy" 
+BODYFILE	= "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\GPCE500A_DacSpk.bdy" 
 
 BINFILE	= "$(OUTDIR)\GPCE500A_DacSpk.TSK"
 
@@ -85,19 +85,13 @@ CFLAGS	= $(OPT) -B$(APPDIR)\toolchain\ $(INCLUDES)
 
 BINTYPE	= -at
 
-LDFLAGS	= -Wno-L0062 -blank 0x00 -initdata -infblk "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\GPCE500A_DacSpk.inb" -conf "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\Body\GPCE5\Checksum\GPCE5.cks"
+LDFLAGS	= -Wno-L0062 -blank 0x00 -initdata -infblk "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\GPCE500A_DacSpk.inb" -conf "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\Body\GPCE5\Checksum\GPCE5.cks"
 
 EXTRAFLAGS	= 
 
 
 OBJFILES	= \
-	"$(OUTDIR)\animals02_34K_sp4.res" \
-	"$(OUTDIR)\animals03_34K_sp4.res" \
-	"$(OUTDIR)\animals04_34K_sp4.res" \
-	"$(OUTDIR)\animals08_34K_sp4.res" \
-	"$(OUTDIR)\tailor3_16K_a18.res" \
-	"$(OUTDIR)\them2_seekctrl_001_sp4.res" \
-	"$(OUTDIR)\FileMerger_ROM_bin.res" \
+	"$(OUTDIR)\SpinVoice_bin.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\system.obj" \
 	"$(OUTDIR)\BootCode_User.obj" \
@@ -108,65 +102,151 @@ OBJFILES	= \
 	"$(OUTDIR)\SPI_Flash.obj" \
 	"$(OUTDIR)\ORAM_Arrangement.obj" \
 	"$(OUTDIR)\main.obj" \
-	"$(OUTDIR)\isr.obj" 
+	"$(OUTDIR)\isr.obj" \
+	"$(OUTDIR)\phy_adc.obj" \
+	"$(OUTDIR)\phy_ext.obj" \
+	"$(OUTDIR)\phy_gpio.obj" \
+	"$(OUTDIR)\phy_i2c.obj" \
+	"$(OUTDIR)\phy_iopwm.obj" \
+	"$(OUTDIR)\phy_spi.obj" \
+	"$(OUTDIR)\phy_uart.obj" \
+	"$(OUTDIR)\board.obj" \
+	"$(OUTDIR)\dev_voice.obj" \
+	"$(OUTDIR)\dev_button.obj" \
+	"$(OUTDIR)\dev_cap_touch.obj" \
+	"$(OUTDIR)\kernel.obj" \
+	"$(OUTDIR)\os_beason.obj" 
 
-"$(OUTDIR)\animals02_34K_sp4.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals02_34K.sp4"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals02_34K.sp4" "$(OUTDIR)\animals02_34K_sp4.res" RES_ANIMALS02_34K_SP4 
+"$(OUTDIR)\SpinVoice_bin.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\voice\SpinVoice.bin"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\voice\SpinVoice.bin" "$(OUTDIR)\SpinVoice_bin.res" RES_SPINVOICE_BIN 
 
-"$(OUTDIR)\animals03_34K_sp4.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals03_34K.sp4"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals03_34K.sp4" "$(OUTDIR)\animals03_34K_sp4.res" RES_ANIMALS03_34K_SP4 
+"$(OUTDIR)\Resource.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\Resource.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\Resource.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\Resource.asm" 
 
-"$(OUTDIR)\animals04_34K_sp4.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals04_34K.sp4"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals04_34K.sp4" "$(OUTDIR)\animals04_34K_sp4.res" RES_ANIMALS04_34K_SP4 
+"$(OUTDIR)\system.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\system.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\system.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\system.asm" 
 
-"$(OUTDIR)\animals08_34K_sp4.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals08_34K.sp4"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\animals08_34K.sp4" "$(OUTDIR)\animals08_34K_sp4.res" RES_ANIMALS08_34K_SP4 
+"$(OUTDIR)\BootCode_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\BootCode_User.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\BootCode_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\BootCode_User.asm" 
 
-"$(OUTDIR)\tailor3_16K_a18.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\tailor3_16K.a18"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\tailor3_16K.a18" "$(OUTDIR)\tailor3_16K_a18.res" RES_TAILOR3_16K_A18 
+"$(OUTDIR)\SACM_A34Pro_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_A34Pro_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\A34Pro_fptr.inc" "GPCE36_CE5.inc" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A34Pro_fptr_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_A34Pro_fptr_User.asm" 
 
-"$(OUTDIR)\them2_seekctrl_001_sp4.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\them2_seekctrl_001.sp4"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\them2_seekctrl_001.sp4" "$(OUTDIR)\them2_seekctrl_001_sp4.res" RES_THEM2_SEEKCTRL_001_SP4 
+"$(OUTDIR)\SACM_A1800_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_A1800_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\A1800_fptr.inc" "GPCE36_CE5.inc" "Resource.inc" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A1800_fptr_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_A1800_fptr_User.asm" 
 
-"$(OUTDIR)\FileMerger_ROM_bin.res": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\FileMerger_ROM.bin"
-	$(RESC) "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\voice\FileMerger_ROM.bin" "$(OUTDIR)\FileMerger_ROM_bin.res" RES_FILEMERGER_ROM_BIN 
+"$(OUTDIR)\SACM_Mixer_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_Mixer_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_Mixer_Constant.inc" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_Mixer_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\SACM_Mixer_User.asm" 
 
-"$(OUTDIR)\Resource.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Resource.asm" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\Resource.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\Resource.asm" 
+"$(OUTDIR)\VolCompress_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\VolCompress_User.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\VolCompress_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\VolCompress_User.asm" 
 
-"$(OUTDIR)\system.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\system.asm" "GPCE36_CE5.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\system.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\system.asm" 
+"$(OUTDIR)\SPI_Flash.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\SPI_Flash.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPI_Flash.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Project\SPI_Flash.asm" 
 
-"$(OUTDIR)\BootCode_User.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\BootCode_User.asm" ".\GPCE36_CE5.inc" ".\GPCE36_CE5_Body.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\BootCode_User.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\BootCode_User.asm" 
+"$(OUTDIR)\ORAM_Arrangement.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\ORAM_Arrangement.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\ORAM_Arrangement.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Include\ORAM_Arrangement.asm" 
 
-"$(OUTDIR)\SACM_A34Pro_fptr_User.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_A34Pro_fptr_User.asm" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\A34Pro_fptr.inc" "GPCE36_CE5.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A34Pro_fptr_User.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_A34Pro_fptr_User.asm" 
-
-"$(OUTDIR)\SACM_A1800_fptr_User.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_A1800_fptr_User.asm" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\A1800_fptr.inc" "GPCE36_CE5.inc" "Resource.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A1800_fptr_User.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_A1800_fptr_User.asm" 
-
-"$(OUTDIR)\SACM_Mixer_User.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_Mixer_User.asm" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_Mixer_Constant.inc" "GPCE36_CE5.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_Mixer_User.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\SACM_Mixer_User.asm" 
-
-"$(OUTDIR)\VolCompress_User.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\VolCompress_User.asm" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\VolCompress_User.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\VolCompress_User.asm" 
-
-"$(OUTDIR)\SPI_Flash.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\SPI_Flash.asm" ".\GPCE36_CE5.inc" ".\GPCE36_CE5_Body.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPI_Flash.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Project\SPI_Flash.asm" 
-
-"$(OUTDIR)\ORAM_Arrangement.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\ORAM_Arrangement.asm" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\ORAM_Arrangement.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Include\ORAM_Arrangement.asm" 
-
-"$(OUTDIR)\main.asm": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Main\main.c" 
+"$(OUTDIR)\main.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Main\main.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
 	set PATH="$(APPDIR)\toolchain\";%PATH% & \
-	$(CC) $(CFLAGS) -o "$(OUTDIR)\main.asm" "D:/JohnHu/Github_private/GPCE500_basecode/GPCE500A_A18_A34_DACOut/Main/main.c" 
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\main.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Main/main.c" 
 
 "$(OUTDIR)\main.obj": "$(OUTDIR)\main.asm"
 	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\main.obj" "$(OUTDIR)\main.asm" 
 
-"$(OUTDIR)\isr.obj": "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Main\isr.asm" "GPCE36_CE5.inc" "..\Include\A34Pro_fptr.inc" 
-	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\isr.obj" "D:\JohnHu\Github_private\GPCE500_basecode\GPCE500A_A18_A34_DACOut\Main\isr.asm" 
+"$(OUTDIR)\isr.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Main\isr.asm" 
+	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\isr.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Main\isr.asm" 
+
+"$(OUTDIR)\phy_adc.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_adc.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_adc.c" 
+
+"$(OUTDIR)\phy_adc.obj": "$(OUTDIR)\phy_adc.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_adc.obj" "$(OUTDIR)\phy_adc.asm" 
+
+"$(OUTDIR)\phy_ext.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_ext.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_ext.c" 
+
+"$(OUTDIR)\phy_ext.obj": "$(OUTDIR)\phy_ext.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_ext.obj" "$(OUTDIR)\phy_ext.asm" 
+
+"$(OUTDIR)\phy_gpio.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_gpio.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_gpio.c" 
+
+"$(OUTDIR)\phy_gpio.obj": "$(OUTDIR)\phy_gpio.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_gpio.obj" "$(OUTDIR)\phy_gpio.asm" 
+
+"$(OUTDIR)\phy_i2c.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_i2c.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_i2c.c" 
+
+"$(OUTDIR)\phy_i2c.obj": "$(OUTDIR)\phy_i2c.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_i2c.obj" "$(OUTDIR)\phy_i2c.asm" 
+
+"$(OUTDIR)\phy_iopwm.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_iopwm.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_iopwm.c" 
+
+"$(OUTDIR)\phy_iopwm.obj": "$(OUTDIR)\phy_iopwm.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_iopwm.obj" "$(OUTDIR)\phy_iopwm.asm" 
+
+"$(OUTDIR)\phy_spi.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_spi.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_spi.c" 
+
+"$(OUTDIR)\phy_spi.obj": "$(OUTDIR)\phy_spi.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_spi.obj" "$(OUTDIR)\phy_spi.asm" 
+
+"$(OUTDIR)\phy_uart.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\phy_uart.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Phy/phy_uart.c" 
+
+"$(OUTDIR)\phy_uart.obj": "$(OUTDIR)\phy_uart.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\phy_uart.obj" "$(OUTDIR)\phy_uart.asm" 
+
+"$(OUTDIR)\board.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\board.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Dev/board.c" 
+
+"$(OUTDIR)\board.obj": "$(OUTDIR)\board.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\board.obj" "$(OUTDIR)\board.asm" 
+
+"$(OUTDIR)\dev_voice.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\dev_voice.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Dev/dev_voice.c" 
+
+"$(OUTDIR)\dev_voice.obj": "$(OUTDIR)\dev_voice.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\dev_voice.obj" "$(OUTDIR)\dev_voice.asm" 
+
+"$(OUTDIR)\dev_button.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\dev_button.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Dev/dev_button.c" 
+
+"$(OUTDIR)\dev_button.obj": "$(OUTDIR)\dev_button.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\dev_button.obj" "$(OUTDIR)\dev_button.asm" 
+
+"$(OUTDIR)\dev_cap_touch.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\dev_cap_touch.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Dev/dev_cap_touch.c" 
+
+"$(OUTDIR)\dev_cap_touch.obj": "$(OUTDIR)\dev_cap_touch.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\dev_cap_touch.obj" "$(OUTDIR)\dev_cap_touch.asm" 
+
+"$(OUTDIR)\kernel.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\kernel.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Kernel/kernel.c" 
+
+"$(OUTDIR)\kernel.obj": "$(OUTDIR)\kernel.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\kernel.obj" "$(OUTDIR)\kernel.asm" 
+
+"$(OUTDIR)\os_beason.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_voice.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Dev\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\A18_A34_DACOut\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "GPCE36_CE5.h" "Resource.h" "..\Include\SACM.h" "..\Include\System.h" "..\Include\SPI_Flash.h" 
+	set PATH="$(APPDIR)\toolchain\";%PATH% & \
+	$(CC) $(CFLAGS) -o "$(OUTDIR)\os_beason.asm" "D:/JohnHu/Github_private/GPCE_template/GPCE500/A18_A34_DACOut/Kernel/os_beason.c" 
+
+"$(OUTDIR)\os_beason.obj": "$(OUTDIR)\os_beason.asm"
+	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\os_beason.obj" "$(OUTDIR)\os_beason.asm" 
 
 
 GEN_BOOTPACKER_INFO :
@@ -211,13 +291,7 @@ $(BINFILE) : $(OBJFILES)
 compile :	 $(OBJFILES)
 
 CLEANFILES = \
-	"$(OUTDIR)\animals02_34K_sp4.res" \
-	"$(OUTDIR)\animals03_34K_sp4.res" \
-	"$(OUTDIR)\animals04_34K_sp4.res" \
-	"$(OUTDIR)\animals08_34K_sp4.res" \
-	"$(OUTDIR)\tailor3_16K_a18.res" \
-	"$(OUTDIR)\them2_seekctrl_001_sp4.res" \
-	"$(OUTDIR)\FileMerger_ROM_bin.res" \
+	"$(OUTDIR)\SpinVoice_bin.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\Resource.lst" \
 	"$(OUTDIR)\system.obj" \
@@ -241,6 +315,45 @@ CLEANFILES = \
 	"$(OUTDIR)\main.asm" \
 	"$(OUTDIR)\isr.obj" \
 	"$(OUTDIR)\isr.lst" \
+	"$(OUTDIR)\phy_adc.obj" \
+	"$(OUTDIR)\phy_adc.lst" \
+	"$(OUTDIR)\phy_adc.asm" \
+	"$(OUTDIR)\phy_ext.obj" \
+	"$(OUTDIR)\phy_ext.lst" \
+	"$(OUTDIR)\phy_ext.asm" \
+	"$(OUTDIR)\phy_gpio.obj" \
+	"$(OUTDIR)\phy_gpio.lst" \
+	"$(OUTDIR)\phy_gpio.asm" \
+	"$(OUTDIR)\phy_i2c.obj" \
+	"$(OUTDIR)\phy_i2c.lst" \
+	"$(OUTDIR)\phy_i2c.asm" \
+	"$(OUTDIR)\phy_iopwm.obj" \
+	"$(OUTDIR)\phy_iopwm.lst" \
+	"$(OUTDIR)\phy_iopwm.asm" \
+	"$(OUTDIR)\phy_spi.obj" \
+	"$(OUTDIR)\phy_spi.lst" \
+	"$(OUTDIR)\phy_spi.asm" \
+	"$(OUTDIR)\phy_uart.obj" \
+	"$(OUTDIR)\phy_uart.lst" \
+	"$(OUTDIR)\phy_uart.asm" \
+	"$(OUTDIR)\board.obj" \
+	"$(OUTDIR)\board.lst" \
+	"$(OUTDIR)\board.asm" \
+	"$(OUTDIR)\dev_voice.obj" \
+	"$(OUTDIR)\dev_voice.lst" \
+	"$(OUTDIR)\dev_voice.asm" \
+	"$(OUTDIR)\dev_button.obj" \
+	"$(OUTDIR)\dev_button.lst" \
+	"$(OUTDIR)\dev_button.asm" \
+	"$(OUTDIR)\dev_cap_touch.obj" \
+	"$(OUTDIR)\dev_cap_touch.lst" \
+	"$(OUTDIR)\dev_cap_touch.asm" \
+	"$(OUTDIR)\kernel.obj" \
+	"$(OUTDIR)\kernel.lst" \
+	"$(OUTDIR)\kernel.asm" \
+	"$(OUTDIR)\os_beason.obj" \
+	"$(OUTDIR)\os_beason.lst" \
+	"$(OUTDIR)\os_beason.asm" \
 	"$(BINFILENOEXT).s37" \
 	"$(BINFILENOEXT).tsk" \
 	"$(BINFILENOEXT)_SPI.bin*" \
@@ -254,7 +367,7 @@ CLEANFILES = \
 	$(SBMFILE)
 
 clean :
-	$(RM) $(wordlist 1,42,$(CLEANFILES))
+	$(RM) $(wordlist 1,75,$(CLEANFILES))
 
 .c.asm:
 	$(CC) $(CFLAGS) $(INCLUDES) -o "$(OUTDIR)\$@" $<

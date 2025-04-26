@@ -1,0 +1,119 @@
+<Project Name="FileMerger" Version="1.0.0">
+    <Setting>
+        <Body ChipSeries="GPCE1" SystemClock="81920000" />
+    </Setting>
+    <UI>
+        <FileFilter Value="*.adp|*.a16|*.a16p|*.a18|*.a181|*.a20|*.a34|*.a36|*.a48|*.a64|*.pcmgpce|*.rav|*.s20|*.s32|*.s48|*.s53|*.s72|*.s80|*.s88|*.sp4|*.sp5|*.se4|*.se5|*.AM2|*.AM3|*.AM4|*.AM5|*.pcm|*.ref|*.spp|*.spa|*.drm|*.geo|*.ima|*.wav|*.mp3|*.equ|*.bin" />
+        <Recursive Value="0" />
+        <AllFileType Value="*.adp|*.a16|*.a16p|*.a18|*.a181|*.a20|*.a34|*.a36|*.a48|*.a64|*.pcmgpce|*.rav|*.s20|*.s32|*.s48|*.s53|*.s72|*.s80|*.s88|*.sp4|*.sp5|*.se4|*.se5|*.AM2|*.AM3|*.AM4|*.AM5|*.pcm|*.ref|*.spp|*.spa|*.drm|*.geo|*.ima|*.wav|*.mp3|*.equ|*.bin|*.*" />
+        <BinVersion Value="1" />
+        <SourceFolder Source="D:\JohnHu\wav\a18_for_bin" />
+        <BinFile Source="D:\JohnHu\wav\a18_for_bin\bin\SpinVoice.bin" />
+        <IncFile Source="D:\JohnHu\wav\a18_for_bin\bin\SpinVoice.inc" />
+        <HFile Source="D:\JohnHu\wav\a18_for_bin\bin\SpinVoice.h" />
+        <EnableUserBinFile Value="0" />
+        <UserBinFile Source="C:\Program Files (x86)\Generalplus\G+ Gadget 1.2.0.2\UserData.bin" />
+        <RecordFile Source="C:\Program Files (x86)\Generalplus\G+ Gadget 1.2.0.2\ROM_Address.bin" />
+        <BodyFile Source="./PreLoadValueBodyMapping.ini" />
+        <ByteOrder Value="0" />
+        <Flag64Bit Value="0" />
+        <ResourceNo Value="1" />
+        <AddressOffset Value="0" />
+        <Add8BytesHead_Version1 Value="0" />
+        <Add8BytesHead_Version2 Value="0" />
+        <Add8BytesHead Value="0" />
+        <ReservedBytes Value="304" />
+        <AddressBase Value="1" />
+        <MergeAddressTable Value="1" />
+        <FillData Value="0xFF" />
+        <AddrByteBased Value="1" />
+        <BinFileSize Value="Autosize" />
+        <CheckSumAlgorithm Value="1" />
+        <GroupNameFormat Value="%N" />
+        <GroupAddrFormat Value="%N_Addr" />
+        <FileNameFormat Value="%n" />
+        <FileAddrFormat Value="%n_Addr" />
+        <OutputAddr Value="1" />
+        <OutputIndex Value="1" />
+        <Reserved32ByteHead Value=" 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" />
+    </UI>
+    <Resource>
+        <File Name="whereareyou_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\whereareyou_16K_wav.a18" GroupIndex="0" />
+        <File Name="vibrate_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\vibrate_16K_wav.a18" GroupIndex="0" />
+        <File Name="tryme_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\tryme_16K_wav.a18" GroupIndex="0" />
+        <File Name="top_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\top_16K_wav.a18" GroupIndex="0" />
+        <File Name="ten_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\ten_16K_wav.a18" GroupIndex="0" />
+        <File Name="spin_master_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\spin_master_16K_wav.a18" GroupIndex="0" />
+        <File Name="shortpower_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\shortpower_16K_wav.a18" GroupIndex="0" />
+        <File Name="shortneighbour_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\shortneighbour_16K_wav.a18" GroupIndex="0" />
+        <File Name="shortgnd_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\shortgnd_16K_wav.a18" GroupIndex="0" />
+        <File Name="shakeneck_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\shakeneck_16K_wav.a18" GroupIndex="0" />
+        <File Name="shakehead_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\shakehead_16K_wav.a18" GroupIndex="0" />
+        <File Name="second_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\second_16K_wav.a18" GroupIndex="0" />
+        <File Name="right_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\right_16K_wav.a18" GroupIndex="0" />
+        <File Name="release_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\release_16K_wav.a18" GroupIndex="0" />
+        <File Name="red_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\red_16K_wav.a18" GroupIndex="0" />
+        <File Name="open_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\open_16K_wav.a18" GroupIndex="0" />
+        <File Name="N010_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N010_wav.a18" GroupIndex="0" />
+        <File Name="N009_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N009_wav.a18" GroupIndex="0" />
+        <File Name="N008_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N008_wav.a18" GroupIndex="0" />
+        <File Name="N007_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N007_wav.a18" GroupIndex="0" />
+        <File Name="N006_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N006_wav.a18" GroupIndex="0" />
+        <File Name="N005_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N005_wav.a18" GroupIndex="0" />
+        <File Name="N004_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N004_wav.a18" GroupIndex="0" />
+        <File Name="N003_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N003_wav.a18" GroupIndex="0" />
+        <File Name="N002_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N002_wav.a18" GroupIndex="0" />
+        <File Name="N001_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N001_wav.a18" GroupIndex="0" />
+        <File Name="N000_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\N000_wav.a18" GroupIndex="0" />
+        <File Name="left_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\left_16K_wav.a18" GroupIndex="0" />
+        <File Name="iamcoming_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\iamcoming_16K_wav.a18" GroupIndex="0" />
+        <File Name="horseshoe_singlecn.a18" Source="D:\JohnHu\wav\a18_for_bin\horseshoe_singlecn.a18" GroupIndex="0" />
+        <File Name="horseshoe.a18" Source="D:\JohnHu\wav\a18_for_bin\horseshoe.a18" GroupIndex="0" />
+        <File Name="horseloud.a18" Source="D:\JohnHu\wav\a18_for_bin\horseloud.a18" GroupIndex="0" />
+        <File Name="hold_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\hold_16K_wav.a18" GroupIndex="0" />
+        <File Name="hello_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\hello_16K_wav.a18" GroupIndex="0" />
+        <File Name="green_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\green_16K_wav.a18" GroupIndex="0" />
+        <File Name="gentleman_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\gentleman_16K_wav.a18" GroupIndex="0" />
+        <File Name="explore_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\explore_16K_wav.a18" GroupIndex="0" />
+        <File Name="everythingok_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\everythingok_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_Z_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_Z_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_Y_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_Y_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_X_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_X_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_W_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_W_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_V_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_V_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_U_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_U_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_T_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_T_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_S_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_S_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_R_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_R_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_Q_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_Q_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_P_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_P_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_O_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_O_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_N_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_N_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_M_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_M_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_L_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_L_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_K_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_K_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_J_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_J_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_I_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_I_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_H_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_H_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_G_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_G_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_F_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_F_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_E_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_E_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_D_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_D_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_C_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_C_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_B_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_B_16K_wav.a18" GroupIndex="0" />
+        <File Name="EN_A_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\EN_A_16K_wav.a18" GroupIndex="0" />
+        <File Name="Di_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\Di_16K_wav.a18" GroupIndex="0" />
+        <File Name="comehere_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\comehere_16K_wav.a18" GroupIndex="0" />
+        <File Name="close_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\close_16K_wav.a18" GroupIndex="0" />
+        <File Name="click_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\click_16K_wav.a18" GroupIndex="0" />
+        <File Name="button_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\button_16K_wav.a18" GroupIndex="0" />
+        <File Name="box_open_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\box_open_16K_wav.a18" GroupIndex="0" />
+        <File Name="box_close_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\box_close_16K_wav.a18" GroupIndex="0" />
+        <File Name="bottom_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\bottom_16K_wav.a18" GroupIndex="0" />
+        <File Name="blue_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\blue_16K_wav.a18" GroupIndex="0" />
+        <File Name="batvol_16K_wav.a18" Source="D:\JohnHu\wav\a18_for_bin\batvol_16K_wav.a18" GroupIndex="0" />
+        <File Name="animal_angry.a18" Source="D:\JohnHu\wav\a18_for_bin\animal_angry.a18" GroupIndex="0" />
+    </Resource>
+    <EquationTable />
+    <CustomFormat />
+</Project>

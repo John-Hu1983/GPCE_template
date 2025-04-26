@@ -124,7 +124,7 @@ T_IO_Event:
 .external T_SACM_A34Pro_fptr_SpeechTable;
 
 .if C_SPEECH_Source_Type==C_FilerMerger_Version1
-	.external _RES_FILEMERGER_ROM_BIN_SA;
+	.external _RES_SPINVOICE_BIN_SA;
 .endif
 
 //**************************************************************************
@@ -321,8 +321,8 @@ F_USER_A34Pro_fptr_SetStartAddr:
 	[R_ExtMem_High] = R4
 .endif	
 .if C_SPEECH_Source_Type==C_FilerMerger_Version1
-	DS = SEG _RES_FILEMERGER_ROM_BIN_SA;
-	R4 = OFFSET _RES_FILEMERGER_ROM_BIN_SA;
+	DS = SEG _RES_SPINVOICE_BIN_SA;
+	R4 = OFFSET _RES_SPINVOICE_BIN_SA;
 	R3 = D:[R4++];
 	R4 = D:[R4];
 	R2 = R4;

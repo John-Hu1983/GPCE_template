@@ -13,7 +13,7 @@ BodyName=GPCE500A
 
 [SetLink]
 ExeFile=0
-Output=GPCE500A_Demo_SPI.bin
+Output=.\Debug\GPCE500A_DacSpk.s37
 INTVEC=1
 STARTUP=0
 ALIGNRES=0
@@ -24,11 +24,13 @@ NONPAGE0=0
 EnableCheckSPIMechanism=0
 
 [LIBRARY]
-Count=4
+Count=6
 LIB0=CMacro1232.lib
 LIB1=..\Library\A3400Pro_fptr_V0.9.3.lib
 LIB2=..\Library\GPCE_VolumeCompressor_V0.9.1.lib
 LIB3=..\Library\SACM_A1800_fptr_V0.9.2.lib
+LIB4=..\Library\CLib1232.lib
+LIB5=..\Library\Libmem1232.lib
 
 [SYMBOL]
 Count=0
