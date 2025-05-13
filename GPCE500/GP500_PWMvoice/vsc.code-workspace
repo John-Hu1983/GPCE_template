@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"sacm.h": "c",
+			"app_shell.h": "c",
+			"rf_config.h": "c"
+		}
+	}
+}
