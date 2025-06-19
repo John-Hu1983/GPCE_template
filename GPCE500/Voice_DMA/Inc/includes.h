@@ -15,7 +15,6 @@
 
 #include "../Inc/typedef.h"
 #include "../Inc/usr_config.h"
-#include "./voice/SpinVoice.h"
 
 #include "../Phy/phy_adc.h"
 #include "../Phy/phy_timer.h"

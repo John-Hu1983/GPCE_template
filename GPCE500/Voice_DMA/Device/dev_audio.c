@@ -192,22 +192,22 @@ void play_a1800_string(char *str, bool_t renew)
     if (str[i] >= '0' && str[i] <= '9')
     {
       ok = 1;
-      ascll = _N000_WAV - (str[i] - '0');
+      ascll = str[i] - '0' + N000_A18;
     }
     else if (str[i] >= 'a' && str[i] <= 'z')
     {
       ok = 1;
-      ascll = _EN_A_16K_WAV - (str[i] - 'a');
+      ascll = str[i] - 'a' + EN_A_A18;
     }
     else if (str[i] >= 'A' && str[i] <= 'Z')
     {
       ok = 1;
-      ascll = _EN_A_16K_WAV - (str[i] - 'A');
+      ascll = str[i] - 'A' + EN_A_A18;
     }
     else if (str[i] == ' ')
     {
       ok = 1;
-      ascll = SILENT_SEVERAL;
+      ascll = SILENT_500MS;
     }
     if (ok)
     {

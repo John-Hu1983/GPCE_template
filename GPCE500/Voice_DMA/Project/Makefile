@@ -1,6 +1,6 @@
 #####################################################################
 #																	 
-#	Created by u'nSP IDE V4.1.1		14:04:34	06/19/25
+#	Created by u'nSP IDE V4.1.1		14:52:40	06/19/25
 #
 #####################################################################
 
@@ -91,7 +91,47 @@ EXTRAFLAGS	=
 
 
 OBJFILES	= \
-	"$(OUTDIR)\SpinVoice_bin.res" \
+	"$(OUTDIR)\N000_wav_a18.res" \
+	"$(OUTDIR)\N001_wav_a18.res" \
+	"$(OUTDIR)\N002_wav_a18.res" \
+	"$(OUTDIR)\N003_wav_a18.res" \
+	"$(OUTDIR)\N004_wav_a18.res" \
+	"$(OUTDIR)\N005_wav_a18.res" \
+	"$(OUTDIR)\N006_wav_a18.res" \
+	"$(OUTDIR)\N007_wav_a18.res" \
+	"$(OUTDIR)\N008_wav_a18.res" \
+	"$(OUTDIR)\N009_wav_a18.res" \
+	"$(OUTDIR)\N010_wav_a18.res" \
+	"$(OUTDIR)\EN_A_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_B_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_C_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_D_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_E_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_F_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_G_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_H_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_I_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_J_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_K_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_L_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_M_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_N_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_O_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_P_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Q_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_R_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_S_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_T_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_U_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_V_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_W_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_X_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Y_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Z_16K_wav_a18.res" \
+	"$(OUTDIR)\DANCEICE_16K_wav_a18.res" \
+	"$(OUTDIR)\danger_16K_wav_a18.res" \
+	"$(OUTDIR)\HATCHSONG_16K_wav_a18.res" \
+	"$(OUTDIR)\tailor3_16K_a18.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\system.obj" \
 	"$(OUTDIR)\BootCode_User.obj" \
@@ -128,8 +168,128 @@ OBJFILES	= \
 	"$(OUTDIR)\app_operate.obj" \
 	"$(OUTDIR)\app_shell.obj" 
 
-"$(OUTDIR)\SpinVoice_bin.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\SpinVoice.bin"
-	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\SpinVoice.bin" "$(OUTDIR)\SpinVoice_bin.res" RES_SPINVOICE_BIN 
+"$(OUTDIR)\N000_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N000_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N000_wav.a18" "$(OUTDIR)\N000_wav_a18.res" RES_N000_WAV_A18 
+
+"$(OUTDIR)\N001_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N001_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N001_wav.a18" "$(OUTDIR)\N001_wav_a18.res" RES_N001_WAV_A18 
+
+"$(OUTDIR)\N002_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N002_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N002_wav.a18" "$(OUTDIR)\N002_wav_a18.res" RES_N002_WAV_A18 
+
+"$(OUTDIR)\N003_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N003_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N003_wav.a18" "$(OUTDIR)\N003_wav_a18.res" RES_N003_WAV_A18 
+
+"$(OUTDIR)\N004_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N004_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N004_wav.a18" "$(OUTDIR)\N004_wav_a18.res" RES_N004_WAV_A18 
+
+"$(OUTDIR)\N005_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N005_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N005_wav.a18" "$(OUTDIR)\N005_wav_a18.res" RES_N005_WAV_A18 
+
+"$(OUTDIR)\N006_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N006_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N006_wav.a18" "$(OUTDIR)\N006_wav_a18.res" RES_N006_WAV_A18 
+
+"$(OUTDIR)\N007_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N007_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N007_wav.a18" "$(OUTDIR)\N007_wav_a18.res" RES_N007_WAV_A18 
+
+"$(OUTDIR)\N008_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N008_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N008_wav.a18" "$(OUTDIR)\N008_wav_a18.res" RES_N008_WAV_A18 
+
+"$(OUTDIR)\N009_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N009_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N009_wav.a18" "$(OUTDIR)\N009_wav_a18.res" RES_N009_WAV_A18 
+
+"$(OUTDIR)\N010_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N010_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\decimal\a18\N010_wav.a18" "$(OUTDIR)\N010_wav_a18.res" RES_N010_WAV_A18 
+
+"$(OUTDIR)\EN_A_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_A_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_A_16K_wav.a18" "$(OUTDIR)\EN_A_16K_wav_a18.res" RES_EN_A_16K_WAV_A18 
+
+"$(OUTDIR)\EN_B_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_B_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_B_16K_wav.a18" "$(OUTDIR)\EN_B_16K_wav_a18.res" RES_EN_B_16K_WAV_A18 
+
+"$(OUTDIR)\EN_C_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_C_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_C_16K_wav.a18" "$(OUTDIR)\EN_C_16K_wav_a18.res" RES_EN_C_16K_WAV_A18 
+
+"$(OUTDIR)\EN_D_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_D_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_D_16K_wav.a18" "$(OUTDIR)\EN_D_16K_wav_a18.res" RES_EN_D_16K_WAV_A18 
+
+"$(OUTDIR)\EN_E_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_E_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_E_16K_wav.a18" "$(OUTDIR)\EN_E_16K_wav_a18.res" RES_EN_E_16K_WAV_A18 
+
+"$(OUTDIR)\EN_F_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_F_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_F_16K_wav.a18" "$(OUTDIR)\EN_F_16K_wav_a18.res" RES_EN_F_16K_WAV_A18 
+
+"$(OUTDIR)\EN_G_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_G_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_G_16K_wav.a18" "$(OUTDIR)\EN_G_16K_wav_a18.res" RES_EN_G_16K_WAV_A18 
+
+"$(OUTDIR)\EN_H_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_H_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_H_16K_wav.a18" "$(OUTDIR)\EN_H_16K_wav_a18.res" RES_EN_H_16K_WAV_A18 
+
+"$(OUTDIR)\EN_I_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_I_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_I_16K_wav.a18" "$(OUTDIR)\EN_I_16K_wav_a18.res" RES_EN_I_16K_WAV_A18 
+
+"$(OUTDIR)\EN_J_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_J_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_J_16K_wav.a18" "$(OUTDIR)\EN_J_16K_wav_a18.res" RES_EN_J_16K_WAV_A18 
+
+"$(OUTDIR)\EN_K_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_K_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_K_16K_wav.a18" "$(OUTDIR)\EN_K_16K_wav_a18.res" RES_EN_K_16K_WAV_A18 
+
+"$(OUTDIR)\EN_L_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_L_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_L_16K_wav.a18" "$(OUTDIR)\EN_L_16K_wav_a18.res" RES_EN_L_16K_WAV_A18 
+
+"$(OUTDIR)\EN_M_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_M_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_M_16K_wav.a18" "$(OUTDIR)\EN_M_16K_wav_a18.res" RES_EN_M_16K_WAV_A18 
+
+"$(OUTDIR)\EN_N_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_N_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_N_16K_wav.a18" "$(OUTDIR)\EN_N_16K_wav_a18.res" RES_EN_N_16K_WAV_A18 
+
+"$(OUTDIR)\EN_O_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_O_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_O_16K_wav.a18" "$(OUTDIR)\EN_O_16K_wav_a18.res" RES_EN_O_16K_WAV_A18 
+
+"$(OUTDIR)\EN_P_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_P_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_P_16K_wav.a18" "$(OUTDIR)\EN_P_16K_wav_a18.res" RES_EN_P_16K_WAV_A18 
+
+"$(OUTDIR)\EN_Q_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Q_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Q_16K_wav.a18" "$(OUTDIR)\EN_Q_16K_wav_a18.res" RES_EN_Q_16K_WAV_A18 
+
+"$(OUTDIR)\EN_R_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_R_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_R_16K_wav.a18" "$(OUTDIR)\EN_R_16K_wav_a18.res" RES_EN_R_16K_WAV_A18 
+
+"$(OUTDIR)\EN_S_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_S_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_S_16K_wav.a18" "$(OUTDIR)\EN_S_16K_wav_a18.res" RES_EN_S_16K_WAV_A18 
+
+"$(OUTDIR)\EN_T_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_T_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_T_16K_wav.a18" "$(OUTDIR)\EN_T_16K_wav_a18.res" RES_EN_T_16K_WAV_A18 
+
+"$(OUTDIR)\EN_U_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_U_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_U_16K_wav.a18" "$(OUTDIR)\EN_U_16K_wav_a18.res" RES_EN_U_16K_WAV_A18 
+
+"$(OUTDIR)\EN_V_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_V_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_V_16K_wav.a18" "$(OUTDIR)\EN_V_16K_wav_a18.res" RES_EN_V_16K_WAV_A18 
+
+"$(OUTDIR)\EN_W_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_W_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_W_16K_wav.a18" "$(OUTDIR)\EN_W_16K_wav_a18.res" RES_EN_W_16K_WAV_A18 
+
+"$(OUTDIR)\EN_X_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_X_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_X_16K_wav.a18" "$(OUTDIR)\EN_X_16K_wav_a18.res" RES_EN_X_16K_WAV_A18 
+
+"$(OUTDIR)\EN_Y_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Y_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Y_16K_wav.a18" "$(OUTDIR)\EN_Y_16K_wav_a18.res" RES_EN_Y_16K_WAV_A18 
+
+"$(OUTDIR)\EN_Z_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Z_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\letter\a18\EN_Z_16K_wav.a18" "$(OUTDIR)\EN_Z_16K_wav_a18.res" RES_EN_Z_16K_WAV_A18 
+
+"$(OUTDIR)\DANCEICE_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\DANCEICE_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\DANCEICE_16K_wav.a18" "$(OUTDIR)\DANCEICE_16K_wav_a18.res" RES_DANCEICE_16K_WAV_A18 
+
+"$(OUTDIR)\danger_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\danger_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\danger_16K_wav.a18" "$(OUTDIR)\danger_16K_wav_a18.res" RES_DANGER_16K_WAV_A18 
+
+"$(OUTDIR)\HATCHSONG_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\HATCHSONG_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\HATCHSONG_16K_wav.a18" "$(OUTDIR)\HATCHSONG_16K_wav_a18.res" RES_HATCHSONG_16K_WAV_A18 
+
+"$(OUTDIR)\tailor3_16K_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\tailor3_16K.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\tailor3_16K.a18" "$(OUTDIR)\tailor3_16K_a18.res" RES_TAILOR3_16K_A18 
 
 "$(OUTDIR)\Resource.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\Resource.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
@@ -354,7 +514,47 @@ $(BINFILE) : $(OBJFILES)
 compile :	 $(OBJFILES)
 
 CLEANFILES = \
-	"$(OUTDIR)\SpinVoice_bin.res" \
+	"$(OUTDIR)\N000_wav_a18.res" \
+	"$(OUTDIR)\N001_wav_a18.res" \
+	"$(OUTDIR)\N002_wav_a18.res" \
+	"$(OUTDIR)\N003_wav_a18.res" \
+	"$(OUTDIR)\N004_wav_a18.res" \
+	"$(OUTDIR)\N005_wav_a18.res" \
+	"$(OUTDIR)\N006_wav_a18.res" \
+	"$(OUTDIR)\N007_wav_a18.res" \
+	"$(OUTDIR)\N008_wav_a18.res" \
+	"$(OUTDIR)\N009_wav_a18.res" \
+	"$(OUTDIR)\N010_wav_a18.res" \
+	"$(OUTDIR)\EN_A_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_B_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_C_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_D_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_E_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_F_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_G_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_H_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_I_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_J_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_K_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_L_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_M_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_N_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_O_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_P_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Q_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_R_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_S_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_T_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_U_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_V_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_W_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_X_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Y_16K_wav_a18.res" \
+	"$(OUTDIR)\EN_Z_16K_wav_a18.res" \
+	"$(OUTDIR)\DANCEICE_16K_wav_a18.res" \
+	"$(OUTDIR)\danger_16K_wav_a18.res" \
+	"$(OUTDIR)\HATCHSONG_16K_wav_a18.res" \
+	"$(OUTDIR)\tailor3_16K_a18.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\Resource.lst" \
 	"$(OUTDIR)\system.obj" \
@@ -458,7 +658,7 @@ CLEANFILES = \
 
 clean :
 	$(RM) $(wordlist 1,100,$(CLEANFILES))
-	$(RM) $(wordlist 101,102,$(CLEANFILES))
+	$(RM) $(wordlist 101,142,$(CLEANFILES))
 
 .c.asm:
 	$(CC) $(CFLAGS) $(INCLUDES) -o "$(OUTDIR)\$@" $<

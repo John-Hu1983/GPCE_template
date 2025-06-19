@@ -116,7 +116,7 @@ void init_board_global(void)
   open_2048hz_irq();
   open_interrupt_global();
 
-  _play_a1800_manually(_IAMCOMING_16K_WAV);
+  _play_a1800_manually(N000_A18);
 
   // play_a1800_music(_IAMCOMING_16K_WAV, true);
 }
