@@ -1,0 +1,1311 @@
+#Sunplus Debeloper Project File - Name = SunplusIDE
+#Sunplus Developer Generated Build File Format Version V1.00
+#**DO NOT EDIT**
+#TARTYPE (GPCE500A)Application
+CFG=Debug
+
+VER=4.1.1 
+# Begin Project
+#Name Begin GPCE500A-Debug
+# Begin SubItem "GPCE3100_ROMCode  files"
+# Begin Group "Source Files"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Resource.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE500A_Demo.rc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Head Files"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Resource.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=Resource.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "External Dependencies"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Makefile
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "SPI_Files_Folder"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Include\system.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=BootCode_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_A34Pro_fptr_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_A1800_fptr_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\VolCompress_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\MIDI.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\MIDI_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPU.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPUSpeech.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\ORAM_Arrangement.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=SPI_Flash.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5_Body.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5_Body.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_CH2_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "External Headers"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=7929948
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Include\A34Pro_fptr.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\A1800_fptr.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_CH2_Constant.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_Constant.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\includes.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\typedef.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\usr_config.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_audio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\System.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=7929948
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=7929948
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=50724956
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_operate.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Main"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=808779868
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Main\main.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Main\isr.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Device"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=6619228
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Device\dev_audio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1937339228
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Phy"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=6516224
+# Begin Source File
+SOURCE=..\Phy\phy_adc.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=852060
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=852060
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Kernel"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=6644585
+# Begin Source File
+SOURCE=..\Kernel\kernel.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1919221852
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Apps"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Apps\app_operate.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1886388316
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1886388316
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# End SubItem
+#Name End GPCE500A-Debug
+#Name Begin GPCE500A-Release
+# Begin SubItem "GPCE3100_ROMCode  files"
+# Begin Group "Source Files"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Resource.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE500A_Demo.rc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Head Files"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Resource.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=Resource.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "External Dependencies"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=Makefile
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "SPI_Files_Folder"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Include\system.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=BootCode_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_A34Pro_fptr_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_A1800_fptr_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\VolCompress_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\MIDI.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\MIDI_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPU.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SPUSpeech.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\ORAM_Arrangement.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=SPI_Flash.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5_Body.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=GPCE36_CE5_Body.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_CH2_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_User.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "External Headers"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=7929948
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Include\A34Pro_fptr.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\A1800_fptr.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_CH2_Constant.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM_Mixer_Constant.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\includes.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\typedef.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Inc\usr_config.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_audio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\System.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=7929948
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\SACM.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Include\GEO.inc
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=7929948
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=50724956
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_operate.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1747845212
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Main"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=808779868
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Main\main.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Main\isr.asm
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Device"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=6619228
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Device\dev_audio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1937339228
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Phy"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=6516224
+# Begin Source File
+SOURCE=..\Phy\phy_adc.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=852060
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=6619228
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=852060
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1986330716
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Kernel"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=6644585
+# Begin Source File
+SOURCE=..\Kernel\kernel.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1919221852
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=2036858972
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# Begin Group "Apps"
+#PROP Default_Filter=
+USEPARAM=FALSE
+PARAM=
+EXPORT=3
+SPECIFICFLAG=0
+# Begin Source File
+SOURCE=..\Apps\app_operate.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1886388316
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.c
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=1886388316
+SPECIFICFLAG=0
+# End Source File
+# End Group
+# End SubItem
+#Name End GPCE500A-Release
+# End Project
+#Sunplus Debeloper Project File - Name = SunplusIDE
+#Sunplus Developer Generated Build File Format Version V1.00

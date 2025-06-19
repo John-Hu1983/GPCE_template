@@ -1,0 +1,893 @@
+Version: 3.0
+Options: tsk
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\Resource.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\system.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\BootCode_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\GEO_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SACM_A34Pro_fptr_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SACM_A1800_fptr_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\VolCompress_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\MIDI.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\MIDI_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SPU.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SPUSpeech.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\ORAM_Arrangement.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SPI_Flash.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SACM_Mixer_CH2_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SACM_Mixer_User.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\main.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\isr.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\dev_audio.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\board.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\dev_button.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\dev_cap_touch.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\dev_sleep.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_adc.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_ccp.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_ext.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_gpio.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_i2c.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_iopwm.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_spi.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_timer.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\phy_uart.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\kernel.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\os_beason.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\app_operate.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\app_shell.obj"
+Obj: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\SpinVoice_bin.res"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\..\Library\A3400Pro_fptr_V0.9.3.lib"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\..\Library\SACM_A1800_fptr_V0.9.2.lib"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\..\Library\GPCE_VolumeCompressor_V0.9.1.lib"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\.\MIDI\GPCE5_DEMO.lib"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\..\Library\CLib1232.lib"
+Lib: "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\CMacro\CMacro1232.lib"
+Lib: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\..\Library\Libmem1232.lib"
+Output: "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Debug\GPCE500A_Demo_SPI.bin"
+Define: CODE in "system.obj" with _CODE_SPI_SEC 
+Define: DATA in "system.obj" with _DATA_SPI_SEC 
+Define: CODE in "BootCode_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "BootCode_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "GEO_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "GEO_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_A34Pro_fptr_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_A34Pro_fptr_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_A1800_fptr_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_A1800_fptr_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "VolCompress_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "VolCompress_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "MIDI.obj" with _CODE_SPI_SEC 
+Define: DATA in "MIDI.obj" with _DATA_SPI_SEC 
+Define: CODE in "MIDI_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "MIDI_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SPU.obj" with _CODE_SPI_SEC 
+Define: DATA in "SPU.obj" with _DATA_SPI_SEC 
+Define: CODE in "SPUSpeech.obj" with _CODE_SPI_SEC 
+Define: DATA in "SPUSpeech.obj" with _DATA_SPI_SEC 
+Define: CODE in "ORAM_Arrangement.obj" with _CODE_SPI_SEC 
+Define: DATA in "ORAM_Arrangement.obj" with _DATA_SPI_SEC 
+Define: CODE in "SPI_Flash.obj" with _CODE_SPI_SEC 
+Define: DATA in "SPI_Flash.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_Mixer_CH2_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_Mixer_CH2_User.obj" with _DATA_SPI_SEC 
+Define: CODE in "SACM_Mixer_User.obj" with _CODE_SPI_SEC 
+Define: DATA in "SACM_Mixer_User.obj" with _DATA_SPI_SEC 
+Define: __sn_section_RES_SPINVOICE_BIN in "SpinVoice_bin.res" with _RESOURCE_SPI_SEC 
+Locate: _CODE_SPI_SEC at 9800
+Locate: _DATA_SPI_SEC after _CODE_SPI_SEC
+Locate: _RESOURCE_SPI_SEC at 20000
+Locate: __sn_init_table at 11940
+Locate: IRAM after __sn_init_table linkat #RAM
+Locate: IRam_Bank0 after __sn_init_table linkat #RAM
+Locate: A1800_fptr_ISR_Service_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" at 9900
+;Align: A1800_fptr_ISR_Service_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Event_ISR_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_ISR_Service_BLOCK
+;Align: A1800_fptr_Event_ISR_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: Mixer_ISR_Service_ROMBLOCK in "SACM_Mixer_User.obj" after A1800_fptr_Event_ISR_BLOCK
+;Align: Mixer_ISR_Service_ROMBLOCK in "SACM_Mixer_User.obj" with 0 
+Locate: GPCE5_MIDISquencer_CODE_ISR in "MIDI.obj" after Mixer_ISR_Service_ROMBLOCK
+;Align: GPCE5_MIDISquencer_CODE_ISR in "MIDI.obj" with 0 
+Locate: A34Pro_fptr_Event_ISR_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" after GPCE5_MIDISquencer_CODE_ISR
+;Align: A34Pro_fptr_Event_ISR_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A1800_PM_OUT_BLOCK in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A34Pro_fptr_Event_ISR_BLOCK
+;Align: A1800_PM_OUT_BLOCK in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: SACM_A1800_fptr_DECODE_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_PM_OUT_BLOCK
+;Align: SACM_A1800_fptr_DECODE_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_3_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after SACM_A1800_fptr_DECODE_BLOCK
+;Align: A1800_IM_BLOCK_3_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_3_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_3_2
+;Align: A1800_IM_BLOCK_3_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_2_4 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_3_1
+;Align: A1800_IM_BLOCK_2_4 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_2_3 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_2_4
+;Align: A1800_IM_BLOCK_2_3 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_2_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_2_3
+;Align: A1800_IM_BLOCK_2_2 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_2_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_2_2
+;Align: A1800_IM_BLOCK_2_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_API_IM_BLOCK_2_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_2_1
+;Align: A1800_fptr_API_IM_BLOCK_2_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_API_IM_BLOCK_2_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_API_IM_BLOCK_2_2
+;Align: A1800_fptr_API_IM_BLOCK_2_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Evt_IM_BLOCK_2_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_API_IM_BLOCK_2_1
+;Align: A1800_fptr_Evt_IM_BLOCK_2_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Evt_IM_BLOCK_2_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_Evt_IM_BLOCK_2_2
+;Align: A1800_fptr_Evt_IM_BLOCK_2_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_IM_BLOCK_1_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_Evt_IM_BLOCK_2_1
+;Align: A1800_IM_BLOCK_1_1 in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_API_IM_BLOCK_1_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_IM_BLOCK_1_1
+;Align: A1800_fptr_API_IM_BLOCK_1_2 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_API_IM_BLOCK_1_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_API_IM_BLOCK_1_2
+;Align: A1800_fptr_API_IM_BLOCK_1_1 in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Evt_IM_BLOCK_1_3 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_API_IM_BLOCK_1_1
+;Align: A1800_fptr_Evt_IM_BLOCK_1_3 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Evt_IM_BLOCK_1_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_Evt_IM_BLOCK_1_3
+;Align: A1800_fptr_Evt_IM_BLOCK_1_2 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A1800_fptr_Evt_IM_BLOCK_1_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" after A1800_fptr_Evt_IM_BLOCK_1_2
+;Align: A1800_fptr_Evt_IM_BLOCK_1_1 in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib" with 0 
+Locate: A34Pro_fptr_ISR_Service_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" after A1800_fptr_Evt_IM_BLOCK_1_1
+;Align: A34Pro_fptr_ISR_Service_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A34Pro_fptr_Kernel_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" after A34Pro_fptr_ISR_Service_BLOCK
+;Align: A34Pro_fptr_Kernel_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A34Pro_fptr_StepTable_BLOCK in "A34Pro_fptr_StepTable" of "A3400Pro_fptr_V0.9.3.lib" after A34Pro_fptr_Kernel_BLOCK
+;Align: A34Pro_fptr_StepTable_BLOCK in "A34Pro_fptr_StepTable" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A34Pro_fptr_Event_Kernel_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" after A34Pro_fptr_StepTable_BLOCK
+;Align: A34Pro_fptr_Event_Kernel_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" after A34Pro_fptr_Event_Kernel_BLOCK
+;Align: A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: A34Pro_fptr_Evt_API_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" after A34Pro_fptr_API_BLOCK
+;Align: A34Pro_fptr_Evt_API_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib" with 0 
+Locate: SleepCode_RAMCode_SEC in "system.obj" at 10000 linkat 1000
+;Align: SleepCode_RAMCode_SEC in "system.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" at 10 
+;Align: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_MIXER_CH2_DECOUT_RAM_BLO in "ORAM_Arrangement.obj" at 113 
+;Align: OVERLAP_MIXER_CH2_DECOUT_RAM_BLO in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" at 113 
+;Align: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 393 
+;Align: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 396 
+;Align: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" at 39B 
+;Align: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" at 3D9 
+;Align: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" at 48E 
+;Align: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_MIXER_CH2_RAM_BLOCK in "ORAM_Arrangement.obj" at 5DA 
+;Align: OVERLAP_MIXER_CH2_RAM_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 85E 
+;Align: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" with 0 
+;section has ORG setting:
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 874 
+;Align: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" with 0 
+;Locate: TEXT in "MIDI.obj" at 980B 
+;Align: TEXT in "MIDI.obj" with 0 
+;Locate: IRAM in "MIDI.obj" at 11972  linkat AE2 
+;Align: IRAM in "MIDI.obj" with 0 
+;Locate: IRAM in "SACM_Mixer_CH2_User.obj" at 1196D  linkat ADD 
+;Align: IRAM in "SACM_Mixer_CH2_User.obj" with 0 
+;Locate: IRAM in "SACM_Mixer_User.obj" at 1196E  linkat ADE 
+;Align: IRAM in "SACM_Mixer_User.obj" with 0 
+;Locate: IRAM in "kernel.obj" at 11984  linkat AF4 
+;Align: IRAM in "kernel.obj" with 0 
+;Locate: IRAM in "os_beason.obj" at 11978  linkat AE8 
+;Align: IRAM in "os_beason.obj" with 0 
+;Locate: IRAM in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at 1196F  linkat ADF 
+;Align: IRAM in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: IRAM in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at 11970  linkat AE0 
+;Align: IRAM in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: IRAM in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  at 11971  linkat AE1 
+;Align: IRAM in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: IRAM in "reent/impure" of "CLib1232.lib"  at 1197C  linkat AEC 
+;Align: IRAM in "reent/impure" of "CLib1232.lib"  with 0 
+;Locate: IRAM in "memory/malloc" of "Libmem1232.lib"  at 11974  linkat AE4 
+;Align: IRAM in "memory/malloc" of "Libmem1232.lib"  with 0 
+;Locate: IRAM in "memory/init_heap" of "Libmem1232.lib"  at 11976  linkat AE6 
+;Align: IRAM in "memory/init_heap" of "Libmem1232.lib"  with 0 
+;Locate: RAM in "system.obj" at 91E 
+;Align: RAM in "system.obj" with 0 
+;Locate: RAM in "GEO_User.obj" at 925 
+;Align: RAM in "GEO_User.obj" with 0 
+;Locate: RAM in "SACM_A34Pro_fptr_User.obj" at 92B 
+;Align: RAM in "SACM_A34Pro_fptr_User.obj" with 0 
+;Locate: RAM in "SACM_A1800_fptr_User.obj" at 93A 
+;Align: RAM in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: RAM in "SPU.obj" at 942 
+;Align: RAM in "SPU.obj" with 0 
+;Locate: RAM in "SPUSpeech.obj" at 94A 
+;Align: RAM in "SPUSpeech.obj" with 0 
+;Locate: RAM in "SPI_Flash.obj" at 952 
+;Align: RAM in "SPI_Flash.obj" with 0 
+;Locate: RAM in "dev_audio.obj" at 955 
+;Align: RAM in "dev_audio.obj" with 0 
+;Locate: RAM in "dev_cap_touch.obj" at 9DE 
+;Align: RAM in "dev_cap_touch.obj" with 0 
+;Locate: RAM in "phy_adc.obj" at A4C 
+;Align: RAM in "phy_adc.obj" with 0 
+;Locate: RAM in "phy_ext.obj" at A52 
+;Align: RAM in "phy_ext.obj" with 0 
+;Locate: RAM in "phy_uart.obj" at A53 
+;Align: RAM in "phy_uart.obj" with 0 
+;Locate: RAM in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  at AD9 
+;Align: RAM in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  with 0 
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "SACM_A1800_fptr_User.obj" at 113 
+;Align: OVERLAP_A18_DACOUT_RAM_BLOCK in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: GPCE5_MIDISquencer_RAM in "MIDI.obj" at 879 
+;Align: GPCE5_MIDISquencer_RAM in "MIDI.obj" with 0 
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "ORAM_Arrangement.obj" at 10 
+;Locate: OVERLAP_MIXER_CH2_DECOUT_RAM_BLO in "ORAM_Arrangement.obj" at 113 
+;Locate: OVERLAP_A18_DACOUT_RAM_BLOCK in "ORAM_Arrangement.obj" at 113 
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 393 
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 396 
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "ORAM_Arrangement.obj" at 39B 
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "ORAM_Arrangement.obj" at 3D9 
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "ORAM_Arrangement.obj" at 48E 
+;Locate: OVERLAP_MIXER_CH2_RAM_BLOCK in "ORAM_Arrangement.obj" at 5DA 
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "ORAM_Arrangement.obj" at 85E 
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "ORAM_Arrangement.obj" at 874 
+;Locate: OVERLAP_MIXER_CH2_RAM_BLOCK in "SACM_Mixer_CH2_User.obj" at 5DA 
+;Align: OVERLAP_MIXER_CH2_RAM_BLOCK in "SACM_Mixer_CH2_User.obj" with 0 
+;Locate: OVERLAP_MIXER_CH2_DECOUT_RAM_BLO in "SACM_Mixer_CH2_User.obj" at 113 
+;Align: OVERLAP_MIXER_CH2_DECOUT_RAM_BLO in "SACM_Mixer_CH2_User.obj" with 0 
+;Locate: OVERLAP_MIXER_RAM_BLOCK in "SACM_Mixer_User.obj" at 10 
+;Align: OVERLAP_MIXER_RAM_BLOCK in "SACM_Mixer_User.obj" with 0 
+;Locate: OVERLAP_A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at 85E 
+;Align: OVERLAP_A34Pro_fptr_API_BLOCK in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_API_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at 393 
+;Align: OVERLAP_A1800_fptr_API_BLOCK in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_RAM_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  at 39B 
+;Align: OVERLAP_A1800_fptr_RAM_BLOCK in "SACM_A1800_fptr_Decode" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  at 874 
+;Align: OVERLAP_A34Pro_fptr_EVENT_BLOCK in "A34Pro_fptr_Event" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: OVERLAP_A1800_fptr_EVENT_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  at 396 
+;Align: OVERLAP_A1800_fptr_EVENT_BLOCK in "A1800_fptr_Event " of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_DM_BLOCK_Global in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at 3D9 
+;Align: OVERLAP_A1800_DM_BLOCK_Global in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: OVERLAP_A1800_DM_BLOCK_Local in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  at 48E 
+;Align: OVERLAP_A1800_DM_BLOCK_Local in "A1800_Codec" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: CODE in "Resource.obj" at FFFB 
+;Align: CODE in "Resource.obj" with 0 
+;Locate: BootCode_SEC in "BootCode_User.obj" at 8100 
+;Align: BootCode_SEC in "BootCode_User.obj" with 0 
+;Locate: GPF8F_MIDISquencer_CODE in "MIDI.obj" at D0D2 
+;Align: GPF8F_MIDISquencer_CODE in "MIDI.obj" with 0 
+;Locate: SPIFC_RAMCode_SEC in "SPI_Flash.obj" at EE09 
+;Align: SPIFC_RAMCode_SEC in "SPI_Flash.obj" with 0 
+;Locate: Mixer_CH2_ISR_Service_ROMBLOCK in "SACM_Mixer_CH2_User.obj" at 124D9 
+;Align: Mixer_CH2_ISR_Service_ROMBLOCK in "SACM_Mixer_CH2_User.obj" with 0 
+;Locate: CODE in "main.obj" at 11937 
+;Align: CODE in "main.obj" with 0 
+;Locate: CODE in "dev_audio.obj" at FB2C 
+;Align: CODE in "dev_audio.obj" with 0 
+;Locate: CODE in "board.obj" at 12062 
+;Align: CODE in "board.obj" with 0 
+;Locate: DATA in "board.obj" at FEEDF 
+;Align: DATA in "board.obj" with 0 
+;Locate: CODE in "dev_button.obj" at 11353 
+;Align: CODE in "dev_button.obj" with 0 
+;Locate: CODE in "dev_cap_touch.obj" at F1C4 
+;Align: CODE in "dev_cap_touch.obj" with 0 
+;Locate: CODE in "dev_sleep.obj" at F524 
+;Align: CODE in "dev_sleep.obj" with 0 
+;Locate: CODE in "phy_adc.obj" at 102F5 
+;Align: CODE in "phy_adc.obj" with 0 
+;Locate: CODE in "phy_ccp.obj" at 12219 
+;Align: CODE in "phy_ccp.obj" with 0 
+;Locate: CODE in "phy_ext.obj" at 10097 
+;Align: CODE in "phy_ext.obj" with 0 
+;Locate: CODE in "phy_gpio.obj" at 10B90 
+;Align: CODE in "phy_gpio.obj" with 0 
+;Locate: CODE in "phy_i2c.obj" at FDD8 
+;Align: CODE in "phy_i2c.obj" with 0 
+;Locate: CODE in "phy_iopwm.obj" at 11B11 
+;Align: CODE in "phy_iopwm.obj" with 0 
+;Locate: CODE in "phy_spi.obj" at 1054C 
+;Align: CODE in "phy_spi.obj" with 0 
+;Locate: CODE in "phy_timer.obj" at 11494 
+;Align: CODE in "phy_timer.obj" with 0 
+;Locate: CODE in "phy_uart.obj" at 1097C 
+;Align: CODE in "phy_uart.obj" with 0 
+;Locate: CODE in "kernel.obj" at 11798 
+;Align: CODE in "kernel.obj" with 0 
+;Locate: CODE in "os_beason.obj" at 10F1A 
+;Align: CODE in "os_beason.obj" with 0 
+;Locate: CODE in "app_operate.obj" at 1272E 
+;Align: CODE in "app_operate.obj" with 0 
+;Locate: CODE in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  at 12736 
+;Align: CODE in "SACM_A34Pro_fptr_API" of "A3400Pro_fptr_V0.9.3.lib"  with 0 
+;Locate: CODE in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  at 1274E 
+;Align: CODE in "SACM_A1800_fptr_API" of "SACM_A1800_fptr_V0.9.2.lib"  with 0 
+;Locate: CODE in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  at 11C5D 
+;Align: CODE in "VolumeCompressor" of "GPCE_VolumeCompressor_V0.9.1.lib"  with 0 
+;Locate: TABLE_OBJ in "tempObj" of "GPCE5_DEMO.lib"  at E5FC5 
+;Align: TABLE_OBJ in "tempObj" of "GPCE5_DEMO.lib"  with 0 
+;Locate: TABLE_SR in "tmpSR" of "GPCE5_DEMO.lib"  at E2BFA 
+;Align: TABLE_SR in "tmpSR" of "GPCE5_DEMO.lib"  with 0 
+;Locate: CODE in "stdio/sprintf" of "CLib1232.lib"  at 98DC 
+;Align: CODE in "stdio/sprintf" of "CLib1232.lib"  with 0 
+;Locate: CODE in "string/memset" of "CLib1232.lib"  at 125D5 
+;Align: CODE in "string/memset" of "CLib1232.lib"  with 0 
+;Locate: CODE in "string/strlen" of "CLib1232.lib"  at 12636 
+;Align: CODE in "string/strlen" of "CLib1232.lib"  with 0 
+;Locate: CODE in "muliu2" of "CMacro1232.lib"  at 126C8 
+;Align: CODE in "muliu2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "divu2" of "CMacro1232.lib"  at 11E8B 
+;Align: CODE in "divu2" of "CMacro1232.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_48kc1_109" of "GPCE5_DEMO.lib"  at 9C4BF 
+;Align: MelodyRes in "_00_GPiano_48kc1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_48kc1_109_l" of "GPCE5_DEMO.lib"  at FE245 
+;Align: MelodyRes in "_00_GPiano_48kc1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_60k_109" of "GPCE5_DEMO.lib"  at 530D4 
+;Align: MelodyRes in "_00_GPiano_60k_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_60k_109_l" of "GPCE5_DEMO.lib"  at FEAB8 
+;Align: MelodyRes in "_00_GPiano_60k_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_72Ac1s_109" of "GPCE5_DEMO.lib"  at 4DBBC 
+;Align: MelodyRes in "_00_GPiano_72Ac1s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_72Ac1s_109_l" of "GPCE5_DEMO.lib"  at FF0BF 
+;Align: MelodyRes in "_00_GPiano_72Ac1s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_84kc1f_109" of "GPCE5_DEMO.lib"  at 96D63 
+;Align: MelodyRes in "_00_GPiano_84kc1f_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_84kc1f_109_l" of "GPCE5_DEMO.lib"  at FF0EA 
+;Align: MelodyRes in "_00_GPiano_84kc1f_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_96kc1f_109" of "GPCE5_DEMO.lib"  at 99B95 
+;Align: MelodyRes in "_00_GPiano_96kc1f_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_00_GPiano_96kc1f_109_l" of "GPCE5_DEMO.lib"  at 1FDE9 
+;Align: MelodyRes in "_00_GPiano_96kc1f_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_57_109" of "GPCE5_DEMO.lib"  at E90F2 
+;Align: MelodyRes in "_56_Trum_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_57_109_l" of "GPCE5_DEMO.lib"  at FEC00 
+;Align: MelodyRes in "_56_Trum_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_69_109" of "GPCE5_DEMO.lib"  at EF6DC 
+;Align: MelodyRes in "_56_Trum_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_69_109_l" of "GPCE5_DEMO.lib"  at FF3A5 
+;Align: MelodyRes in "_56_Trum_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_81_109" of "GPCE5_DEMO.lib"  at FA2FC 
+;Align: MelodyRes in "_56_Trum_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_56_Trum_81_109_l" of "GPCE5_DEMO.lib"  at FF6D2 
+;Align: MelodyRes in "_56_Trum_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_33_109" of "GPCE5_DEMO.lib"  at D2CBA 
+;Align: MelodyRes in "_S4M033_33_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_33_109_l" of "GPCE5_DEMO.lib"  at FDEEB 
+;Align: MelodyRes in "_S4M033_33_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i033a33c1p1_109" of "GPCE5_DEMO.lib"  at F2990 
+;Align: MelodyRes in "_i033a33c1p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i033a33c1p1_109_l" of "GPCE5_DEMO.lib"  at FE0BF 
+;Align: MelodyRes in "_i033a33c1p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_45_109" of "GPCE5_DEMO.lib"  at C7A96 
+;Align: MelodyRes in "_S4M033_45_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_45_109_l" of "GPCE5_DEMO.lib"  at FE546 
+;Align: MelodyRes in "_S4M033_45_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_57_109" of "GPCE5_DEMO.lib"  at E6C3E 
+;Align: MelodyRes in "_S4M033_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M033_57_109_l" of "GPCE5_DEMO.lib"  at FEE1C 
+;Align: MelodyRes in "_S4M033_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_String048_G3_43i_109" of "GPCE5_DEMO.lib"  at D4CE9 
+;Align: MelodyRes in "_String048_G3_43i_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_String048_G3_43i_109_l" of "GPCE5_DEMO.lib"  at AD22B 
+;Align: MelodyRes in "_String048_G3_43i_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_String048_G4_55ii_109" of "GPCE5_DEMO.lib"  at D0C05 
+;Align: MelodyRes in "_String048_G4_55ii_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_String048_G4_55ii_109_l" of "GPCE5_DEMO.lib"  at AB39B 
+;Align: MelodyRes in "_String048_G4_55ii_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a65c2p1_109" of "GPCE5_DEMO.lib"  at DE69E 
+;Align: MelodyRes in "_i048a65c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a65c2p1_109_l" of "GPCE5_DEMO.lib"  at B43DB 
+;Align: MelodyRes in "_i048a65c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a70c2p1_109" of "GPCE5_DEMO.lib"  at F0BAB 
+;Align: MelodyRes in "_i048a70c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a70c2p1_109_l" of "GPCE5_DEMO.lib"  at A0FDC 
+;Align: MelodyRes in "_i048a70c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a77c2p1_109" of "GPCE5_DEMO.lib"  at E1E40 
+;Align: MelodyRes in "_i048a77c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a77c2p1_109_l" of "GPCE5_DEMO.lib"  at B28E1 
+;Align: MelodyRes in "_i048a77c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a82c2p1_109" of "GPCE5_DEMO.lib"  at F15E9 
+;Align: MelodyRes in "_i048a82c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a82c2p1_109_l" of "GPCE5_DEMO.lib"  at BF6D6 
+;Align: MelodyRes in "_i048a82c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a89c2p1_109" of "GPCE5_DEMO.lib"  at DF4C1 
+;Align: MelodyRes in "_i048a89c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i048a89c2p1_109_l" of "GPCE5_DEMO.lib"  at B936C 
+;Align: MelodyRes in "_i048a89c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_24_Guitar_58s_109" of "GPCE5_DEMO.lib"  at E9CE2 
+;Align: MelodyRes in "_24_Guitar_58s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_24_Guitar_58s_109_l" of "GPCE5_DEMO.lib"  at FE8F2 
+;Align: MelodyRes in "_24_Guitar_58s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_24_Guitar_72s_109" of "GPCE5_DEMO.lib"  at F45CD 
+;Align: MelodyRes in "_24_Guitar_72s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_24_Guitar_72s_109_l" of "GPCE5_DEMO.lib"  at FEA0B 
+;Align: MelodyRes in "_24_Guitar_72s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i024a84c2p1_109" of "GPCE5_DEMO.lib"  at EC005 
+;Align: MelodyRes in "_i024a84c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i024a84c2p1_109_l" of "GPCE5_DEMO.lib"  at FF6BB 
+;Align: MelodyRes in "_i024a84c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M068_57_109" of "GPCE5_DEMO.lib"  at EA8C7 
+;Align: MelodyRes in "_S4M068_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M068_57_109_l" of "GPCE5_DEMO.lib"  at FECF3 
+;Align: MelodyRes in "_S4M068_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a71c4p1_109" of "GPCE5_DEMO.lib"  at F7B42 
+;Align: MelodyRes in "_i068a71c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a71c4p1_109_l" of "GPCE5_DEMO.lib"  at FE9B0 
+;Align: MelodyRes in "_i068a71c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a74c4p1_109" of "GPCE5_DEMO.lib"  at F9B69 
+;Align: MelodyRes in "_i068a74c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a74c4p1_109_l" of "GPCE5_DEMO.lib"  at FED44 
+;Align: MelodyRes in "_i068a74c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a80c4p1_109" of "GPCE5_DEMO.lib"  at FB077 
+;Align: MelodyRes in "_i068a80c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a80c4p1_109_l" of "GPCE5_DEMO.lib"  at FEF5C 
+;Align: MelodyRes in "_i068a80c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a85c4p1_109" of "GPCE5_DEMO.lib"  at FD952 
+;Align: MelodyRes in "_i068a85c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a85c4p1_109_l" of "GPCE5_DEMO.lib"  at FF635 
+;Align: MelodyRes in "_i068a85c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a88c4p1_109" of "GPCE5_DEMO.lib"  at FD638 
+;Align: MelodyRes in "_i068a88c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i068a88c4p1_109_l" of "GPCE5_DEMO.lib"  at FF65D 
+;Align: MelodyRes in "_i068a88c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_m_60_fhr_62a_109" of "GPCE5_DEMO.lib"  at 89FF8 
+;Align: MelodyRes in "_m_60_fhr_62a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_m_60_fhr_62a_109_l" of "GPCE5_DEMO.lib"  at 66D98 
+;Align: MelodyRes in "_m_60_fhr_62a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_m_60_fhr_74a_109" of "GPCE5_DEMO.lib"  at 58277 
+;Align: MelodyRes in "_m_60_fhr_74a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_m_60_fhr_74a_109_l" of "GPCE5_DEMO.lib"  at 822BC 
+;Align: MelodyRes in "_m_60_fhr_74a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_57_109" of "GPCE5_DEMO.lib"  at B0D5E 
+;Align: MelodyRes in "_S4M046_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_57_109_l" of "GPCE5_DEMO.lib"  at FE433 
+;Align: MelodyRes in "_S4M046_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_69_109" of "GPCE5_DEMO.lib"  at A3424 
+;Align: MelodyRes in "_S4M046_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_69_109_l" of "GPCE5_DEMO.lib"  at FECA2 
+;Align: MelodyRes in "_S4M046_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_81_109" of "GPCE5_DEMO.lib"  at BAD29 
+;Align: MelodyRes in "_S4M046_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M046_81_109_l" of "GPCE5_DEMO.lib"  at FF591 
+;Align: MelodyRes in "_S4M046_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22050_69a_109" of "GPCE5_DEMO.lib"  at D5CFE 
+;Align: MelodyRes in "_08_22050_69a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22050_69a_109_l" of "GPCE5_DEMO.lib"  at FF02F 
+;Align: MelodyRes in "_08_22050_69a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22k_81b_109" of "GPCE5_DEMO.lib"  at DAAC4 
+;Align: MelodyRes in "_08_22k_81b_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22k_81b_109_l" of "GPCE5_DEMO.lib"  at FF6A1 
+;Align: MelodyRes in "_08_22k_81b_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22050_93a_109" of "GPCE5_DEMO.lib"  at F72A7 
+;Align: MelodyRes in "_08_22050_93a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_08_22050_93a_109_l" of "GPCE5_DEMO.lib"  at FDFEC 
+;Align: MelodyRes in "_08_22050_93a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M044_69_109" of "GPCE5_DEMO.lib"  at F8BC0 
+;Align: MelodyRes in "_S4M044_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M044_69_109_l" of "GPCE5_DEMO.lib"  at C0E96 
+;Align: MelodyRes in "_S4M044_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i044a57b2p0_109" of "GPCE5_DEMO.lib"  at 74F7F 
+;Align: MelodyRes in "_i044a57b2p0_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i044a57b2p0_109_l" of "GPCE5_DEMO.lib"  at 7DEBB 
+;Align: MelodyRes in "_i044a57b2p0_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M044_81_109" of "GPCE5_DEMO.lib"  at E466A 
+;Align: MelodyRes in "_S4M044_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M044_81_109_l" of "GPCE5_DEMO.lib"  at BC619 
+;Align: MelodyRes in "_S4M044_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_45_Pizzicato_36a_10a" of "GPCE5_DEMO.lib"  at 8D679 
+;Align: MelodyRes in "_45_Pizzicato_36a_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_45_Pizzicato_36a_10a_l" of "GPCE5_DEMO.lib"  at FF1B9 
+;Align: MelodyRes in "_45_Pizzicato_36a_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_45_Pizzicato_48a_10a" of "GPCE5_DEMO.lib"  at 908C7 
+;Align: MelodyRes in "_45_Pizzicato_48a_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_45_Pizzicato_48a_10a_l" of "GPCE5_DEMO.lib"  at FF449 
+;Align: MelodyRes in "_45_Pizzicato_48a_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i045a60c2p1_10a" of "GPCE5_DEMO.lib"  at 93B15 
+;Align: MelodyRes in "_i045a60c2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i045a60c2p1_10a_l" of "GPCE5_DEMO.lib"  at FF115 
+;Align: MelodyRes in "_i045a60c2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i045a72c2p1_10a" of "GPCE5_DEMO.lib"  at A7626 
+;Align: MelodyRes in "_i045a72c2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i045a72c2p1_10a_l" of "GPCE5_DEMO.lib"  at FF25D 
+;Align: MelodyRes in "_i045a72c2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M030_69_109" of "GPCE5_DEMO.lib"  at F32FD 
+;Align: MelodyRes in "_S4M030_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M030_69_109_l" of "GPCE5_DEMO.lib"  at CD782 
+;Align: MelodyRes in "_S4M030_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i030a81c4p1_109" of "GPCE5_DEMO.lib"  at E84EB 
+;Align: MelodyRes in "_i030a81c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i030a81c4p1_109_l" of "GPCE5_DEMO.lib"  at FEFC9 
+;Align: MelodyRes in "_i030a81c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M030_81_109" of "GPCE5_DEMO.lib"  at EB4A4 
+;Align: MelodyRes in "_S4M030_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M030_81_109_l" of "GPCE5_DEMO.lib"  at EE1A7 
+;Align: MelodyRes in "_S4M030_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i030a88c4p1_109" of "GPCE5_DEMO.lib"  at FCF7B 
+;Align: MelodyRes in "_i030a88c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i030a88c4p1_109_l" of "GPCE5_DEMO.lib"  at FF67F 
+;Align: MelodyRes in "_i030a88c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_58s_109" of "GPCE5_DEMO.lib"  at E3940 
+;Align: MelodyRes in "_61_Brass_58s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_58s_109_l" of "GPCE5_DEMO.lib"  at FE188 
+;Align: MelodyRes in "_61_Brass_58s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_70s_109" of "GPCE5_DEMO.lib"  at E02A8 
+;Align: MelodyRes in "_61_Brass_70s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_70s_109_l" of "GPCE5_DEMO.lib"  at FF062 
+;Align: MelodyRes in "_61_Brass_70s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_82s_109" of "GPCE5_DEMO.lib"  at E1074 
+;Align: MelodyRes in "_61_Brass_82s_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_61_Brass_82s_109_l" of "GPCE5_DEMO.lib"  at 1FFD0 
+;Align: MelodyRes in "_61_Brass_82s_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a60c2p1_109" of "GPCE5_DEMO.lib"  at C2647 
+;Align: MelodyRes in "_i025a60c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a60c2p1_109_l" of "GPCE5_DEMO.lib"  at FEA62 
+;Align: MelodyRes in "_i025a60c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M025_57_109" of "GPCE5_DEMO.lib"  at F4F00 
+;Align: MelodyRes in "_S4M025_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M025_57_109_l" of "GPCE5_DEMO.lib"  at FE828 
+;Align: MelodyRes in "_S4M025_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a64c2p1_109" of "GPCE5_DEMO.lib"  at CC5AF 
+;Align: MelodyRes in "_i025a64c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a64c2p1_109_l" of "GPCE5_DEMO.lib"  at FEDD8 
+;Align: MelodyRes in "_i025a64c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a68c2p1_109" of "GPCE5_DEMO.lib"  at BDEE2 
+;Align: MelodyRes in "_i025a68c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i025a68c2p1_109_l" of "GPCE5_DEMO.lib"  at FEF93 
+;Align: MelodyRes in "_i025a68c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M025_69_109" of "GPCE5_DEMO.lib"  at F6108 
+;Align: MelodyRes in "_S4M025_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M025_69_109_l" of "GPCE5_DEMO.lib"  at FEFFC 
+;Align: MelodyRes in "_S4M025_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_65_AltoSax_60a_109" of "GPCE5_DEMO.lib"  at CE92B 
+;Align: MelodyRes in "_65_AltoSax_60a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_65_AltoSax_60a_109_l" of "GPCE5_DEMO.lib"  at FE7B1 
+;Align: MelodyRes in "_65_AltoSax_60a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_65_AltoSax_72a_109" of "GPCE5_DEMO.lib"  at CFA98 
+;Align: MelodyRes in "_65_AltoSax_72a_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_65_AltoSax_72a_109_l" of "GPCE5_DEMO.lib"  at FE73A 
+;Align: MelodyRes in "_65_AltoSax_72a_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M066_69_109" of "GPCE5_DEMO.lib"  at CA0CE 
+;Align: MelodyRes in "_S4M066_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M066_69_109_l" of "GPCE5_DEMO.lib"  at FEB5E 
+;Align: MelodyRes in "_S4M066_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i066b60b1p0_109" of "GPCE5_DEMO.lib"  at FA9C7 
+;Align: MelodyRes in "_i066b60b1p0_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i066b60b1p0_109_l" of "GPCE5_DEMO.lib"  at FEE9E 
+;Align: MelodyRes in "_i066b60b1p0_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i004a54c2p1_109" of "GPCE5_DEMO.lib"  at FD31A 
+;Align: MelodyRes in "_i004a54c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i004a54c2p1_109_l" of "GPCE5_DEMO.lib"  at FE6C1 
+;Align: MelodyRes in "_i004a54c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M004_57_109" of "GPCE5_DEMO.lib"  at E5321 
+;Align: MelodyRes in "_S4M004_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M004_57_109_l" of "GPCE5_DEMO.lib"  at FE5C7 
+;Align: MelodyRes in "_S4M004_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i004a66c2p1_109" of "GPCE5_DEMO.lib"  at FDC5B 
+;Align: MelodyRes in "_i004a66c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i004a66c2p1_109_l" of "GPCE5_DEMO.lib"  at FEF1F 
+;Align: MelodyRes in "_i004a66c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M004_69_109" of "GPCE5_DEMO.lib"  at F93D5 
+;Align: MelodyRes in "_S4M004_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M004_69_109_l" of "GPCE5_DEMO.lib"  at FEB0D 
+;Align: MelodyRes in "_S4M004_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_69_109" of "GPCE5_DEMO.lib"  at D9BB9 
+;Align: MelodyRes in "_73_Flute_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_69_109_l" of "GPCE5_DEMO.lib"  at FEBAF 
+;Align: MelodyRes in "_73_Flute_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_81_109" of "GPCE5_DEMO.lib"  at D8C73 
+;Align: MelodyRes in "_73_Flute_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_81_109_l" of "GPCE5_DEMO.lib"  at FEC51 
+;Align: MelodyRes in "_73_Flute_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_93_109" of "GPCE5_DEMO.lib"  at D6D08 
+;Align: MelodyRes in "_73_Flute_93_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_73_Flute_93_109_l" of "GPCE5_DEMO.lib"  at FE88D 
+;Align: MelodyRes in "_73_Flute_93_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_57_109" of "GPCE5_DEMO.lib"  at CB35A 
+;Align: MelodyRes in "_S4M071_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_57_109_l" of "GPCE5_DEMO.lib"  at FE392 
+;Align: MelodyRes in "_S4M071_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i071a60c2p1_109" of "GPCE5_DEMO.lib"  at C52E3 
+;Align: MelodyRes in "_i071a60c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i071a60c2p1_109_l" of "GPCE5_DEMO.lib"  at AF0B7 
+;Align: MelodyRes in "_i071a60c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_69_109" of "GPCE5_DEMO.lib"  at F83A3 
+;Align: MelodyRes in "_S4M071_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_69_109_l" of "GPCE5_DEMO.lib"  at FF4ED 
+;Align: MelodyRes in "_S4M071_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i071a72c2p1_109" of "GPCE5_DEMO.lib"  at B5ED4 
+;Align: MelodyRes in "_i071a72c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i071a72c2p1_109_l" of "GPCE5_DEMO.lib"  at C66D7 
+;Align: MelodyRes in "_i071a72c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_81_109" of "GPCE5_DEMO.lib"  at DC8C1 
+;Align: MelodyRes in "_S4M071_81_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M071_81_109_l" of "GPCE5_DEMO.lib"  at FE648 
+;Align: MelodyRes in "_S4M071_81_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M026_57_109" of "GPCE5_DEMO.lib"  at F014C 
+;Align: MelodyRes in "_S4M026_57_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M026_57_109_l" of "GPCE5_DEMO.lib"  at FEE5D 
+;Align: MelodyRes in "_S4M026_57_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a61c5p1_109" of "GPCE5_DEMO.lib"  at FCB10 
+;Align: MelodyRes in "_i026a61c5p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a61c5p1_109_l" of "GPCE5_DEMO.lib"  at FE2EF 
+;Align: MelodyRes in "_i026a61c5p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a64c4p1_109" of "GPCE5_DEMO.lib"  at FC653 
+;Align: MelodyRes in "_i026a64c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a64c4p1_109_l" of "GPCE5_DEMO.lib"  at FE4C4 
+;Align: MelodyRes in "_i026a64c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M026_69_109" of "GPCE5_DEMO.lib"  at F6A02 
+;Align: MelodyRes in "_S4M026_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M026_69_109_l" of "GPCE5_DEMO.lib"  at FF301 
+;Align: MelodyRes in "_S4M026_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a70c4p1_109" of "GPCE5_DEMO.lib"  at FC162 
+;Align: MelodyRes in "_i026a70c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a70c4p1_109_l" of "GPCE5_DEMO.lib"  at FE952 
+;Align: MelodyRes in "_i026a70c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a75c4p1_109" of "GPCE5_DEMO.lib"  at FB716 
+;Align: MelodyRes in "_i026a75c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a75c4p1_109_l" of "GPCE5_DEMO.lib"  at FED91 
+;Align: MelodyRes in "_i026a75c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a83c4p1_109" of "GPCE5_DEMO.lib"  at FBC4B 
+;Align: MelodyRes in "_i026a83c4p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i026a83c4p1_109_l" of "GPCE5_DEMO.lib"  at FF092 
+;Align: MelodyRes in "_i026a83c4p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i053a73c2p1_109" of "GPCE5_DEMO.lib"  at ED698 
+;Align: MelodyRes in "_i053a73c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i053a73c2p1_109_l" of "GPCE5_DEMO.lib"  at DD7B1 
+;Align: MelodyRes in "_i053a73c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M053_69_109" of "GPCE5_DEMO.lib"  at C8E2D 
+;Align: MelodyRes in "_S4M053_69_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_S4M053_69_109_l" of "GPCE5_DEMO.lib"  at A56E5 
+;Align: MelodyRes in "_S4M053_69_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i053a77c2p1_109" of "GPCE5_DEMO.lib"  at F580D 
+;Align: MelodyRes in "_i053a77c2p1_109" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_i053a77c2p1_109_l" of "GPCE5_DEMO.lib"  at DB9CE 
+;Align: MelodyRes in "_i053a77c2p1_109_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d53ac2p1_10a" of "GPCE5_DEMO.lib"  at 6B999 
+;Align: MelodyRes in "_d53ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d53ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF167 
+;Align: MelodyRes in "_d53ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d35ac1p1_10a" of "GPCE5_DEMO.lib"  at F3C66 
+;Align: MelodyRes in "_d35ac1p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d35ac1p1_10a_l" of "GPCE5_DEMO.lib"  at FF20B 
+;Align: MelodyRes in "_d35ac1p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d42ac2p1_10a" of "GPCE5_DEMO.lib"  at E78A0 
+;Align: MelodyRes in "_d42ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d42ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF2AF 
+;Align: MelodyRes in "_d42ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d54ac2b1_10a" of "GPCE5_DEMO.lib"  at ECB54 
+;Align: MelodyRes in "_d54ac2b1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d54ac2b1_10a_l" of "GPCE5_DEMO.lib"  at FF353 
+;Align: MelodyRes in "_d54ac2b1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d37ac2p1_10a" of "GPCE5_DEMO.lib"  at D7D05 
+;Align: MelodyRes in "_d37ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d37ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF3F7 
+;Align: MelodyRes in "_d37ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d51ac2p1_10a" of "GPCE5_DEMO.lib"  at 6205B 
+;Align: MelodyRes in "_d51ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d51ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF49B 
+;Align: MelodyRes in "_d51ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d55ac2b1_10a" of "GPCE5_DEMO.lib"  at 9EAF9 
+;Align: MelodyRes in "_d55ac2b1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d55ac2b1_10a_l" of "GPCE5_DEMO.lib"  at FF53F 
+;Align: MelodyRes in "_d55ac2b1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d57ac2p1_10a" of "GPCE5_DEMO.lib"  at 3BF08 
+;Align: MelodyRes in "_d57ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d57ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF5E3 
+;Align: MelodyRes in "_d57ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d46ac2p1_10a" of "GPCE5_DEMO.lib"  at 704BC 
+;Align: MelodyRes in "_d46ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d46ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF13E 
+;Align: MelodyRes in "_d46ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d52ac2p1_10a" of "GPCE5_DEMO.lib"  at 484F9 
+;Align: MelodyRes in "_d52ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d52ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF190 
+;Align: MelodyRes in "_d52ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d49ac2p1_10a" of "GPCE5_DEMO.lib"  at 128E5 
+;Align: MelodyRes in "_d49ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d49ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF1E2 
+;Align: MelodyRes in "_d49ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Bird_11k_10a" of "GPCE5_DEMO.lib"  at B796C 
+;Align: MelodyRes in "_Bird_11k_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Bird_11k_10a_l" of "GPCE5_DEMO.lib"  at FF234 
+;Align: MelodyRes in "_Bird_11k_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Bird3_11k_10a" of "GPCE5_DEMO.lib"  at 19AE8 
+;Align: MelodyRes in "_Bird3_11k_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Bird3_11k_10a_l" of "GPCE5_DEMO.lib"  at FF286 
+;Align: MelodyRes in "_Bird3_11k_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d40ac2b1_10a" of "GPCE5_DEMO.lib"  at D3CD2 
+;Align: MelodyRes in "_d40ac2b1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d40ac2b1_10a_l" of "GPCE5_DEMO.lib"  at FF2D8 
+;Align: MelodyRes in "_d40ac2b1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d41ac2p1_10a" of "GPCE5_DEMO.lib"  at 3535D 
+;Align: MelodyRes in "_d41ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d41ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF32A 
+;Align: MelodyRes in "_d41ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d36ac2p1_10a" of "GPCE5_DEMO.lib"  at A94F8 
+;Align: MelodyRes in "_d36ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d36ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF37C 
+;Align: MelodyRes in "_d36ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d38ac2p1_10a" of "GPCE5_DEMO.lib"  at C3CE4 
+;Align: MelodyRes in "_d38ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d38ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF3CE 
+;Align: MelodyRes in "_d38ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d44ac2p1_10a" of "GPCE5_DEMO.lib"  at F1FFD 
+;Align: MelodyRes in "_d44ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d44ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF420 
+;Align: MelodyRes in "_d44ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d59ac2b1_10a" of "GPCE5_DEMO.lib"  at 8633D 
+;Align: MelodyRes in "_d59ac2b1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d59ac2b1_10a_l" of "GPCE5_DEMO.lib"  at FF472 
+;Align: MelodyRes in "_d59ac2b1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Drum_85_10a" of "GPCE5_DEMO.lib"  at D1C9C 
+;Align: MelodyRes in "_Drum_85_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_Drum_85_10a_l" of "GPCE5_DEMO.lib"  at FF4C4 
+;Align: MelodyRes in "_Drum_85_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d47ac2p1_10a" of "GPCE5_DEMO.lib"  at 79880 
+;Align: MelodyRes in "_d47ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d47ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF516 
+;Align: MelodyRes in "_d47ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d45ac2p1_10a" of "GPCE5_DEMO.lib"  at 5D278 
+;Align: MelodyRes in "_d45ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d45ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF568 
+;Align: MelodyRes in "_d45ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d39ac2b1_10a" of "GPCE5_DEMO.lib"  at EEC58 
+;Align: MelodyRes in "_d39ac2b1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d39ac2b1_10a_l" of "GPCE5_DEMO.lib"  at FF5BA 
+;Align: MelodyRes in "_d39ac2b1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d43ac2p1_10a" of "GPCE5_DEMO.lib"  at 4254B 
+;Align: MelodyRes in "_d43ac2p1_10a" of "GPCE5_DEMO.lib"  with 0 
+;Locate: MelodyRes in "_d43ac2p1_10a_l" of "GPCE5_DEMO.lib"  at FF60C 
+;Align: MelodyRes in "_d43ac2p1_10a_l" of "GPCE5_DEMO.lib"  with 0 
+;Locate: CODE in "stdio/vsprintf" of "CLib1232.lib"  at 12617 
+;Align: CODE in "stdio/vsprintf" of "CLib1232.lib"  with 0 
+;Locate: CODE in "__clz32" of "CMacro1232.lib"  at 126B4 
+;Align: CODE in "__clz32" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__divi32_n" of "CMacro1232.lib"  at 12561 
+;Align: CODE in "__divi32_n" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "lshiu2" of "CMacro1232.lib"  at 1271A 
+;Align: CODE in "lshiu2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "stdio/vsnprintf" of "CLib1232.lib"  at 115BE 
+;Align: CODE in "stdio/vsnprintf" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdio/__v_printf" of "CLib1232.lib"  at E12F 
+;Align: CODE in "stdio/__v_printf" of "CLib1232.lib"  with 0 
+;Locate: NB_DATA in "stdio/__v_printf" of "CLib1232.lib"  at 1276E 
+;Align: NB_DATA in "stdio/__v_printf" of "CLib1232.lib"  with 0 
+;Locate: CODE in "string/memcpy" of "CLib1232.lib"  at 12475 
+;Align: CODE in "string/memcpy" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdlib/strtoul" of "CLib1232.lib"  at 11205 
+;Align: CODE in "stdlib/strtoul" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdlib/strtol" of "CLib1232.lib"  at 110A2 
+;Align: CODE in "stdlib/strtol" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdlib/__lltostr" of "CLib1232.lib"  at 1186E 
+;Align: CODE in "stdlib/__lltostr" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdlib/__ltostr" of "CLib1232.lib"  at 11BC1 
+;Align: CODE in "stdlib/__ltostr" of "CLib1232.lib"  with 0 
+;Locate: CODE in "stdio/__dtostrex" of "CLib1232.lib"  at F86B 
+;Align: CODE in "stdio/__dtostrex" of "CLib1232.lib"  with 0 
+;Locate: CODE in "subiu4" of "CMacro1232.lib"  at 126F8 
+;Align: CODE in "subiu4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "ltsf2" of "CMacro1232.lib"  at 11E0A 
+;Align: CODE in "ltsf2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "gtsf2" of "CMacro1232.lib"  at 11D89 
+;Align: CODE in "gtsf2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "ctype/isspace" of "CLib1232.lib"  at 1266C 
+;Align: CODE in "ctype/isspace" of "CLib1232.lib"  with 0 
+;Locate: CODE in "ctype/isdigit" of "CLib1232.lib"  at 126EA 
+;Align: CODE in "ctype/isdigit" of "CLib1232.lib"  with 0 
+;Locate: CODE in "ctype/isalpha" of "CLib1232.lib"  at 12686 
+;Align: CODE in "ctype/isalpha" of "CLib1232.lib"  with 0 
+;Locate: CODE in "ctype/isupper" of "CLib1232.lib"  at 126DA 
+;Align: CODE in "ctype/isupper" of "CLib1232.lib"  with 0 
+;Locate: NB_DATA in "reent/impure" of "CLib1232.lib"  at 128E3 
+;Align: NB_DATA in "reent/impure" of "CLib1232.lib"  with 0 
+;Locate: CODE in "modu2" of "CMacro1232.lib"  at 11F02 
+;Align: CODE in "modu2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "string/memmove" of "CLib1232.lib"  at 11F78 
+;Align: CODE in "string/memmove" of "CLib1232.lib"  with 0 
+;Locate: CODE in "modu4" of "CMacro1232.lib"  at 1198D 
+;Align: CODE in "modu4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "divu4" of "CMacro1232.lib"  at 11A55 
+;Align: CODE in "divu4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "stdlib/cvt" of "CLib1232.lib"  at E8F9 
+;Align: CODE in "stdlib/cvt" of "CLib1232.lib"  with 0 
+;Locate: NB_DATA in "stdlib/cvt" of "CLib1232.lib"  at 12884 
+;Align: NB_DATA in "stdlib/cvt" of "CLib1232.lib"  with 0 
+;Locate: CODE in "libm/s_isnan" of "CLib1232.lib"  at 125AF 
+;Align: CODE in "libm/s_isnan" of "CLib1232.lib"  with 0 
+;Locate: CODE in "libm/s_isinf" of "CLib1232.lib"  at 12508 
+;Align: CODE in "libm/s_isinf" of "CLib1232.lib"  with 0 
+;Locate: CODE in "memory/free" of "Libmem1232.lib"  at 120D5 
+;Align: CODE in "memory/free" of "Libmem1232.lib"  with 0 
+;Locate: CODE in "string/strcpy" of "CLib1232.lib"  at 12651 
+;Align: CODE in "string/strcpy" of "CLib1232.lib"  with 0 
+;Locate: CODE in "modi1" of "CMacro1232.lib"  at 11FED 
+;Align: CODE in "modi1" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "divi1" of "CMacro1232.lib"  at 12146 
+;Align: CODE in "divi1" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__modi32_n" of "CMacro1232.lib"  at 12535 
+;Align: CODE in "__modi32_n" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__clz64" of "CMacro1232.lib"  at 12589 
+;Align: CODE in "__clz64" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__modi64_n" of "CMacro1232.lib"  at 121B5 
+;Align: CODE in "__modi64_n" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "lshiu4" of "CMacro1232.lib"  at 12406 
+;Align: CODE in "lshiu4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__divi64_n" of "CMacro1232.lib"  at 12277 
+;Align: CODE in "__divi64_n" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "memory/malloc" of "Libmem1232.lib"  at 116BC 
+;Align: CODE in "memory/malloc" of "Libmem1232.lib"  with 0 
+;Locate: CODE in "cvf2d4" of "CMacro1232.lib"  at 12332 
+;Align: CODE in "cvf2d4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "eqsf2" of "CMacro1232.lib"  at 122D5 
+;Align: CODE in "eqsf2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "muld4" of "CMacro1232.lib"  at 10D8B 
+;Align: CODE in "muld4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "cvd4i1" of "CMacro1232.lib"  at 123C9 
+;Align: CODE in "cvd4i1" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "cvi1d4" of "CMacro1232.lib"  at 124A8 
+;Align: CODE in "cvi1d4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "addsubd4" of "CMacro1232.lib"  at 10767 
+;Align: CODE in "addsubd4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__clz16" of "CMacro1232.lib"  at 12705 
+;Align: CODE in "__clz16" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__divi16_n" of "CMacro1232.lib"  at 12724 
+;Align: CODE in "__divi16_n" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "lshiu1" of "CMacro1232.lib"  at 1273E 
+;Align: CODE in "lshiu1" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "rshu1" of "CMacro1232.lib"  at 12746 
+;Align: CODE in "rshu1" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "rshu2" of "CMacro1232.lib"  at 12710 
+;Align: CODE in "rshu2" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "rshu4" of "CMacro1232.lib"  at 1243F 
+;Align: CODE in "rshu4" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "memory/init_heap" of "Libmem1232.lib"  at 125F6 
+;Align: CODE in "memory/init_heap" of "Libmem1232.lib"  with 0 
+;Locate: CODE in "__u2fd1bit" of "CMacro1232.lib"  at 1269E 
+;Align: CODE in "__u2fd1bit" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__rshu4_r" of "CMacro1232.lib"  at 12380 
+;Align: CODE in "__rshu4_r" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "__mul_u32_u128" of "CMacro1232.lib"  at 11CF6 
+;Align: CODE in "__mul_u32_u128" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "memory/ram_info" of "Libmem1232.lib"  at 98FE 
+;Align: CODE in "memory/ram_info" of "Libmem1232.lib"  with 0 
+;Locate: CODE in "_GPTag" of "CMacro1232.lib"  at 12756 
+;Align: CODE in "_GPTag" of "CMacro1232.lib"  with 0 
+;Locate: CODE in "stdlib/_GPTag" of "CLib1232.lib"  at 1275E 
+;Align: CODE in "stdlib/_GPTag" of "CLib1232.lib"  with 0 
+;Locate: CODE in "memory/_GPTag" of "Libmem1232.lib"  at 12766 
+;Align: CODE in "memory/_GPTag" of "Libmem1232.lib"  with 0 
+;Locate: _CODE_SPI_SEC in "SPU.obj" at 9800 
+;Align: _CODE_SPI_SEC in "SPU.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SPI_Flash.obj" at 98AB 
+;Align: _CODE_SPI_SEC in "SPI_Flash.obj" with 0 
+;Locate: _CODE_SPI_SEC in "MIDI_User.obj" at 98C3 
+;Align: _CODE_SPI_SEC in "MIDI_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "VolCompress_User.obj" at C74D 
+;Align: _CODE_SPI_SEC in "VolCompress_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "BootCode_User.obj" at C773 
+;Align: _CODE_SPI_SEC in "BootCode_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_Mixer_User.obj" at C7C2 
+;Align: _CODE_SPI_SEC in "SACM_Mixer_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "GEO_User.obj" at C8A6 
+;Align: _CODE_SPI_SEC in "GEO_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_Mixer_CH2_User.obj" at C996 
+;Align: _CODE_SPI_SEC in "SACM_Mixer_CH2_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_A1800_fptr_User.obj" at CA9E 
+;Align: _CODE_SPI_SEC in "SACM_A1800_fptr_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SACM_A34Pro_fptr_User.obj" at CBD9 
+;Align: _CODE_SPI_SEC in "SACM_A34Pro_fptr_User.obj" with 0 
+;Locate: _CODE_SPI_SEC in "system.obj" at CD18 
+;Align: _CODE_SPI_SEC in "system.obj" with 0 
+;Locate: _CODE_SPI_SEC in "SPUSpeech.obj" at CED1 
+;Align: _CODE_SPI_SEC in "SPUSpeech.obj" with 0 
+;Locate: _RESOURCE_SPI_SEC in "SpinVoice_bin.res" at 20000 
+;Align: _RESOURCE_SPI_SEC in "SpinVoice_bin.res" with 0 
+;Locate: __sn_init_table in "<internal obj.>" of "<internal lib.>"  at 11940 
+;Align: __sn_init_table in "<internal obj.>" of "<internal lib.>"  with 0 

@@ -1,0 +1,3098 @@
+// ==========================================================
+// Description: 2016/11/08, modify M_ADSR_TBL format
+// ==========================================================
+// COMBINATION=0, Attack(ADPCM4)+Loop(ADPCM4)
+// COMBINATION=1, Attack(ADPCM5)+Loop(ADPCM4)
+// COMBINATION=2, Attack(PCM8)+Loop(ADPCM4)
+// COMBINATION=3, Attack(PCM16)+Loop(ADPCM4)
+// COMBINATION=10, Attack(ADPCM4)+Loop(ADPCM5)
+// COMBINATION=11, Attack(ADCPM5)+Loop(ADCPM5)
+// COMBINATION=12, Attack(PCM8)+Loop(ADCPM5)
+// COMBINATION=13, Attack(PCM16)+Loop(ADCPM5)
+// COMBINATION=20, Attack(ADCPM4)+Loop(PCM8)
+// COMBINATION=21, Attack(ADCPM5)+Loop(PCM8)
+// COMBINATION=22, Attack(PCM8)+Loop(PCM8)
+// COMBINATION=23, Attack(PCM16)+Loop(PCM8)
+// COMBINATION=30, Attack(ADCPM4)+Loop(PCM16)
+// COMBINATION=31, Attack(ADCPM5)+Loop(PCM16)
+// COMBINATION=32, Attack(PCM8)+Loop(PCM16)
+// COMBINATION=33, Attack(PCM16)+Loop(PCM16)
+TABLE_OBJ:	.SECTION	.DATA
+.define ADPCM4  0x0000
+.define ADPCM5  0x0001
+.define PCM8	0x0002
+.define PCM16   0x0003
+
+M_ADSR_TBL: .MACRO  ADSR,INST1,STR1,INST2,STR2,LENGTH,NOTEOFF,COMBINATION
+	.DW OFFSET(ADSR)                    		// Envelope table !
+	.DW SEG16(ADSR)
+	.DW SEG16((INST1)+(STR1*16384*65536))  // bank of instrument address, if PCM then +0x8000
+	.DW OFFSET (INST1)          	   // offset of instrument address (-1:hareware limit)
+	.DW SEG16((INST2)+(STR2*16384*65536))  // if PCM, then +0x8000
+	.DW OFFSET (INST2)
+	.IF	LENGTH == 0
+		.DW	0x0000						// Loop Data Length
+	.ELSE
+		.IF STR2==ADPCM4
+		.DW	LENGTH + 0xa						// Loop Data Length
+		.ENDIF
+		.IF STR2==ADPCM5
+		.DW	LENGTH + 0xa						// Loop Data Length
+		.ENDIF
+		.IF STR2==PCM8
+		.DW	LENGTH					// +1 for End Code (80H)
+		.ENDIF
+		.IF STR2==PCM16
+		.DW	LENGTH					// +2 for End Code (0080H)
+		.ENDIF
+	.ENDIF
+	.DW	OFFSET(NOTEOFF)			    // Note off release table
+	.DW	SEG16(NOTEOFF)
+	.DW COMBINATION					// Check which combination
+.ENDM
+//==================================================
+// COMBINATION=0, Attack(ADPCM4)+Loop(ADPCM4)
+// COMBINATION=1, Attack(ADPCM5)+Loop(ADPCM4)
+// COMBINATION=2, Attack(PCM8)+Loop(ADPCM4)
+// COMBINATION=3, Attack(PCM16)+Loop(ADPCM4)
+// COMBINATION=10, Attack(ADPCM4)+Loop(ADPCM5)
+// COMBINATION=11, Attack(ADCPM5)+Loop(ADCPM5)
+// COMBINATION=12, Attack(PCM8)+Loop(ADCPM5)
+// COMBINATION=13, Attack(PCM16)+Loop(ADCPM5)
+// COMBINATION=20, Attack(ADCPM4)+Loop(PCM8)
+// COMBINATION=21, Attack(ADCPM5)+Loop(PCM8)
+// COMBINATION=22, Attack(PCM8)+Loop(PCM8)
+// COMBINATION=23, Attack(PCM16)+Loop(PCM8)
+// COMBINATION=30, Attack(ADCPM4)+Loop(PCM16)
+// COMBINATION=31, Attack(ADCPM5)+Loop(PCM16)
+// COMBINATION=32, Attack(PCM8)+Loop(PCM16)
+// COMBINATION=33, Attack(PCM16)+Loop(PCM16)
+
+M_DRUM_TBL: .MACRO  Status,DRUM1,STR1,ADSR,NOTEOFF,DRUM2,STR2,LENGTH,COMBINATION
+	.DW Status
+	.DW SEG16((DRUM1)+(STR1*16384*65536))	// if PCM, add 0x8000
+	.DW OFFSET (DRUM1)		// must -1 (Har.DWare limit)!
+	.DW OFFSET(ADSR)
+	.DW SEG16(ADSR)
+	.DW OFFSET(NOTEOFF)
+	.DW SEG16(NOTEOFF)
+	.DW SEG16((DRUM2)+(STR2*16384*65536))	// if PCM, add 0x8000
+	.DW OFFSET (DRUM2)		// must -1 (Har.DWare limit)!
+	.IF	LENGTH == 0
+		.DW	0x0000						// Loop Data Length
+	.ELSE
+		.IF STR2==ADPCM4
+		.DW	LENGTH + 0xa						// Loop Data Length
+		.ENDIF
+		.IF STR2==ADPCM5
+		.DW	LENGTH + 0xa						// Loop Data Length
+		.ENDIF
+		.IF STR2==PCM8
+		.DW	LENGTH					// +1 for End Code (80H)
+		.ENDIF
+		.IF STR2==PCM16
+		.DW	LENGTH					// +2 for End Code (0080H)
+		.ENDIF
+	.ENDIF
+	.DW COMBINATION
+.ENDM
+
+// ==========================================================
+
+.EXTERNAL	__RES__00_GPiano_48kc1_1090_sa
+.EXTERNAL    __RES__00_GPiano_48kc1_1091_sa
+.EXTERNAL    __RES__00_GPiano_48kc1_1091_ea
+.EXTERNAL	__RES__00_GPiano_60k_1090_sa
+.EXTERNAL    __RES__00_GPiano_60k_1091_sa
+.EXTERNAL    __RES__00_GPiano_60k_1091_ea
+.EXTERNAL	__RES__00_GPiano_72Ac1s_1090_sa
+.EXTERNAL    __RES__00_GPiano_72Ac1s_1091_sa
+.EXTERNAL    __RES__00_GPiano_72Ac1s_1091_ea
+.EXTERNAL	__RES__00_GPiano_84kc1f_1090_sa
+.EXTERNAL    __RES__00_GPiano_84kc1f_1091_sa
+.EXTERNAL    __RES__00_GPiano_84kc1f_1091_ea
+.EXTERNAL	__RES__00_GPiano_96kc1f_1090_sa
+.EXTERNAL    __RES__00_GPiano_96kc1f_1091_sa
+.EXTERNAL    __RES__00_GPiano_96kc1f_1091_ea
+.EXTERNAL	__RES__56_Trum_57_1090_sa
+.EXTERNAL    __RES__56_Trum_57_1091_sa
+.EXTERNAL    __RES__56_Trum_57_1091_ea
+.EXTERNAL	__RES__56_Trum_69_1090_sa
+.EXTERNAL    __RES__56_Trum_69_1091_sa
+.EXTERNAL    __RES__56_Trum_69_1091_ea
+.EXTERNAL	__RES__56_Trum_81_1090_sa
+.EXTERNAL    __RES__56_Trum_81_1091_sa
+.EXTERNAL    __RES__56_Trum_81_1091_ea
+.EXTERNAL	__RES__S4M033_33_1090_sa
+.EXTERNAL    __RES__S4M033_33_1091_sa
+.EXTERNAL    __RES__S4M033_33_1091_ea
+.EXTERNAL	__RES__i033a33c1p1_1090_sa
+.EXTERNAL    __RES__i033a33c1p1_1091_sa
+.EXTERNAL    __RES__i033a33c1p1_1091_ea
+.EXTERNAL	__RES__S4M033_45_1090_sa
+.EXTERNAL    __RES__S4M033_45_1091_sa
+.EXTERNAL    __RES__S4M033_45_1091_ea
+.EXTERNAL	__RES__S4M033_57_1090_sa
+.EXTERNAL    __RES__S4M033_57_1091_sa
+.EXTERNAL    __RES__S4M033_57_1091_ea
+.EXTERNAL	__RES__String048_G3_43i_1090_sa
+.EXTERNAL    __RES__String048_G3_43i_1091_sa
+.EXTERNAL    __RES__String048_G3_43i_1091_ea
+.EXTERNAL	__RES__String048_G4_55ii_1090_sa
+.EXTERNAL    __RES__String048_G4_55ii_1091_sa
+.EXTERNAL    __RES__String048_G4_55ii_1091_ea
+.EXTERNAL	__RES__i048a65c2p1_1090_sa
+.EXTERNAL    __RES__i048a65c2p1_1091_sa
+.EXTERNAL    __RES__i048a65c2p1_1091_ea
+.EXTERNAL	__RES__i048a70c2p1_1090_sa
+.EXTERNAL    __RES__i048a70c2p1_1091_sa
+.EXTERNAL    __RES__i048a70c2p1_1091_ea
+.EXTERNAL	__RES__i048a77c2p1_1090_sa
+.EXTERNAL    __RES__i048a77c2p1_1091_sa
+.EXTERNAL    __RES__i048a77c2p1_1091_ea
+.EXTERNAL	__RES__i048a82c2p1_1090_sa
+.EXTERNAL    __RES__i048a82c2p1_1091_sa
+.EXTERNAL    __RES__i048a82c2p1_1091_ea
+.EXTERNAL	__RES__i048a89c2p1_1090_sa
+.EXTERNAL    __RES__i048a89c2p1_1091_sa
+.EXTERNAL    __RES__i048a89c2p1_1091_ea
+.EXTERNAL	__RES__24_Guitar_58s_1090_sa
+.EXTERNAL    __RES__24_Guitar_58s_1091_sa
+.EXTERNAL    __RES__24_Guitar_58s_1091_ea
+.EXTERNAL	__RES__24_Guitar_72s_1090_sa
+.EXTERNAL    __RES__24_Guitar_72s_1091_sa
+.EXTERNAL    __RES__24_Guitar_72s_1091_ea
+.EXTERNAL	__RES__i024a84c2p1_1090_sa
+.EXTERNAL    __RES__i024a84c2p1_1091_sa
+.EXTERNAL    __RES__i024a84c2p1_1091_ea
+.EXTERNAL	__RES__S4M068_57_1090_sa
+.EXTERNAL    __RES__S4M068_57_1091_sa
+.EXTERNAL    __RES__S4M068_57_1091_ea
+.EXTERNAL	__RES__i068a71c4p1_1090_sa
+.EXTERNAL    __RES__i068a71c4p1_1091_sa
+.EXTERNAL    __RES__i068a71c4p1_1091_ea
+.EXTERNAL	__RES__i068a74c4p1_1090_sa
+.EXTERNAL    __RES__i068a74c4p1_1091_sa
+.EXTERNAL    __RES__i068a74c4p1_1091_ea
+.EXTERNAL	__RES__i068a80c4p1_1090_sa
+.EXTERNAL    __RES__i068a80c4p1_1091_sa
+.EXTERNAL    __RES__i068a80c4p1_1091_ea
+.EXTERNAL	__RES__i068a85c4p1_1090_sa
+.EXTERNAL    __RES__i068a85c4p1_1091_sa
+.EXTERNAL    __RES__i068a85c4p1_1091_ea
+.EXTERNAL	__RES__i068a88c4p1_1090_sa
+.EXTERNAL    __RES__i068a88c4p1_1091_sa
+.EXTERNAL    __RES__i068a88c4p1_1091_ea
+.EXTERNAL	__RES__m_60_fhr_62a_1090_sa
+.EXTERNAL    __RES__m_60_fhr_62a_1091_sa
+.EXTERNAL    __RES__m_60_fhr_62a_1091_ea
+.EXTERNAL	__RES__m_60_fhr_74a_1090_sa
+.EXTERNAL    __RES__m_60_fhr_74a_1091_sa
+.EXTERNAL    __RES__m_60_fhr_74a_1091_ea
+.EXTERNAL	__RES__S4M046_57_1090_sa
+.EXTERNAL    __RES__S4M046_57_1091_sa
+.EXTERNAL    __RES__S4M046_57_1091_ea
+.EXTERNAL	__RES__S4M046_69_1090_sa
+.EXTERNAL    __RES__S4M046_69_1091_sa
+.EXTERNAL    __RES__S4M046_69_1091_ea
+.EXTERNAL	__RES__S4M046_81_1090_sa
+.EXTERNAL    __RES__S4M046_81_1091_sa
+.EXTERNAL    __RES__S4M046_81_1091_ea
+.EXTERNAL	__RES__08_22050_69a_1090_sa
+.EXTERNAL    __RES__08_22050_69a_1091_sa
+.EXTERNAL    __RES__08_22050_69a_1091_ea
+.EXTERNAL	__RES__08_22k_81b_1090_sa
+.EXTERNAL    __RES__08_22k_81b_1091_sa
+.EXTERNAL    __RES__08_22k_81b_1091_ea
+.EXTERNAL	__RES__08_22050_93a_1090_sa
+.EXTERNAL    __RES__08_22050_93a_1091_sa
+.EXTERNAL    __RES__08_22050_93a_1091_ea
+.EXTERNAL	__RES__S4M044_69_1090_sa
+.EXTERNAL    __RES__S4M044_69_1091_sa
+.EXTERNAL    __RES__S4M044_69_1091_ea
+.EXTERNAL	__RES__i044a57b2p0_1090_sa
+.EXTERNAL    __RES__i044a57b2p0_1091_sa
+.EXTERNAL    __RES__i044a57b2p0_1091_ea
+.EXTERNAL	__RES__S4M044_81_1090_sa
+.EXTERNAL    __RES__S4M044_81_1091_sa
+.EXTERNAL    __RES__S4M044_81_1091_ea
+.EXTERNAL	__RES__45_Pizzicato_36a_10a0_sa
+.EXTERNAL    __RES__45_Pizzicato_36a_10a1_sa
+.EXTERNAL    __RES__45_Pizzicato_36a_10a1_ea
+.EXTERNAL	__RES__45_Pizzicato_48a_10a0_sa
+.EXTERNAL    __RES__45_Pizzicato_48a_10a1_sa
+.EXTERNAL    __RES__45_Pizzicato_48a_10a1_ea
+.EXTERNAL	__RES__i045a60c2p1_10a0_sa
+.EXTERNAL    __RES__i045a60c2p1_10a1_sa
+.EXTERNAL    __RES__i045a60c2p1_10a1_ea
+.EXTERNAL	__RES__i045a72c2p1_10a0_sa
+.EXTERNAL    __RES__i045a72c2p1_10a1_sa
+.EXTERNAL    __RES__i045a72c2p1_10a1_ea
+.EXTERNAL	__RES__S4M030_69_1090_sa
+.EXTERNAL    __RES__S4M030_69_1091_sa
+.EXTERNAL    __RES__S4M030_69_1091_ea
+.EXTERNAL	__RES__i030a81c4p1_1090_sa
+.EXTERNAL    __RES__i030a81c4p1_1091_sa
+.EXTERNAL    __RES__i030a81c4p1_1091_ea
+.EXTERNAL	__RES__S4M030_81_1090_sa
+.EXTERNAL    __RES__S4M030_81_1091_sa
+.EXTERNAL    __RES__S4M030_81_1091_ea
+.EXTERNAL	__RES__i030a88c4p1_1090_sa
+.EXTERNAL    __RES__i030a88c4p1_1091_sa
+.EXTERNAL    __RES__i030a88c4p1_1091_ea
+.EXTERNAL	__RES__61_Brass_58s_1090_sa
+.EXTERNAL    __RES__61_Brass_58s_1091_sa
+.EXTERNAL    __RES__61_Brass_58s_1091_ea
+.EXTERNAL	__RES__61_Brass_70s_1090_sa
+.EXTERNAL    __RES__61_Brass_70s_1091_sa
+.EXTERNAL    __RES__61_Brass_70s_1091_ea
+.EXTERNAL	__RES__61_Brass_82s_1090_sa
+.EXTERNAL    __RES__61_Brass_82s_1091_sa
+.EXTERNAL    __RES__61_Brass_82s_1091_ea
+.EXTERNAL	__RES__i025a60c2p1_1090_sa
+.EXTERNAL    __RES__i025a60c2p1_1091_sa
+.EXTERNAL    __RES__i025a60c2p1_1091_ea
+.EXTERNAL	__RES__S4M025_57_1090_sa
+.EXTERNAL    __RES__S4M025_57_1091_sa
+.EXTERNAL    __RES__S4M025_57_1091_ea
+.EXTERNAL	__RES__i025a64c2p1_1090_sa
+.EXTERNAL    __RES__i025a64c2p1_1091_sa
+.EXTERNAL    __RES__i025a64c2p1_1091_ea
+.EXTERNAL	__RES__i025a68c2p1_1090_sa
+.EXTERNAL    __RES__i025a68c2p1_1091_sa
+.EXTERNAL    __RES__i025a68c2p1_1091_ea
+.EXTERNAL	__RES__S4M025_69_1090_sa
+.EXTERNAL    __RES__S4M025_69_1091_sa
+.EXTERNAL    __RES__S4M025_69_1091_ea
+.EXTERNAL	__RES__65_AltoSax_60a_1090_sa
+.EXTERNAL    __RES__65_AltoSax_60a_1091_sa
+.EXTERNAL    __RES__65_AltoSax_60a_1091_ea
+.EXTERNAL	__RES__65_AltoSax_72a_1090_sa
+.EXTERNAL    __RES__65_AltoSax_72a_1091_sa
+.EXTERNAL    __RES__65_AltoSax_72a_1091_ea
+.EXTERNAL	__RES__S4M066_69_1090_sa
+.EXTERNAL    __RES__S4M066_69_1091_sa
+.EXTERNAL    __RES__S4M066_69_1091_ea
+.EXTERNAL	__RES__i066b60b1p0_1090_sa
+.EXTERNAL    __RES__i066b60b1p0_1091_sa
+.EXTERNAL    __RES__i066b60b1p0_1091_ea
+.EXTERNAL	__RES__i004a54c2p1_1090_sa
+.EXTERNAL    __RES__i004a54c2p1_1091_sa
+.EXTERNAL    __RES__i004a54c2p1_1091_ea
+.EXTERNAL	__RES__S4M004_57_1090_sa
+.EXTERNAL    __RES__S4M004_57_1091_sa
+.EXTERNAL    __RES__S4M004_57_1091_ea
+.EXTERNAL	__RES__i004a66c2p1_1090_sa
+.EXTERNAL    __RES__i004a66c2p1_1091_sa
+.EXTERNAL    __RES__i004a66c2p1_1091_ea
+.EXTERNAL	__RES__S4M004_69_1090_sa
+.EXTERNAL    __RES__S4M004_69_1091_sa
+.EXTERNAL    __RES__S4M004_69_1091_ea
+.EXTERNAL	__RES__73_Flute_69_1090_sa
+.EXTERNAL    __RES__73_Flute_69_1091_sa
+.EXTERNAL    __RES__73_Flute_69_1091_ea
+.EXTERNAL	__RES__73_Flute_81_1090_sa
+.EXTERNAL    __RES__73_Flute_81_1091_sa
+.EXTERNAL    __RES__73_Flute_81_1091_ea
+.EXTERNAL	__RES__73_Flute_93_1090_sa
+.EXTERNAL    __RES__73_Flute_93_1091_sa
+.EXTERNAL    __RES__73_Flute_93_1091_ea
+.EXTERNAL	__RES__S4M071_57_1090_sa
+.EXTERNAL    __RES__S4M071_57_1091_sa
+.EXTERNAL    __RES__S4M071_57_1091_ea
+.EXTERNAL	__RES__i071a60c2p1_1090_sa
+.EXTERNAL    __RES__i071a60c2p1_1091_sa
+.EXTERNAL    __RES__i071a60c2p1_1091_ea
+.EXTERNAL	__RES__S4M071_69_1090_sa
+.EXTERNAL    __RES__S4M071_69_1091_sa
+.EXTERNAL    __RES__S4M071_69_1091_ea
+.EXTERNAL	__RES__i071a72c2p1_1090_sa
+.EXTERNAL    __RES__i071a72c2p1_1091_sa
+.EXTERNAL    __RES__i071a72c2p1_1091_ea
+.EXTERNAL	__RES__S4M071_81_1090_sa
+.EXTERNAL    __RES__S4M071_81_1091_sa
+.EXTERNAL    __RES__S4M071_81_1091_ea
+.EXTERNAL	__RES__S4M026_57_1090_sa
+.EXTERNAL    __RES__S4M026_57_1091_sa
+.EXTERNAL    __RES__S4M026_57_1091_ea
+.EXTERNAL	__RES__i026a61c5p1_1090_sa
+.EXTERNAL    __RES__i026a61c5p1_1091_sa
+.EXTERNAL    __RES__i026a61c5p1_1091_ea
+.EXTERNAL	__RES__i026a64c4p1_1090_sa
+.EXTERNAL    __RES__i026a64c4p1_1091_sa
+.EXTERNAL    __RES__i026a64c4p1_1091_ea
+.EXTERNAL	__RES__S4M026_69_1090_sa
+.EXTERNAL    __RES__S4M026_69_1091_sa
+.EXTERNAL    __RES__S4M026_69_1091_ea
+.EXTERNAL	__RES__i026a70c4p1_1090_sa
+.EXTERNAL    __RES__i026a70c4p1_1091_sa
+.EXTERNAL    __RES__i026a70c4p1_1091_ea
+.EXTERNAL	__RES__i026a75c4p1_1090_sa
+.EXTERNAL    __RES__i026a75c4p1_1091_sa
+.EXTERNAL    __RES__i026a75c4p1_1091_ea
+.EXTERNAL	__RES__i026a83c4p1_1090_sa
+.EXTERNAL    __RES__i026a83c4p1_1091_sa
+.EXTERNAL    __RES__i026a83c4p1_1091_ea
+.EXTERNAL	__RES__i053a73c2p1_1090_sa
+.EXTERNAL    __RES__i053a73c2p1_1091_sa
+.EXTERNAL    __RES__i053a73c2p1_1091_ea
+.EXTERNAL	__RES__S4M053_69_1090_sa
+.EXTERNAL    __RES__S4M053_69_1091_sa
+.EXTERNAL    __RES__S4M053_69_1091_ea
+.EXTERNAL	__RES__i053a77c2p1_1090_sa
+.EXTERNAL    __RES__i053a77c2p1_1091_sa
+.EXTERNAL    __RES__i053a77c2p1_1091_ea
+.EXTERNAL	__RES__d53ac2p1_10a0_sa
+.EXTERNAL    __RES__d53ac2p1_10a1_sa
+.EXTERNAL    __RES__d53ac2p1_10a1_ea
+.EXTERNAL	__RES__d35ac1p1_10a0_sa
+.EXTERNAL    __RES__d35ac1p1_10a1_sa
+.EXTERNAL    __RES__d35ac1p1_10a1_ea
+.EXTERNAL	__RES__d42ac2p1_10a0_sa
+.EXTERNAL    __RES__d42ac2p1_10a1_sa
+.EXTERNAL    __RES__d42ac2p1_10a1_ea
+.EXTERNAL	__RES__d54ac2b1_10a0_sa
+.EXTERNAL    __RES__d54ac2b1_10a1_sa
+.EXTERNAL    __RES__d54ac2b1_10a1_ea
+.EXTERNAL	__RES__d37ac2p1_10a0_sa
+.EXTERNAL    __RES__d37ac2p1_10a1_sa
+.EXTERNAL    __RES__d37ac2p1_10a1_ea
+.EXTERNAL	__RES__d51ac2p1_10a0_sa
+.EXTERNAL    __RES__d51ac2p1_10a1_sa
+.EXTERNAL    __RES__d51ac2p1_10a1_ea
+.EXTERNAL	__RES__d55ac2b1_10a0_sa
+.EXTERNAL    __RES__d55ac2b1_10a1_sa
+.EXTERNAL    __RES__d55ac2b1_10a1_ea
+.EXTERNAL	__RES__d57ac2p1_10a0_sa
+.EXTERNAL    __RES__d57ac2p1_10a1_sa
+.EXTERNAL    __RES__d57ac2p1_10a1_ea
+.EXTERNAL	__RES__d46ac2p1_10a0_sa
+.EXTERNAL    __RES__d46ac2p1_10a1_sa
+.EXTERNAL    __RES__d46ac2p1_10a1_ea
+.EXTERNAL	__RES__d52ac2p1_10a0_sa
+.EXTERNAL    __RES__d52ac2p1_10a1_sa
+.EXTERNAL    __RES__d52ac2p1_10a1_ea
+.EXTERNAL	__RES__d49ac2p1_10a0_sa
+.EXTERNAL    __RES__d49ac2p1_10a1_sa
+.EXTERNAL    __RES__d49ac2p1_10a1_ea
+.EXTERNAL	__RES__Bird_11k_10a0_sa
+.EXTERNAL    __RES__Bird_11k_10a1_sa
+.EXTERNAL    __RES__Bird_11k_10a1_ea
+.EXTERNAL	__RES__Bird3_11k_10a0_sa
+.EXTERNAL    __RES__Bird3_11k_10a1_sa
+.EXTERNAL    __RES__Bird3_11k_10a1_ea
+.EXTERNAL	__RES__d40ac2b1_10a0_sa
+.EXTERNAL    __RES__d40ac2b1_10a1_sa
+.EXTERNAL    __RES__d40ac2b1_10a1_ea
+.EXTERNAL	__RES__d41ac2p1_10a0_sa
+.EXTERNAL    __RES__d41ac2p1_10a1_sa
+.EXTERNAL    __RES__d41ac2p1_10a1_ea
+.EXTERNAL	__RES__d36ac2p1_10a0_sa
+.EXTERNAL    __RES__d36ac2p1_10a1_sa
+.EXTERNAL    __RES__d36ac2p1_10a1_ea
+.EXTERNAL	__RES__d38ac2p1_10a0_sa
+.EXTERNAL    __RES__d38ac2p1_10a1_sa
+.EXTERNAL    __RES__d38ac2p1_10a1_ea
+.EXTERNAL	__RES__d44ac2p1_10a0_sa
+.EXTERNAL    __RES__d44ac2p1_10a1_sa
+.EXTERNAL    __RES__d44ac2p1_10a1_ea
+.EXTERNAL	__RES__d59ac2b1_10a0_sa
+.EXTERNAL    __RES__d59ac2b1_10a1_sa
+.EXTERNAL    __RES__d59ac2b1_10a1_ea
+.EXTERNAL	__RES__Drum_85_10a0_sa
+.EXTERNAL    __RES__Drum_85_10a1_sa
+.EXTERNAL    __RES__Drum_85_10a1_ea
+.EXTERNAL	__RES__d47ac2p1_10a0_sa
+.EXTERNAL    __RES__d47ac2p1_10a1_sa
+.EXTERNAL    __RES__d47ac2p1_10a1_ea
+.EXTERNAL	__RES__d45ac2p1_10a0_sa
+.EXTERNAL    __RES__d45ac2p1_10a1_sa
+.EXTERNAL    __RES__d45ac2p1_10a1_ea
+.EXTERNAL	__RES__d39ac2b1_10a0_sa
+.EXTERNAL    __RES__d39ac2b1_10a1_sa
+.EXTERNAL    __RES__d39ac2b1_10a1_ea
+.EXTERNAL	__RES__d43ac2p1_10a0_sa
+.EXTERNAL    __RES__d43ac2p1_10a1_sa
+.EXTERNAL    __RES__d43ac2p1_10a1_ea
+
+.PUBLIC   T_Instruments
+.PUBLIC   T_DrumInst
+.PUBLIC   Release_Tag
+
+
+
+T_Instruments:
+	.DW _Inst0  ;_00_Piano_C
+.DW	SEG16(_Inst0)
+	.DW _Inst1  ;_56_Trum
+.DW	SEG16(_Inst1)
+	.DW _Inst2  ;_Bass_finger
+.DW	SEG16(_Inst2)
+	.DW _Inst3  ;_Str_Ensem1
+.DW	SEG16(_Inst3)
+	.DW _Inst4  ;_24_Guitar
+.DW	SEG16(_Inst4)
+	.DW _Inst5  ;_Oboe
+.DW	SEG16(_Inst5)
+	.DW _Inst6  ;_m_60_fhr
+.DW	SEG16(_Inst6)
+	.DW _Inst7  ;_Orch_Harp
+.DW	SEG16(_Inst7)
+	.DW _Inst8  ;_08_Celesta_k
+.DW	SEG16(_Inst8)
+	.DW _Inst9  ;_Tre_Strings
+.DW	SEG16(_Inst9)
+	.DW _Inst10  ;_Pizzicato_Str
+.DW	SEG16(_Inst10)
+	.DW _Inst11  ;_Distort_Gtr
+.DW	SEG16(_Inst11)
+	.DW _Inst12  ;_61_Brass
+.DW	SEG16(_Inst12)
+	.DW _Inst13  ;_Gtr_steel
+.DW	SEG16(_Inst13)
+	.DW _Inst14  ;_65_Sax
+.DW	SEG16(_Inst14)
+	.DW _Inst15  ;_TenorSax
+.DW	SEG16(_Inst15)
+	.DW _Inst16  ;_Rhod_Piano
+.DW	SEG16(_Inst16)
+	.DW _Inst17  ;_73_Flute
+.DW	SEG16(_Inst17)
+	.DW _Inst18  ;_Clarinet
+.DW	SEG16(_Inst18)
+	.DW _Inst19  ;_Gtr_jazz
+.DW	SEG16(_Inst19)
+	.DW _Inst20  ;_Voice_Oohs
+.DW	SEG16(_Inst20)
+T_DrumInst:
+	.DW _Drum0_Sec0  ;Drum53
+.DW	SEG16(_Drum0_Sec0)
+	.DW _Drum1_Sec0  ;Drum35
+.DW	SEG16(_Drum1_Sec0)
+	.DW _Drum2_Sec0  ;Drum42
+.DW	SEG16(_Drum2_Sec0)
+	.DW _Drum3_Sec0  ;Drum54
+.DW	SEG16(_Drum3_Sec0)
+	.DW _Drum4_Sec0  ;Drum37
+.DW	SEG16(_Drum4_Sec0)
+	.DW _Drum5_Sec0  ;Drum51
+.DW	SEG16(_Drum5_Sec0)
+	.DW _Drum6_Sec0  ;Drum55
+.DW	SEG16(_Drum6_Sec0)
+	.DW _Drum7_Sec0  ;Drum57
+.DW	SEG16(_Drum7_Sec0)
+	.DW _Drum8_Sec0  ;Drum46
+.DW	SEG16(_Drum8_Sec0)
+	.DW _Drum9_Sec0  ;Drum52
+.DW	SEG16(_Drum9_Sec0)
+	.DW _Druma_Sec0  ;Drum49
+.DW	SEG16(_Druma_Sec0)
+	.DW _Drumb_Sec0  ;23_Bird
+.DW	SEG16(_Drumb_Sec0)
+	.DW _Drumc_Sec0  ;26_Bird
+.DW	SEG16(_Drumc_Sec0)
+	.DW _Drumd_Sec0  ;Drum40
+.DW	SEG16(_Drumd_Sec0)
+	.DW _Drume_Sec0  ;Drum41
+.DW	SEG16(_Drume_Sec0)
+	.DW _Drumf_Sec0  ;Drum36
+.DW	SEG16(_Drumf_Sec0)
+	.DW _Drum10_Sec0  ;Drum38
+.DW	SEG16(_Drum10_Sec0)
+	.DW _Drum11_Sec0  ;Drum44
+.DW	SEG16(_Drum11_Sec0)
+	.DW _Drum12_Sec0  ;Drum59
+.DW	SEG16(_Drum12_Sec0)
+	.DW _Drum13_Sec0  ;85_Castanets
+.DW	SEG16(_Drum13_Sec0)
+	.DW _Drum14_Sec0  ;Drum47
+.DW	SEG16(_Drum14_Sec0)
+	.DW _Drum15_Sec0  ;Drum45
+.DW	SEG16(_Drum15_Sec0)
+	.DW _Drum16_Sec0  ;Drum39
+.DW	SEG16(_Drum16_Sec0)
+	.DW _Drum17_Sec0  ;Drum43
+.DW	SEG16(_Drum17_Sec0)
+
+	.DW 0xff00
+	.DW 0xa55a
+	.DW 0x1518
+
+
+_Inst0:  ;_00_Piano_C
+.DW  48
+.DW  48
+.DW  1
+.DW  _Inst0_Sec0
+.DW	SEG16(_Inst0_Sec0)
+.DW  62
+.DW  60
+.DW  1
+.DW  _Inst0_Sec1
+.DW	SEG16(_Inst0_Sec1)
+.DW  75
+.DW  72
+.DW  2
+.DW  _Inst0_Sec2
+.DW	SEG16(_Inst0_Sec2)
+.DW  97
+.DW  84
+.DW  1
+.DW  _Inst0_Sec3
+.DW	SEG16(_Inst0_Sec3)
+.DW  127
+.DW  96
+.DW  1
+.DW  _Inst0_Sec4
+.DW	SEG16(_Inst0_Sec4)
+
+
+_Inst1:  ;_56_Trum
+.DW  57
+.DW  57
+.DW  3
+.DW  _Inst1_Sec0
+.DW	SEG16(_Inst1_Sec0)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst1_Sec1
+.DW	SEG16(_Inst1_Sec1)
+.DW  127
+.DW  81
+.DW  3
+.DW  _Inst1_Sec2
+.DW	SEG16(_Inst1_Sec2)
+
+
+_Inst2:  ;_Bass_finger
+.DW  33
+.DW  33
+.DW  4
+.DW  _Inst2_Sec0
+.DW	SEG16(_Inst2_Sec0)
+.DW  34
+.DW  33
+.DW  4
+.DW  _Inst2_Sec1
+.DW	SEG16(_Inst2_Sec1)
+.DW  35
+.DW  33
+.DW  4
+.DW  _Inst2_Sec2
+.DW	SEG16(_Inst2_Sec2)
+.DW  40
+.DW  33
+.DW  5
+.DW  _Inst2_Sec3
+.DW	SEG16(_Inst2_Sec3)
+.DW  45
+.DW  45
+.DW  4
+.DW  _Inst2_Sec4
+.DW	SEG16(_Inst2_Sec4)
+.DW  46
+.DW  45
+.DW  4
+.DW  _Inst2_Sec5
+.DW	SEG16(_Inst2_Sec5)
+.DW  47
+.DW  45
+.DW  4
+.DW  _Inst2_Sec6
+.DW	SEG16(_Inst2_Sec6)
+.DW  127
+.DW  57
+.DW  4
+.DW  _Inst2_Sec7
+.DW	SEG16(_Inst2_Sec7)
+
+
+_Inst3:  ;_Str_Ensem1
+.DW  43
+.DW  43
+.DW  1
+.DW  _Inst3_Sec0
+.DW	SEG16(_Inst3_Sec0)
+.DW  55
+.DW  55
+.DW  1
+.DW  _Inst3_Sec1
+.DW	SEG16(_Inst3_Sec1)
+.DW  65
+.DW  65
+.DW  1
+.DW  _Inst3_Sec2
+.DW	SEG16(_Inst3_Sec2)
+.DW  70
+.DW  70
+.DW  1
+.DW  _Inst3_Sec3
+.DW	SEG16(_Inst3_Sec3)
+.DW  77
+.DW  77
+.DW  1
+.DW  _Inst3_Sec5
+.DW	SEG16(_Inst3_Sec5)
+.DW  89
+.DW  82
+.DW  1
+.DW  _Inst3_Sec8
+.DW	SEG16(_Inst3_Sec8)
+.DW  127
+.DW  89
+.DW  1
+.DW  _Inst3_Sec9
+.DW	SEG16(_Inst3_Sec9)
+
+
+_Inst4:  ;_24_Guitar
+.DW  58
+.DW  58
+.DW  6
+.DW  _Inst4_Sec0
+.DW	SEG16(_Inst4_Sec0)
+.DW  81
+.DW  72
+.DW  7
+.DW  _Inst4_Sec1
+.DW	SEG16(_Inst4_Sec1)
+.DW  127
+.DW  84
+.DW  8
+.DW  _Inst4_Sec2
+.DW	SEG16(_Inst4_Sec2)
+
+
+_Inst5:  ;_Oboe
+.DW  57
+.DW  57
+.DW  3
+.DW  _Inst5_Sec0
+.DW	SEG16(_Inst5_Sec0)
+.DW  64
+.DW  71
+.DW  9
+.DW  _Inst5_Sec3
+.DW	SEG16(_Inst5_Sec3)
+.DW  69
+.DW  74
+.DW  10
+.DW  _Inst5_Sec4
+.DW	SEG16(_Inst5_Sec4)
+.DW  73
+.DW  80
+.DW  11
+.DW  _Inst5_Sec8
+.DW	SEG16(_Inst5_Sec8)
+.DW  79
+.DW  85
+.DW  12
+.DW  _Inst5_Sec9
+.DW	SEG16(_Inst5_Sec9)
+.DW  127
+.DW  88
+.DW  13
+.DW  _Inst5_Secb
+.DW	SEG16(_Inst5_Secb)
+
+
+_Inst6:  ;_m_60_fhr
+.DW  62
+.DW  62
+.DW  1
+.DW  _Inst6_Sec1
+.DW	SEG16(_Inst6_Sec1)
+.DW  127
+.DW  74
+.DW  1
+.DW  _Inst6_Sec2
+.DW	SEG16(_Inst6_Sec2)
+
+
+_Inst7:  ;_Orch_Harp
+.DW  57
+.DW  57
+.DW  14
+.DW  _Inst7_Sec3
+.DW	SEG16(_Inst7_Sec3)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst7_Sec7
+.DW	SEG16(_Inst7_Sec7)
+.DW  127
+.DW  81
+.DW  3
+.DW  _Inst7_Secc
+.DW	SEG16(_Inst7_Secc)
+
+
+_Inst8:  ;_08_Celesta_k
+.DW  69
+.DW  69
+.DW  1
+.DW  _Inst8_Sec0
+.DW	SEG16(_Inst8_Sec0)
+.DW  81
+.DW  81
+.DW  1
+.DW  _Inst8_Sec1
+.DW	SEG16(_Inst8_Sec1)
+.DW  127
+.DW  93
+.DW  1
+.DW  _Inst8_Sec2
+.DW	SEG16(_Inst8_Sec2)
+
+
+_Inst9:  ;_Tre_Strings
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst9_Sec0
+.DW	SEG16(_Inst9_Sec0)
+.DW  70
+.DW  69
+.DW  3
+.DW  _Inst9_Sec1
+.DW	SEG16(_Inst9_Sec1)
+.DW  71
+.DW  69
+.DW  3
+.DW  _Inst9_Sec2
+.DW	SEG16(_Inst9_Sec2)
+.DW  77
+.DW  57
+.DW  1
+.DW  _Inst9_Sec3
+.DW	SEG16(_Inst9_Sec3)
+.DW  127
+.DW  81
+.DW  3
+.DW  _Inst9_Sec4
+.DW	SEG16(_Inst9_Sec4)
+
+
+_Inst10:  ;_Pizzicato_Str
+.DW  36
+.DW  36
+.DW  1
+.DW  _Insta_Sec0
+.DW	SEG16(_Insta_Sec0)
+.DW  48
+.DW  48
+.DW  1
+.DW  _Insta_Sec1
+.DW	SEG16(_Insta_Sec1)
+.DW  60
+.DW  60
+.DW  1
+.DW  _Insta_Sec2
+.DW	SEG16(_Insta_Sec2)
+.DW  127
+.DW  72
+.DW  1
+.DW  _Insta_Sec3
+.DW	SEG16(_Insta_Sec3)
+
+
+_Inst11:  ;_Distort_Gtr
+.DW  69
+.DW  69
+.DW  3
+.DW  _Instb_Sec9
+.DW	SEG16(_Instb_Sec9)
+.DW  70
+.DW  69
+.DW  3
+.DW  _Instb_Seca
+.DW	SEG16(_Instb_Seca)
+.DW  71
+.DW  69
+.DW  3
+.DW  _Instb_Secb
+.DW	SEG16(_Instb_Secb)
+.DW  74
+.DW  81
+.DW  15
+.DW  _Instb_Secc
+.DW	SEG16(_Instb_Secc)
+.DW  81
+.DW  81
+.DW  3
+.DW  _Instb_Secd
+.DW	SEG16(_Instb_Secd)
+.DW  82
+.DW  81
+.DW  3
+.DW  _Instb_Sece
+.DW	SEG16(_Instb_Sece)
+.DW  83
+.DW  81
+.DW  3
+.DW  _Instb_Secf
+.DW	SEG16(_Instb_Secf)
+.DW  127
+.DW  88
+.DW  13
+.DW  _Instb_Sec10
+.DW	SEG16(_Instb_Sec10)
+
+
+_Inst12:  ;_61_Brass
+.DW  58
+.DW  58
+.DW  1
+.DW  _Instc_Sec0
+.DW	SEG16(_Instc_Sec0)
+.DW  70
+.DW  70
+.DW  1
+.DW  _Instc_Sec1
+.DW	SEG16(_Instc_Sec1)
+.DW  127
+.DW  82
+.DW  1
+.DW  _Instc_Sec2
+.DW	SEG16(_Instc_Sec2)
+
+
+_Inst13:  ;_Gtr_steel
+.DW  52
+.DW  60
+.DW  16
+.DW  _Instd_Sec4
+.DW	SEG16(_Instd_Sec4)
+.DW  57
+.DW  57
+.DW  2
+.DW  _Instd_Sec5
+.DW	SEG16(_Instd_Sec5)
+.DW  58
+.DW  57
+.DW  2
+.DW  _Instd_Sec6
+.DW	SEG16(_Instd_Sec6)
+.DW  59
+.DW  64
+.DW  1
+.DW  _Instd_Sec7
+.DW	SEG16(_Instd_Sec7)
+.DW  60
+.DW  57
+.DW  2
+.DW  _Instd_Sec8
+.DW	SEG16(_Instd_Sec8)
+.DW  65
+.DW  68
+.DW  1
+.DW  _Instd_Sec9
+.DW	SEG16(_Instd_Sec9)
+.DW  127
+.DW  69
+.DW  2
+.DW  _Instd_Seca
+.DW	SEG16(_Instd_Seca)
+
+
+_Inst14:  ;_65_Sax
+.DW  60
+.DW  60
+.DW  17
+.DW  _Inste_Sec1
+.DW	SEG16(_Inste_Sec1)
+.DW  127
+.DW  72
+.DW  17
+.DW  _Inste_Sec2
+.DW	SEG16(_Inste_Sec2)
+
+
+_Inst15:  ;_TenorSax
+.DW  69
+.DW  69
+.DW  3
+.DW  _Instf_Sec3
+.DW	SEG16(_Instf_Sec3)
+.DW  70
+.DW  69
+.DW  3
+.DW  _Instf_Sec4
+.DW	SEG16(_Instf_Sec4)
+.DW  71
+.DW  60
+.DW  18
+.DW  _Instf_Sec5
+.DW	SEG16(_Instf_Sec5)
+.DW  127
+.DW  69
+.DW  3
+.DW  _Instf_Sec6
+.DW	SEG16(_Instf_Sec6)
+
+
+_Inst16:  ;_Rhod_Piano
+.DW  54
+.DW  54
+.DW  19
+.DW  _Inst10_Sec3
+.DW	SEG16(_Inst10_Sec3)
+.DW  57
+.DW  57
+.DW  4
+.DW  _Inst10_Sec4
+.DW	SEG16(_Inst10_Sec4)
+.DW  58
+.DW  57
+.DW  4
+.DW  _Inst10_Sec5
+.DW	SEG16(_Inst10_Sec5)
+.DW  59
+.DW  57
+.DW  4
+.DW  _Inst10_Sec6
+.DW	SEG16(_Inst10_Sec6)
+.DW  66
+.DW  66
+.DW  20
+.DW  _Inst10_Sec7
+.DW	SEG16(_Inst10_Sec7)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst10_Sec8
+.DW	SEG16(_Inst10_Sec8)
+.DW  70
+.DW  69
+.DW  3
+.DW  _Inst10_Sec9
+.DW	SEG16(_Inst10_Sec9)
+.DW  127
+.DW  69
+.DW  3
+.DW  _Inst10_Seca
+.DW	SEG16(_Inst10_Seca)
+
+
+_Inst17:  ;_73_Flute
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst11_Sec1
+.DW	SEG16(_Inst11_Sec1)
+.DW  81
+.DW  81
+.DW  3
+.DW  _Inst11_Sec2
+.DW	SEG16(_Inst11_Sec2)
+.DW  127
+.DW  93
+.DW  2
+.DW  _Inst11_Sec3
+.DW	SEG16(_Inst11_Sec3)
+
+
+_Inst18:  ;_Clarinet
+.DW  57
+.DW  57
+.DW  3
+.DW  _Inst12_Sec1
+.DW	SEG16(_Inst12_Sec1)
+.DW  64
+.DW  60
+.DW  1
+.DW  _Inst12_Sec4
+.DW	SEG16(_Inst12_Sec4)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst12_Sec5
+.DW	SEG16(_Inst12_Sec5)
+.DW  72
+.DW  72
+.DW  1
+.DW  _Inst12_Sec8
+.DW	SEG16(_Inst12_Sec8)
+.DW  127
+.DW  81
+.DW  3
+.DW  _Inst12_Seca
+.DW	SEG16(_Inst12_Seca)
+
+
+_Inst19:  ;_Gtr_jazz
+.DW  57
+.DW  57
+.DW  4
+.DW  _Inst13_Sec3
+.DW	SEG16(_Inst13_Sec3)
+.DW  58
+.DW  57
+.DW  4
+.DW  _Inst13_Sec4
+.DW	SEG16(_Inst13_Sec4)
+.DW  59
+.DW  57
+.DW  4
+.DW  _Inst13_Sec5
+.DW	SEG16(_Inst13_Sec5)
+.DW  61
+.DW  61
+.DW  21
+.DW  _Inst13_Sec6
+.DW	SEG16(_Inst13_Sec6)
+.DW  64
+.DW  64
+.DW  22
+.DW  _Inst13_Sec7
+.DW	SEG16(_Inst13_Sec7)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst13_Sec8
+.DW	SEG16(_Inst13_Sec8)
+.DW  70
+.DW  70
+.DW  23
+.DW  _Inst13_Sec9
+.DW	SEG16(_Inst13_Sec9)
+.DW  71
+.DW  69
+.DW  3
+.DW  _Inst13_Seca
+.DW	SEG16(_Inst13_Seca)
+.DW  72
+.DW  69
+.DW  3
+.DW  _Inst13_Secb
+.DW	SEG16(_Inst13_Secb)
+.DW  75
+.DW  75
+.DW  24
+.DW  _Inst13_Secc
+.DW	SEG16(_Inst13_Secc)
+.DW  127
+.DW  83
+.DW  25
+.DW  _Inst13_Secd
+.DW	SEG16(_Inst13_Secd)
+
+
+_Inst20:  ;_Voice_Oohs
+.DW  64
+.DW  73
+.DW  26
+.DW  _Inst14_Sec1
+.DW	SEG16(_Inst14_Sec1)
+.DW  69
+.DW  69
+.DW  3
+.DW  _Inst14_Sec2
+.DW	SEG16(_Inst14_Sec2)
+.DW  70
+.DW  69
+.DW  3
+.DW  _Inst14_Sec3
+.DW	SEG16(_Inst14_Sec3)
+.DW  127
+.DW  77
+.DW  26
+.DW  _Inst14_Sec4
+.DW	SEG16(_Inst14_Sec4)
+
+
+_Inst0_Sec0:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__00_GPiano_48kc1_1090_sa,PCM16,__RES__00_GPiano_48kc1_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst0_Sec1:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__00_GPiano_60k_1090_sa,PCM16,__RES__00_GPiano_60k_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst0_Sec2:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__00_GPiano_72Ac1s_1090_sa,PCM16,__RES__00_GPiano_72Ac1s_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst0_Sec3:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__00_GPiano_84kc1f_1090_sa,PCM16,__RES__00_GPiano_84kc1f_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst0_Sec4:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__00_GPiano_96kc1f_1090_sa,PCM16,__RES__00_GPiano_96kc1f_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst1_Sec0:
+   M_ADSR_TBL Env_sustain,__RES__56_Trum_57_1090_sa,PCM16,__RES__56_Trum_57_1091_sa,PCM16,0,NOf_sustain,33
+_Inst1_Sec1:
+   M_ADSR_TBL Env_sustain,__RES__56_Trum_69_1090_sa,PCM16,__RES__56_Trum_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst1_Sec2:
+   M_ADSR_TBL Env_sustain,__RES__56_Trum_81_1090_sa,PCM16,__RES__56_Trum_81_1091_sa,PCM16,0,NOf_sustain,33
+_Inst2_Sec0:
+   M_ADSR_TBL Env_attack,__RES__S4M033_33_1090_sa,PCM16,__RES__S4M033_33_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec1:
+   M_ADSR_TBL Env_attack,__RES__S4M033_33_1090_sa,PCM16,__RES__S4M033_33_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec2:
+   M_ADSR_TBL Env_attack,__RES__S4M033_33_1090_sa,PCM16,__RES__S4M033_33_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec3:
+   M_ADSR_TBL Env_i033a33c1p1,__RES__i033a33c1p1_1090_sa,PCM16,__RES__i033a33c1p1_1091_sa,PCM16,0,NOf_i033a33c1p1,33
+_Inst2_Sec4:
+   M_ADSR_TBL Env_attack,__RES__S4M033_45_1090_sa,PCM16,__RES__S4M033_45_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec5:
+   M_ADSR_TBL Env_attack,__RES__S4M033_45_1090_sa,PCM16,__RES__S4M033_45_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec6:
+   M_ADSR_TBL Env_attack,__RES__S4M033_45_1090_sa,PCM16,__RES__S4M033_45_1091_sa,PCM16,0,NOf_attack,33
+_Inst2_Sec7:
+   M_ADSR_TBL Env_attack,__RES__S4M033_57_1090_sa,PCM16,__RES__S4M033_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst3_Sec0:
+   M_ADSR_TBL Env_048_String_43,__RES__String048_G3_43i_1090_sa,PCM16,__RES__String048_G3_43i_1091_sa,PCM16,0,NOf_048_String_43,33
+_Inst3_Sec1:
+   M_ADSR_TBL Env_048_String_43,__RES__String048_G4_55ii_1090_sa,PCM16,__RES__String048_G4_55ii_1091_sa,PCM16,0,NOf_048_String_43,33
+_Inst3_Sec2:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__i048a65c2p1_1090_sa,PCM16,__RES__i048a65c2p1_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst3_Sec3:
+   M_ADSR_TBL Env_DEFAULT_ENVELOP,__RES__i048a70c2p1_1090_sa,PCM16,__RES__i048a70c2p1_1091_sa,PCM16,0,NOf_DEFAULT_ENVELOP,33
+_Inst3_Sec5:
+   M_ADSR_TBL Env_i048a77c2p1,__RES__i048a77c2p1_1090_sa,PCM16,__RES__i048a77c2p1_1091_sa,PCM16,0,NOf_i048a77c2p1,33
+_Inst3_Sec8:
+   M_ADSR_TBL Env_i048a82c2p1,__RES__i048a82c2p1_1090_sa,PCM16,__RES__i048a82c2p1_1091_sa,PCM16,0,NOf_i048a82c2p1,33
+_Inst3_Sec9:
+   M_ADSR_TBL Env_i048a89c2p1,__RES__i048a89c2p1_1090_sa,PCM16,__RES__i048a89c2p1_1091_sa,PCM16,0,NOf_i048a89c2p1,33
+_Inst4_Sec0:
+   M_ADSR_TBL Env_i024a58c2p1,__RES__24_Guitar_58s_1090_sa,PCM16,__RES__24_Guitar_58s_1091_sa,PCM16,0,NOf_i024a58c2p1,33
+_Inst4_Sec1:
+   M_ADSR_TBL Env_i024a72c2p1,__RES__24_Guitar_72s_1090_sa,PCM16,__RES__24_Guitar_72s_1091_sa,PCM16,0,NOf_i024a72c2p1,33
+_Inst4_Sec2:
+   M_ADSR_TBL Env_i024a84c2p1,__RES__i024a84c2p1_1090_sa,PCM16,__RES__i024a84c2p1_1091_sa,PCM16,0,NOf_i024a84c2p1,33
+_Inst5_Sec0:
+   M_ADSR_TBL Env_sustain,__RES__S4M068_57_1090_sa,PCM16,__RES__S4M068_57_1091_sa,PCM16,0,NOf_sustain,33
+_Inst5_Sec3:
+   M_ADSR_TBL Env_i068a71c4p1,__RES__i068a71c4p1_1090_sa,PCM16,__RES__i068a71c4p1_1091_sa,PCM16,0,NOf_i068a71c4p1,33
+_Inst5_Sec4:
+   M_ADSR_TBL Env_i068a74c4p1,__RES__i068a74c4p1_1090_sa,PCM16,__RES__i068a74c4p1_1091_sa,PCM16,0,NOf_i068a74c4p1,33
+_Inst5_Sec8:
+   M_ADSR_TBL Env_i068a80c4p1,__RES__i068a80c4p1_1090_sa,PCM16,__RES__i068a80c4p1_1091_sa,PCM16,0,NOf_i068a80c4p1,33
+_Inst5_Sec9:
+   M_ADSR_TBL Env_i068a85c4p1,__RES__i068a85c4p1_1090_sa,PCM16,__RES__i068a85c4p1_1091_sa,PCM16,0,NOf_i068a85c4p1,33
+_Inst5_Secb:
+   M_ADSR_TBL Env_i068a88c4p1,__RES__i068a88c4p1_1090_sa,PCM16,__RES__i068a88c4p1_1091_sa,PCM16,0,NOf_i068a88c4p1,33
+_Inst6_Sec1:
+   M_ADSR_TBL Env_sustain,__RES__m_60_fhr_62a_1090_sa,PCM16,__RES__m_60_fhr_62a_1091_sa,PCM16,0,NOf_sustain,33
+_Inst6_Sec2:
+   M_ADSR_TBL Env_sustain,__RES__m_60_fhr_74a_1090_sa,PCM16,__RES__m_60_fhr_74a_1091_sa,PCM16,0,NOf_sustain,33
+_Inst7_Sec3:
+   M_ADSR_TBL Env_attack,__RES__S4M046_57_1090_sa,PCM16,__RES__S4M046_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst7_Sec7:
+   M_ADSR_TBL Env_attack,__RES__S4M046_69_1090_sa,PCM16,__RES__S4M046_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst7_Secc:
+   M_ADSR_TBL Env_attack,__RES__S4M046_81_1090_sa,PCM16,__RES__S4M046_81_1091_sa,PCM16,0,NOf_attack,33
+_Inst8_Sec0:
+   M_ADSR_TBL Env_attack,__RES__08_22050_69a_1090_sa,PCM16,__RES__08_22050_69a_1091_sa,PCM16,0,NOf_attack,33
+_Inst8_Sec1:
+   M_ADSR_TBL Env_attack,__RES__08_22k_81b_1090_sa,PCM16,__RES__08_22k_81b_1091_sa,PCM16,0,NOf_attack,33
+_Inst8_Sec2:
+   M_ADSR_TBL Env_attack,__RES__08_22050_93a_1090_sa,PCM16,__RES__08_22050_93a_1091_sa,PCM16,0,NOf_attack,33
+_Inst9_Sec0:
+   M_ADSR_TBL Env_sustain,__RES__S4M044_69_1090_sa,PCM16,__RES__S4M044_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst9_Sec1:
+   M_ADSR_TBL Env_sustain,__RES__S4M044_69_1090_sa,PCM16,__RES__S4M044_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst9_Sec2:
+   M_ADSR_TBL Env_sustain,__RES__S4M044_69_1090_sa,PCM16,__RES__S4M044_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst9_Sec3:
+   M_ADSR_TBL Env_i044a57b2p0,__RES__i044a57b2p0_1090_sa,PCM16,__RES__i044a57b2p0_1091_sa,PCM16,0,NOf_i044a57b2p0,33
+_Inst9_Sec4:
+   M_ADSR_TBL Env_sustain,__RES__S4M044_81_1090_sa,PCM16,__RES__S4M044_81_1091_sa,PCM16,0,NOf_sustain,33
+_Insta_Sec0:
+   M_ADSR_TBL Env_dr,__RES__45_Pizzicato_36a_10a0_sa,PCM16,__RES__45_Pizzicato_36a_10a1_sa,PCM16,0,NOf_dr,33
+_Insta_Sec1:
+   M_ADSR_TBL Env_dr,__RES__45_Pizzicato_48a_10a0_sa,PCM16,__RES__45_Pizzicato_48a_10a1_sa,PCM16,0,NOf_dr,33
+_Insta_Sec2:
+   M_ADSR_TBL Env_i045a60c2p1,__RES__i045a60c2p1_10a0_sa,PCM16,__RES__i045a60c2p1_10a1_sa,PCM16,0,NOf_i045a60c2p1,33
+_Insta_Sec3:
+   M_ADSR_TBL Env_i045a72c2p1,__RES__i045a72c2p1_10a0_sa,PCM16,__RES__i045a72c2p1_10a1_sa,PCM16,0,NOf_i045a72c2p1,33
+_Instb_Sec9:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_69_1090_sa,PCM16,__RES__S4M030_69_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Seca:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_69_1090_sa,PCM16,__RES__S4M030_69_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Secb:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_69_1090_sa,PCM16,__RES__S4M030_69_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Secc:
+   M_ADSR_TBL Env_i030a81c4p1,__RES__i030a81c4p1_1090_sa,PCM16,__RES__i030a81c4p1_1091_sa,PCM16,0,NOf_i030a81c4p1,33
+_Instb_Secd:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_81_1090_sa,PCM16,__RES__S4M030_81_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Sece:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_81_1090_sa,PCM16,__RES__S4M030_81_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Secf:
+   M_ADSR_TBL Env_sustain,__RES__S4M030_81_1090_sa,PCM16,__RES__S4M030_81_1091_sa,PCM16,0,NOf_sustain,33
+_Instb_Sec10:
+   M_ADSR_TBL Env_i030a88c4p1,__RES__i030a88c4p1_1090_sa,PCM16,__RES__i030a88c4p1_1091_sa,PCM16,0,NOf_i030a88c4p1,33
+_Instc_Sec0:
+   M_ADSR_TBL Env_61_Brass_82,__RES__61_Brass_58s_1090_sa,PCM16,__RES__61_Brass_58s_1091_sa,PCM16,0,NOf_61_Brass_82,33
+_Instc_Sec1:
+   M_ADSR_TBL Env_61_Brass_82,__RES__61_Brass_70s_1090_sa,PCM16,__RES__61_Brass_70s_1091_sa,PCM16,0,NOf_61_Brass_82,33
+_Instc_Sec2:
+   M_ADSR_TBL Env_61_Brass_82,__RES__61_Brass_82s_1090_sa,PCM16,__RES__61_Brass_82s_1091_sa,PCM16,0,NOf_61_Brass_82,33
+_Instd_Sec4:
+   M_ADSR_TBL Env_i025a60c2p1,__RES__i025a60c2p1_1090_sa,PCM16,__RES__i025a60c2p1_1091_sa,PCM16,0,NOf_i025a60c2p1,33
+_Instd_Sec5:
+   M_ADSR_TBL Env_attack,__RES__S4M025_57_1090_sa,PCM16,__RES__S4M025_57_1091_sa,PCM16,0,NOf_attack,33
+_Instd_Sec6:
+   M_ADSR_TBL Env_attack,__RES__S4M025_57_1090_sa,PCM16,__RES__S4M025_57_1091_sa,PCM16,0,NOf_attack,33
+_Instd_Sec7:
+   M_ADSR_TBL Env_i025a64c2p1,__RES__i025a64c2p1_1090_sa,PCM16,__RES__i025a64c2p1_1091_sa,PCM16,0,NOf_i025a64c2p1,33
+_Instd_Sec8:
+   M_ADSR_TBL Env_attack,__RES__S4M025_57_1090_sa,PCM16,__RES__S4M025_57_1091_sa,PCM16,0,NOf_attack,33
+_Instd_Sec9:
+   M_ADSR_TBL Env_i025a68c2p1,__RES__i025a68c2p1_1090_sa,PCM16,__RES__i025a68c2p1_1091_sa,PCM16,0,NOf_i025a68c2p1,33
+_Instd_Seca:
+   M_ADSR_TBL Env_attack,__RES__S4M025_69_1090_sa,PCM16,__RES__S4M025_69_1091_sa,PCM16,0,NOf_attack,33
+_Inste_Sec1:
+   M_ADSR_TBL Env_i065a80c4p1,__RES__65_AltoSax_60a_1090_sa,PCM16,__RES__65_AltoSax_60a_1091_sa,PCM16,0,NOf_i065a80c4p1,33
+_Inste_Sec2:
+   M_ADSR_TBL Env_i065a80c4p1,__RES__65_AltoSax_72a_1090_sa,PCM16,__RES__65_AltoSax_72a_1091_sa,PCM16,0,NOf_i065a80c4p1,33
+_Instf_Sec3:
+   M_ADSR_TBL Env_sustain,__RES__S4M066_69_1090_sa,PCM16,__RES__S4M066_69_1091_sa,PCM16,0,NOf_sustain,33
+_Instf_Sec4:
+   M_ADSR_TBL Env_sustain,__RES__S4M066_69_1090_sa,PCM16,__RES__S4M066_69_1091_sa,PCM16,0,NOf_sustain,33
+_Instf_Sec5:
+   M_ADSR_TBL Env_i066b60b1p0,__RES__i066b60b1p0_1090_sa,PCM16,__RES__i066b60b1p0_1091_sa,PCM16,0,NOf_i066b60b1p0,33
+_Instf_Sec6:
+   M_ADSR_TBL Env_sustain,__RES__S4M066_69_1090_sa,PCM16,__RES__S4M066_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst10_Sec3:
+   M_ADSR_TBL Env_attack,__RES__i004a54c2p1_1090_sa,PCM16,__RES__i004a54c2p1_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec4:
+   M_ADSR_TBL Env_attack,__RES__S4M004_57_1090_sa,PCM16,__RES__S4M004_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec5:
+   M_ADSR_TBL Env_attack,__RES__S4M004_57_1090_sa,PCM16,__RES__S4M004_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec6:
+   M_ADSR_TBL Env_attack,__RES__S4M004_57_1090_sa,PCM16,__RES__S4M004_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec7:
+   M_ADSR_TBL Env_attack,__RES__i004a66c2p1_1090_sa,PCM16,__RES__i004a66c2p1_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec8:
+   M_ADSR_TBL Env_attack,__RES__S4M004_69_1090_sa,PCM16,__RES__S4M004_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Sec9:
+   M_ADSR_TBL Env_attack,__RES__S4M004_69_1090_sa,PCM16,__RES__S4M004_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst10_Seca:
+   M_ADSR_TBL Env_attack,__RES__S4M004_69_1090_sa,PCM16,__RES__S4M004_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst11_Sec1:
+   M_ADSR_TBL Env_sustain,__RES__73_Flute_69_1090_sa,PCM16,__RES__73_Flute_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst11_Sec2:
+   M_ADSR_TBL Env_sustain,__RES__73_Flute_81_1090_sa,PCM16,__RES__73_Flute_81_1091_sa,PCM16,0,NOf_sustain,33
+_Inst11_Sec3:
+   M_ADSR_TBL Env_sustain,__RES__73_Flute_93_1090_sa,PCM16,__RES__73_Flute_93_1091_sa,PCM16,0,NOf_sustain,33
+_Inst12_Sec1:
+   M_ADSR_TBL Env_sustain,__RES__S4M071_57_1090_sa,PCM16,__RES__S4M071_57_1091_sa,PCM16,0,NOf_sustain,33
+_Inst12_Sec4:
+   M_ADSR_TBL Env_i071a60c2p1,__RES__i071a60c2p1_1090_sa,PCM16,__RES__i071a60c2p1_1091_sa,PCM16,0,NOf_i071a60c2p1,33
+_Inst12_Sec5:
+   M_ADSR_TBL Env_sustain,__RES__S4M071_69_1090_sa,PCM16,__RES__S4M071_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst12_Sec8:
+   M_ADSR_TBL Env_i071a72c2p1,__RES__i071a72c2p1_1090_sa,PCM16,__RES__i071a72c2p1_1091_sa,PCM16,0,NOf_i071a72c2p1,33
+_Inst12_Seca:
+   M_ADSR_TBL Env_sustain,__RES__S4M071_81_1090_sa,PCM16,__RES__S4M071_81_1091_sa,PCM16,0,NOf_sustain,33
+_Inst13_Sec3:
+   M_ADSR_TBL Env_attack,__RES__S4M026_57_1090_sa,PCM16,__RES__S4M026_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Sec4:
+   M_ADSR_TBL Env_attack,__RES__S4M026_57_1090_sa,PCM16,__RES__S4M026_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Sec5:
+   M_ADSR_TBL Env_attack,__RES__S4M026_57_1090_sa,PCM16,__RES__S4M026_57_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Sec6:
+   M_ADSR_TBL Env_i026a61c5p1,__RES__i026a61c5p1_1090_sa,PCM16,__RES__i026a61c5p1_1091_sa,PCM16,0,NOf_i026a61c5p1,33
+_Inst13_Sec7:
+   M_ADSR_TBL Env_i026a64c4p1,__RES__i026a64c4p1_1090_sa,PCM16,__RES__i026a64c4p1_1091_sa,PCM16,0,NOf_i026a64c4p1,33
+_Inst13_Sec8:
+   M_ADSR_TBL Env_attack,__RES__S4M026_69_1090_sa,PCM16,__RES__S4M026_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Sec9:
+   M_ADSR_TBL Env_i026a70c4p1,__RES__i026a70c4p1_1090_sa,PCM16,__RES__i026a70c4p1_1091_sa,PCM16,0,NOf_i026a70c4p1,33
+_Inst13_Seca:
+   M_ADSR_TBL Env_attack,__RES__S4M026_69_1090_sa,PCM16,__RES__S4M026_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Secb:
+   M_ADSR_TBL Env_attack,__RES__S4M026_69_1090_sa,PCM16,__RES__S4M026_69_1091_sa,PCM16,0,NOf_attack,33
+_Inst13_Secc:
+   M_ADSR_TBL Env_i026a75c4p1,__RES__i026a75c4p1_1090_sa,PCM16,__RES__i026a75c4p1_1091_sa,PCM16,0,NOf_i026a75c4p1,33
+_Inst13_Secd:
+   M_ADSR_TBL Env_i026a83c4p1,__RES__i026a83c4p1_1090_sa,PCM16,__RES__i026a83c4p1_1091_sa,PCM16,0,NOf_i026a83c4p1,33
+_Inst14_Sec1:
+   M_ADSR_TBL Env_i053a73c2p1,__RES__i053a73c2p1_1090_sa,PCM16,__RES__i053a73c2p1_1091_sa,PCM16,0,NOf_i053a73c2p1,33
+_Inst14_Sec2:
+   M_ADSR_TBL Env_i053a69c2p1,__RES__S4M053_69_1090_sa,PCM16,__RES__S4M053_69_1091_sa,PCM16,0,NOf_i053a69c2p1,33
+_Inst14_Sec3:
+   M_ADSR_TBL Env_sustain,__RES__S4M053_69_1090_sa,PCM16,__RES__S4M053_69_1091_sa,PCM16,0,NOf_sustain,33
+_Inst14_Sec4:
+   M_ADSR_TBL Env_i053a77c2p1,__RES__i053a77c2p1_1090_sa,PCM16,__RES__i053a77c2p1_1091_sa,PCM16,0,NOf_i053a77c2p1,33
+_Drum0_Sec0:
+   M_DRUM_TBL   1,__RES__d53ac2p1_10a0_sa,PCM16, Env_d53ac2p1,NOf_d53ac2p1,__RES__d53ac2p1_10a1_sa,PCM16,0,33
+_Drum1_Sec0:
+   M_DRUM_TBL   5,__RES__d35ac1p1_10a0_sa,PCM16, Env_d35ac1p1,NOf_d35ac1p1,__RES__d35ac1p1_10a1_sa,PCM16,0,33
+_Drum2_Sec0:
+   M_DRUM_TBL   1,__RES__d42ac2p1_10a0_sa,PCM16, Env_d42,NOf_d42,__RES__d42ac2p1_10a1_sa,PCM16,0,33
+_Drum3_Sec0:
+   M_DRUM_TBL   1,__RES__d54ac2b1_10a0_sa,PCM16, Env_d54ac2b1,NOf_d54ac2b1,__RES__d54ac2b1_10a1_sa,PCM16,0,33
+_Drum4_Sec0:
+   M_DRUM_TBL   1,__RES__d37ac2p1_10a0_sa,PCM16, Env_d37ac2p1,NOf_d37ac2p1,__RES__d37ac2p1_10a1_sa,PCM16,0,33
+_Drum5_Sec0:
+   M_DRUM_TBL   1,__RES__d51ac2p1_10a0_sa,PCM16, Env_d51ac2p1,NOf_d51ac2p1,__RES__d51ac2p1_10a1_sa,PCM16,0,33
+_Drum6_Sec0:
+   M_DRUM_TBL   1,__RES__d55ac2b1_10a0_sa,PCM16, Env_d55ac2b1,NOf_d55ac2b1,__RES__d55ac2b1_10a1_sa,PCM16,0,33
+_Drum7_Sec0:
+   M_DRUM_TBL   1,__RES__d57ac2p1_10a0_sa,PCM16, Env_d57ac2p1,NOf_d57ac2p1,__RES__d57ac2p1_10a1_sa,PCM16,0,33
+_Drum8_Sec0:
+   M_DRUM_TBL   1,__RES__d46ac2p1_10a0_sa,PCM16, Env_d46ac2p1,NOf_d46ac2p1,__RES__d46ac2p1_10a1_sa,PCM16,0,33
+_Drum9_Sec0:
+   M_DRUM_TBL   1,__RES__d52ac2p1_10a0_sa,PCM16, Env_d52ac2p1,NOf_d52ac2p1,__RES__d52ac2p1_10a1_sa,PCM16,0,33
+_Druma_Sec0:
+   M_DRUM_TBL   1,__RES__d49ac2p1_10a0_sa,PCM16, Env_d49ac2p1,NOf_d49ac2p1,__RES__d49ac2p1_10a1_sa,PCM16,0,33
+_Drumb_Sec0:
+   M_DRUM_TBL   5,__RES__Bird_11k_10a0_sa,PCM16, Env_Effect_b,NOf_Effect_b,__RES__Bird_11k_10a1_sa,PCM16,0,33
+_Drumc_Sec0:
+   M_DRUM_TBL   5,__RES__Bird3_11k_10a0_sa,PCM16, Env_Effect_b,NOf_Effect_b,__RES__Bird3_11k_10a1_sa,PCM16,0,33
+_Drumd_Sec0:
+   M_DRUM_TBL   1,__RES__d40ac2b1_10a0_sa,PCM16, Env_d40ac2b1,NOf_d40ac2b1,__RES__d40ac2b1_10a1_sa,PCM16,0,33
+_Drume_Sec0:
+   M_DRUM_TBL   1,__RES__d41ac2p1_10a0_sa,PCM16, Env_d41ac2p1,NOf_d41ac2p1,__RES__d41ac2p1_10a1_sa,PCM16,0,33
+_Drumf_Sec0:
+   M_DRUM_TBL   1,__RES__d36ac2p1_10a0_sa,PCM16, Env_d36ac2p1,NOf_d36ac2p1,__RES__d36ac2p1_10a1_sa,PCM16,0,33
+_Drum10_Sec0:
+   M_DRUM_TBL   1,__RES__d38ac2p1_10a0_sa,PCM16, Env_d38ac2p1,NOf_d38ac2p1,__RES__d38ac2p1_10a1_sa,PCM16,0,33
+_Drum11_Sec0:
+   M_DRUM_TBL   1,__RES__d44ac2p1_10a0_sa,PCM16, Env_d44ac2p1,NOf_d44ac2p1,__RES__d44ac2p1_10a1_sa,PCM16,0,33
+_Drum12_Sec0:
+   M_DRUM_TBL   1,__RES__d59ac2b1_10a0_sa,PCM16, Env_d59ac2b1,NOf_d59ac2b1,__RES__d59ac2b1_10a1_sa,PCM16,0,33
+_Drum13_Sec0:
+   M_DRUM_TBL   27,__RES__Drum_85_10a0_sa,PCM16, Env_dr_85,NOf_dr_85,__RES__Drum_85_10a1_sa,PCM16,0,33
+_Drum14_Sec0:
+   M_DRUM_TBL   1,__RES__d47ac2p1_10a0_sa,PCM16, Env_d47ac2p1,NOf_d47ac2p1,__RES__d47ac2p1_10a1_sa,PCM16,0,33
+_Drum15_Sec0:
+   M_DRUM_TBL   1,__RES__d45ac2p1_10a0_sa,PCM16, Env_d45ac2p1,NOf_d45ac2p1,__RES__d45ac2p1_10a1_sa,PCM16,0,33
+_Drum16_Sec0:
+   M_DRUM_TBL   1,__RES__d39ac2b1_10a0_sa,PCM16, Env_d39ac2b1,NOf_d39ac2b1,__RES__d39ac2b1_10a1_sa,PCM16,0,33
+_Drum17_Sec0:
+   M_DRUM_TBL   1,__RES__d43ac2p1_10a0_sa,PCM16, Env_d43ac2p1,NOf_d43ac2p1,__RES__d43ac2p1_10a1_sa,PCM16,0,33
+
+
+Release_Tag:
+.DW	0
+
+Env_DEFAULT_ENVELOP:
+ .DW 0xa 
+ .DW 0x2e 
+ .DW 0xcd 
+ .DW 0x7f 
+
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x6e 
+
+ .DW 0x6e 
+ .DW 0xff 
+ .DW 0xff 
+ .DW 0x6d 
+
+ .DW 0x00 
+ .DW 0x00 
+ .DW 0x00 
+ .DW 0xFF 
+
+NOf_DEFAULT_ENVELOP:
+ .DW 0xff 
+ .DW 0x8 
+ .DW 0x0 
+
+Env_sustain:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xbe 
+ .DW 0x6d 
+
+ .DW 0x6d 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x61 
+
+ .DW 0x61 
+ .DW 0xff 
+ .DW 0x48 
+ .DW 0x0 
+
+NOf_sustain:
+ .DW 0xfd 
+ .DW 0x76 
+ .DW 0x0 
+
+Env_attack:
+ .DW 0x7f 
+ .DW 0xfe 
+ .DW 0xfe 
+ .DW 0x61 
+
+ .DW 0x61 
+ .DW 0xff 
+ .DW 0x5d 
+ .DW 0x4e 
+
+ .DW 0x4e 
+ .DW 0xff 
+ .DW 0x55 
+ .DW 0x33 
+
+ .DW 0x33 
+ .DW 0xff 
+ .DW 0xb5 
+ .DW 0x20 
+
+ .DW 0x20 
+ .DW 0xff 
+ .DW 0xe2 
+ .DW 0x11 
+
+ .DW 0x11 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5 
+
+ .DW 0x5 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x0 
+
+NOf_attack:
+ .DW 0xfe 
+ .DW 0xe2 
+ .DW 0x0 
+
+Env_i033a33c1p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xd2 
+ .DW 0x6f 
+
+ .DW 0x6f 
+ .DW 0xff 
+ .DW 0xaa 
+ .DW 0x56 
+
+ .DW 0x56 
+ .DW 0xff 
+ .DW 0xe0 
+ .DW 0x43 
+
+ .DW 0x43 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x32 
+
+ .DW 0x32 
+ .DW 0xff 
+ .DW 0xea 
+ .DW 0x0 
+
+NOf_i033a33c1p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_048_String_43:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xd0 
+ .DW 0x5c 
+
+ .DW 0x5c 
+ .DW 0xff 
+ .DW 0xff 
+ .DW 0x55 
+
+ .DW 0x55 
+ .DW 0xff 
+ .DW 0xc7 
+ .DW 0x0 
+
+NOf_048_String_43:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i048a77c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe4 
+ .DW 0x55 
+
+ .DW 0x55 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x44 
+
+ .DW 0x44 
+ .DW 0xff 
+ .DW 0xe3 
+ .DW 0x0 
+
+NOf_i048a77c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i048a82c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xda 
+ .DW 0x55 
+
+ .DW 0x55 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x45 
+
+ .DW 0x45 
+ .DW 0xff 
+ .DW 0xdc 
+ .DW 0x0 
+
+NOf_i048a82c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i048a89c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x5d 
+
+ .DW 0x5d 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x47 
+
+ .DW 0x47 
+ .DW 0xff 
+ .DW 0xe6 
+ .DW 0x0 
+
+NOf_i048a89c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i024a58c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xaf 
+ .DW 0x6f 
+
+ .DW 0x6f 
+ .DW 0xff 
+ .DW 0xff 
+ .DW 0x6e 
+
+ .DW 0x6e 
+ .DW 0xff 
+ .DW 0x46 
+ .DW 0x65 
+
+ .DW 0x65 
+ .DW 0xff 
+ .DW 0x21 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x3f 
+ .DW 0x20 
+
+ .DW 0x20 
+ .DW 0xff 
+ .DW 0xd9 
+ .DW 0x1a 
+
+ .DW 0x1a 
+ .DW 0xff 
+ .DW 0xe3 
+ .DW 0x15 
+
+ .DW 0x15 
+ .DW 0xff 
+ .DW 0xf6 
+ .DW 0x0 
+
+NOf_i024a58c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i024a72c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xcd 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xff 
+ .DW 0x76 
+
+ .DW 0x76 
+ .DW 0xff 
+ .DW 0x74 
+ .DW 0x68 
+
+ .DW 0x68 
+ .DW 0xff 
+ .DW 0x14 
+ .DW 0x2b 
+
+ .DW 0x2b 
+ .DW 0xff 
+ .DW 0x90 
+ .DW 0x1e 
+
+ .DW 0x1e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x17 
+
+ .DW 0x17 
+ .DW 0xff 
+ .DW 0xd8 
+ .DW 0x12 
+
+ .DW 0x12 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0xe 
+
+ .DW 0xe 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x0 
+
+NOf_i024a72c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i024a84c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x78 
+
+ .DW 0x78 
+ .DW 0xff 
+ .DW 0xde 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0x74 
+ .DW 0x68 
+
+ .DW 0x68 
+ .DW 0xff 
+ .DW 0x14 
+ .DW 0x2b 
+
+ .DW 0x2b 
+ .DW 0xff 
+ .DW 0x90 
+ .DW 0x1e 
+
+ .DW 0x1e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x17 
+
+ .DW 0x17 
+ .DW 0xff 
+ .DW 0xd8 
+ .DW 0x12 
+
+ .DW 0x12 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0xe 
+
+ .DW 0xe 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x0 
+
+NOf_i024a84c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i068a71c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x76 
+
+ .DW 0x76 
+ .DW 0xff 
+ .DW 0xfa 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x70 
+ .DW 0x0 
+
+NOf_i068a71c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i068a74c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe4 
+ .DW 0x72 
+
+ .DW 0x72 
+ .DW 0x0 
+ .DW 0x3 
+ .DW 0x78 
+
+ .DW 0x78 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0x5a 
+
+ .DW 0x5a 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x0 
+
+NOf_i068a74c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i068a80c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x73 
+
+ .DW 0x73 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x67 
+
+ .DW 0x67 
+ .DW 0xff 
+ .DW 0xe6 
+ .DW 0x0 
+
+NOf_i068a80c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i068a85c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe6 
+ .DW 0x73 
+
+ .DW 0x73 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x63 
+
+ .DW 0x63 
+ .DW 0xff 
+ .DW 0xe5 
+ .DW 0x0 
+
+NOf_i068a85c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i068a88c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xec 
+ .DW 0x75 
+
+ .DW 0x75 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x60 
+
+ .DW 0x60 
+ .DW 0xff 
+ .DW 0xe6 
+ .DW 0x0 
+
+NOf_i068a88c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i044a57b2p0:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf4 
+ .DW 0x76 
+
+ .DW 0x76 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x60 
+
+ .DW 0x60 
+ .DW 0xff 
+ .DW 0xa5 
+ .DW 0x0 
+
+NOf_i044a57b2p0:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_dr:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xfa 
+ .DW 0x80 
+ .DW 0x0 
+
+NOf_dr:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_i045a60c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xbc 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xff 
+ .DW 0xc0 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0x4a 
+ .DW 0x46 
+
+ .DW 0x46 
+ .DW 0xff 
+ .DW 0x9e 
+ .DW 0x33 
+
+ .DW 0x33 
+ .DW 0xff 
+ .DW 0xa0 
+ .DW 0x19 
+
+ .DW 0x19 
+ .DW 0xff 
+ .DW 0xce 
+ .DW 0x0 
+
+NOf_i045a60c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i045a72c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xbc 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xff 
+ .DW 0xc0 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xfe 
+ .DW 0xf8 
+ .DW 0x37 
+
+ .DW 0x37 
+ .DW 0xff 
+ .DW 0x1c 
+ .DW 0x35 
+
+ .DW 0x35 
+ .DW 0xff 
+ .DW 0x88 
+ .DW 0x18 
+
+ .DW 0x18 
+ .DW 0xff 
+ .DW 0xd9 
+ .DW 0x0 
+
+NOf_i045a72c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i030a81c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe2 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5e 
+
+ .DW 0x5e 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_i030a81c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i030a88c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x7d 
+
+ .DW 0x7d 
+ .DW 0xff 
+ .DW 0xea 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5e 
+
+ .DW 0x5e 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_i030a88c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_61_Brass_82:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5e 
+
+ .DW 0x5e 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_61_Brass_82:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i025a60c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xca 
+ .DW 0x70 
+
+ .DW 0x70 
+ .DW 0xff 
+ .DW 0xff 
+ .DW 0x6f 
+
+ .DW 0x6f 
+ .DW 0xff 
+ .DW 0x5e 
+ .DW 0x38 
+
+ .DW 0x38 
+ .DW 0xff 
+ .DW 0xdb 
+ .DW 0x24 
+
+ .DW 0x24 
+ .DW 0xff 
+ .DW 0xef 
+ .DW 0x11 
+
+ .DW 0x11 
+ .DW 0xff 
+ .DW 0xf4 
+ .DW 0xa 
+
+ .DW 0xa 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x7 
+
+ .DW 0x7 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x0 
+
+NOf_i025a60c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i025a64c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0x8a 
+ .DW 0x6e 
+
+ .DW 0x6e 
+ .DW 0xff 
+ .DW 0x98 
+ .DW 0x68 
+
+ .DW 0x68 
+ .DW 0xff 
+ .DW 0x2d 
+ .DW 0x48 
+
+ .DW 0x48 
+ .DW 0xff 
+ .DW 0x9d 
+ .DW 0x2e 
+
+ .DW 0x2e 
+ .DW 0xff 
+ .DW 0xc7 
+ .DW 0x19 
+
+ .DW 0x19 
+ .DW 0xff 
+ .DW 0xea 
+ .DW 0x11 
+
+ .DW 0x11 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0xd 
+
+ .DW 0xd 
+ .DW 0xff 
+ .DW 0xfb 
+ .DW 0xb 
+
+ .DW 0xb 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0x7 
+
+ .DW 0x7 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x0 
+
+NOf_i025a64c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i025a68c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xc8 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0x90 
+ .DW 0x68 
+
+ .DW 0x68 
+ .DW 0xff 
+ .DW 0xb1 
+ .DW 0x67 
+
+ .DW 0x67 
+ .DW 0xff 
+ .DW 0x9f 
+ .DW 0x48 
+
+ .DW 0x48 
+ .DW 0xff 
+ .DW 0xbe 
+ .DW 0x2e 
+
+ .DW 0x2e 
+ .DW 0xff 
+ .DW 0xd5 
+ .DW 0x24 
+
+ .DW 0x24 
+ .DW 0xff 
+ .DW 0xe3 
+ .DW 0x1a 
+
+ .DW 0x1a 
+ .DW 0xff 
+ .DW 0xe0 
+ .DW 0x10 
+
+ .DW 0x10 
+ .DW 0xff 
+ .DW 0xf1 
+ .DW 0xb 
+
+ .DW 0xb 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0x7 
+
+ .DW 0x7 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x3 
+
+ .DW 0x3 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x0 
+
+NOf_i025a68c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i065a80c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xdd 
+ .DW 0x6b 
+
+ .DW 0x6b 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x56 
+
+ .DW 0x56 
+ .DW 0xff 
+ .DW 0xe1 
+ .DW 0x0 
+
+NOf_i065a80c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i066b60b1p0:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0x4b 
+ .DW 0x63 
+
+ .DW 0x63 
+ .DW 0x0 
+ .DW 0x15 
+ .DW 0x71 
+
+ .DW 0x71 
+ .DW 0xff 
+ .DW 0xe5 
+ .DW 0x5d 
+
+ .DW 0x5d 
+ .DW 0x0 
+ .DW 0x10 
+ .DW 0x6d 
+
+ .DW 0x6d 
+ .DW 0xff 
+ .DW 0xed 
+ .DW 0x56 
+
+ .DW 0x56 
+ .DW 0x0 
+ .DW 0x8 
+ .DW 0x63 
+
+ .DW 0x63 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x0 
+
+NOf_i066b60b1p0:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i071a60c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xa6 
+ .DW 0x76 
+
+ .DW 0x76 
+ .DW 0xff 
+ .DW 0xf6 
+ .DW 0x6f 
+
+ .DW 0x6f 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x5a 
+
+ .DW 0x5a 
+ .DW 0xff 
+ .DW 0xe2 
+ .DW 0x0 
+
+NOf_i071a60c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i071a72c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xbe 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xb5 
+ .DW 0x6b 
+
+ .DW 0x6b 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x5c 
+
+ .DW 0x5c 
+ .DW 0xff 
+ .DW 0xdf 
+ .DW 0x0 
+
+NOf_i071a72c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i026a61c5p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xae 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xce 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x70 
+
+ .DW 0x70 
+ .DW 0xff 
+ .DW 0xc4 
+ .DW 0x69 
+
+ .DW 0x69 
+ .DW 0xff 
+ .DW 0xbf 
+ .DW 0x62 
+
+ .DW 0x62 
+ .DW 0xff 
+ .DW 0xa5 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x61 
+ .DW 0x26 
+
+ .DW 0x26 
+ .DW 0xff 
+ .DW 0xcb 
+ .DW 0x1d 
+
+ .DW 0x1d 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0x18 
+
+ .DW 0x18 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x13 
+
+ .DW 0x13 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x0 
+
+NOf_i026a61c5p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i026a64c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xb7 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xcd 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x70 
+
+ .DW 0x70 
+ .DW 0xff 
+ .DW 0xc4 
+ .DW 0x69 
+
+ .DW 0x69 
+ .DW 0xff 
+ .DW 0xbf 
+ .DW 0x62 
+
+ .DW 0x62 
+ .DW 0xff 
+ .DW 0xa5 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x61 
+ .DW 0x26 
+
+ .DW 0x26 
+ .DW 0xff 
+ .DW 0xcb 
+ .DW 0x1d 
+
+ .DW 0x1d 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0x18 
+
+ .DW 0x18 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x13 
+
+ .DW 0x13 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x0 
+
+NOf_i026a64c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i026a70c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xb9 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xcc 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x70 
+
+ .DW 0x70 
+ .DW 0xff 
+ .DW 0xc4 
+ .DW 0x69 
+
+ .DW 0x69 
+ .DW 0xff 
+ .DW 0xbf 
+ .DW 0x62 
+
+ .DW 0x62 
+ .DW 0xff 
+ .DW 0xa5 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x61 
+ .DW 0x26 
+
+ .DW 0x26 
+ .DW 0xff 
+ .DW 0xcb 
+ .DW 0x1d 
+
+ .DW 0x1d 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0x18 
+
+ .DW 0x18 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x13 
+
+ .DW 0x13 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x0 
+
+NOf_i026a70c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i026a75c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xbc 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xcc 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xcf 
+ .DW 0x70 
+
+ .DW 0x70 
+ .DW 0xff 
+ .DW 0xc4 
+ .DW 0x69 
+
+ .DW 0x69 
+ .DW 0xff 
+ .DW 0xbf 
+ .DW 0x62 
+
+ .DW 0x62 
+ .DW 0xff 
+ .DW 0xa5 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x61 
+ .DW 0x26 
+
+ .DW 0x26 
+ .DW 0xff 
+ .DW 0xcb 
+ .DW 0x1d 
+
+ .DW 0x1d 
+ .DW 0xff 
+ .DW 0xe8 
+ .DW 0x18 
+
+ .DW 0x18 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0x13 
+
+ .DW 0x13 
+ .DW 0xff 
+ .DW 0xf5 
+ .DW 0x0 
+
+NOf_i026a75c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i026a83c4p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xb9 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xff 
+ .DW 0xcc 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0xb5 
+ .DW 0x6f 
+
+ .DW 0x6f 
+ .DW 0xff 
+ .DW 0x46 
+ .DW 0x65 
+
+ .DW 0x65 
+ .DW 0xff 
+ .DW 0x21 
+ .DW 0x59 
+
+ .DW 0x59 
+ .DW 0xff 
+ .DW 0x3f 
+ .DW 0x20 
+
+ .DW 0x20 
+ .DW 0xff 
+ .DW 0xd9 
+ .DW 0x1a 
+
+ .DW 0x1a 
+ .DW 0xff 
+ .DW 0xe3 
+ .DW 0x15 
+
+ .DW 0x15 
+ .DW 0xff 
+ .DW 0xf6 
+ .DW 0x0 
+
+NOf_i026a83c4p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i053a73c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5e 
+
+ .DW 0x5e 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_i053a73c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i053a69c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x5e 
+
+ .DW 0x5e 
+ .DW 0xff 
+ .DW 0xfe 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_i053a69c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_i053a77c2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xe9 
+ .DW 0x6a 
+
+ .DW 0x6a 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x65 
+
+ .DW 0x65 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x4f 
+
+ .DW 0x4f 
+ .DW 0xff 
+ .DW 0xd3 
+ .DW 0x0 
+
+NOf_i053a77c2p1:
+ .DW 0xfe 
+ .DW 0x0 
+ .DW 0x0 
+
+Env_d53ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xfa 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xfc 
+ .DW 0xa1 
+ .DW 0x0 
+
+NOf_d53ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d35ac1p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xe2 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xfa 
+ .DW 0xa7 
+ .DW 0x0 
+
+NOf_d35ac1p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d42:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xee 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xfe 
+ .DW 0x18 
+ .DW 0x0 
+
+NOf_d42:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d54ac2b1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xde 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xe7 
+ .DW 0x66 
+ .DW 0x0 
+
+NOf_d54ac2b1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d37ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xc5 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xf5 
+ .DW 0x2f 
+ .DW 0x0 
+
+NOf_d37ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d51ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xf9 
+ .DW 0x91 
+ .DW 0x0 
+
+NOf_d51ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d55ac2b1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x7c 
+
+ .DW 0x7c 
+ .DW 0xf7 
+ .DW 0x25 
+ .DW 0x0 
+
+NOf_d55ac2b1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d57ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xfc 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xfc 
+ .DW 0x30 
+ .DW 0x0 
+
+NOf_d57ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d46ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf6 
+ .DW 0x7a 
+
+ .DW 0x7a 
+ .DW 0xfc 
+ .DW 0x4e 
+ .DW 0x0 
+
+NOf_d46ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d52ac2p1:
+ .DW 0x7e 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xfd 
+ .DW 0x1d 
+ .DW 0x0 
+
+NOf_d52ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d49ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf9 
+ .DW 0x78 
+
+ .DW 0x78 
+ .DW 0xfd 
+ .DW 0xfa 
+ .DW 0x0 
+
+NOf_d49ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_Effect_b:
+ .DW 0x42 
+ .DW 0x0 
+ .DW 0xb5 
+ .DW 0x77 
+
+ .DW 0x77 
+ .DW 0xff 
+ .DW 0x20 
+ .DW 0x49 
+
+ .DW 0x49 
+ .DW 0xff 
+ .DW 0x8d 
+ .DW 0x37 
+
+ .DW 0x37 
+ .DW 0xff 
+ .DW 0xd0 
+ .DW 0x28 
+
+ .DW 0x28 
+ .DW 0xff 
+ .DW 0xdc 
+ .DW 0x1d 
+
+ .DW 0x1d 
+ .DW 0xff 
+ .DW 0xe6 
+ .DW 0x14 
+
+ .DW 0x14 
+ .DW 0xff 
+ .DW 0xf0 
+ .DW 0xe 
+
+ .DW 0xe 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x7 
+
+ .DW 0x7 
+ .DW 0xff 
+ .DW 0xfd 
+ .DW 0x0 
+
+NOf_Effect_b:
+ .DW 0xfe 
+ .DW 0xe2 
+ .DW 0x0 
+
+Env_d40ac2b1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xd8 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xee 
+ .DW 0xb7 
+ .DW 0x0 
+
+NOf_d40ac2b1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d41ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf7 
+ .DW 0x78 
+
+ .DW 0x78 
+ .DW 0xfe 
+ .DW 0xab 
+ .DW 0x0 
+
+NOf_d41ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d36ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xda 
+ .DW 0x78 
+
+ .DW 0x78 
+ .DW 0xfb 
+ .DW 0xef 
+ .DW 0x0 
+
+NOf_d36ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d38ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xe2 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xf8 
+ .DW 0x32 
+ .DW 0x0 
+
+NOf_d38ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d44ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xcb 
+ .DW 0x7a 
+
+ .DW 0x7a 
+ .DW 0xe1 
+ .DW 0x80 
+ .DW 0x0 
+
+NOf_d44ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d59ac2b1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xfa 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xfb 
+ .DW 0x14 
+ .DW 0x0 
+
+NOf_d59ac2b1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_dr_85:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xe0 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xfc 
+ .DW 0x7e 
+ .DW 0x0 
+
+NOf_dr_85:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d47ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf9 
+ .DW 0x7a 
+
+ .DW 0x7a 
+ .DW 0xf8 
+ .DW 0x60 
+ .DW 0x0 
+
+NOf_d47ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d45ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xfa 
+ .DW 0x7a 
+
+ .DW 0x7a 
+ .DW 0xfe 
+ .DW 0xe9 
+ .DW 0x0 
+
+NOf_d45ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d39ac2b1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xd6 
+ .DW 0x7b 
+
+ .DW 0x7b 
+ .DW 0xf1 
+ .DW 0x88 
+ .DW 0x0 
+
+NOf_d39ac2b1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+Env_d43ac2p1:
+ .DW 0x7f 
+ .DW 0xff 
+ .DW 0xf8 
+ .DW 0x79 
+
+ .DW 0x79 
+ .DW 0xfd 
+ .DW 0x94 
+ .DW 0x0 
+
+NOf_d43ac2p1:
+ .DW 0xf5 
+ .DW 0xd7 
+ .DW 0x0 
+
+
+	.ENDS

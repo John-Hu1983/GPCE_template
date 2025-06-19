@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"includes.h": "c",
+			"dev_audio.h": "c"
+		}
+	}
+}
