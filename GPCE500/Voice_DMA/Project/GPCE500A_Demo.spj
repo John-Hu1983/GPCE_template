@@ -224,7 +224,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=7929948
+EXPORT=1747845212
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\A34Pro_fptr.inc
@@ -291,11 +291,147 @@ EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_operate.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
 SOURCE=..\Include\System.h
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=7929948
+EXPORT=1747845212
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -303,7 +439,7 @@ SOURCE=..\Include\SACM.h
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=6619228
+EXPORT=1747845212
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -322,148 +458,12 @@ ID=
 EXPORT=6619228
 SPECIFICFLAG=0
 # End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_adc.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_timer.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_gpio.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_iopwm.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_uart.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=7929948
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_spi.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_ext.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=50724956
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_ccp.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_i2c.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Kernel\os_beason.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Kernel\kernel.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Apps\app_shell.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Apps\app_operate.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\board.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_cap_touch.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_sleep.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_button.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
 # End Group
 # Begin Group "Main"
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=808779868
+EXPORT=3
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Main\main.c
@@ -486,7 +486,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=6619228
+EXPORT=1937339228
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Device\dev_audio.c
@@ -501,7 +501,7 @@ SOURCE=..\Device\board.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -509,7 +509,7 @@ SOURCE=..\Device\dev_button.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -517,7 +517,7 @@ SOURCE=..\Device\dev_cap_touch.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -525,7 +525,7 @@ SOURCE=..\Device\dev_sleep.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1937339228
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -533,14 +533,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
-SPECIFICFLAG=6516224
+EXPORT=1986330716
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Phy\phy_adc.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=852060
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -548,7 +548,7 @@ SOURCE=..\Phy\phy_ccp.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=6619228
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -556,7 +556,7 @@ SOURCE=..\Phy\phy_ext.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=852060
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -564,7 +564,7 @@ SOURCE=..\Phy\phy_gpio.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -572,7 +572,7 @@ SOURCE=..\Phy\phy_i2c.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -580,7 +580,7 @@ SOURCE=..\Phy\phy_iopwm.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -588,7 +588,7 @@ SOURCE=..\Phy\phy_spi.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -596,7 +596,7 @@ SOURCE=..\Phy\phy_timer.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -604,7 +604,7 @@ SOURCE=..\Phy\phy_uart.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -612,14 +612,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
-SPECIFICFLAG=6644585
+EXPORT=2036858972
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Kernel\kernel.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1919221852
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -627,7 +627,7 @@ SOURCE=..\Kernel\os_beason.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -635,14 +635,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
+EXPORT=1886388316
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Apps\app_operate.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1886388316
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -650,7 +650,7 @@ SOURCE=..\Apps\app_shell.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1886388316
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -874,7 +874,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=7929948
+EXPORT=1747845212
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Include\A34Pro_fptr.inc
@@ -941,11 +941,147 @@ EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
+SOURCE=..\Phy\phy_adc.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_timer.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_gpio.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_iopwm.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_uart.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_spi.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ext.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_ccp.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Phy\phy_i2c.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\os_beason.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Kernel\kernel.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_shell.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Apps\app_operate.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\board.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_cap_touch.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_sleep.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
+SOURCE=..\Device\dev_button.h
+USEPARAM=FALSE
+PARAM=
+ID=
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
+# Begin Source File
 SOURCE=..\Include\System.h
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=7929948
+EXPORT=1747845212
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -953,7 +1089,7 @@ SOURCE=..\Include\SACM.h
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=6619228
+EXPORT=1747845212
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -972,148 +1108,12 @@ ID=
 EXPORT=6619228
 SPECIFICFLAG=0
 # End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_adc.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_timer.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_gpio.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_iopwm.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_uart.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=7929948
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_spi.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_ext.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=50724956
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_ccp.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Phy\phy_i2c.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Kernel\os_beason.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Kernel\kernel.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Apps\app_shell.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Apps\app_operate.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\board.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_cap_touch.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_sleep.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=6619228
-SPECIFICFLAG=0
-# End Source File
-# Begin Source File
-SOURCE=..\Device\dev_button.h
-USEPARAM=FALSE
-PARAM=
-ID=
-EXPORT=1747845212
-SPECIFICFLAG=0
-# End Source File
 # End Group
 # Begin Group "Main"
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=808779868
+EXPORT=3
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Main\main.c
@@ -1136,7 +1136,7 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=6619228
+EXPORT=1937339228
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Device\dev_audio.c
@@ -1151,7 +1151,7 @@ SOURCE=..\Device\board.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1159,7 +1159,7 @@ SOURCE=..\Device\dev_button.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1167,7 +1167,7 @@ SOURCE=..\Device\dev_cap_touch.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1175,7 +1175,7 @@ SOURCE=..\Device\dev_sleep.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1937339228
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -1183,14 +1183,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
-SPECIFICFLAG=6516224
+EXPORT=1986330716
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Phy\phy_adc.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=852060
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1198,7 +1198,7 @@ SOURCE=..\Phy\phy_ccp.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=6619228
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1206,7 +1206,7 @@ SOURCE=..\Phy\phy_ext.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=852060
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1214,7 +1214,7 @@ SOURCE=..\Phy\phy_gpio.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1222,7 +1222,7 @@ SOURCE=..\Phy\phy_i2c.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1230,7 +1230,7 @@ SOURCE=..\Phy\phy_iopwm.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1238,7 +1238,7 @@ SOURCE=..\Phy\phy_spi.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1246,7 +1246,7 @@ SOURCE=..\Phy\phy_timer.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1254,7 +1254,7 @@ SOURCE=..\Phy\phy_uart.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1986330716
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -1262,14 +1262,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
-SPECIFICFLAG=6644585
+EXPORT=2036858972
+SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Kernel\kernel.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1919221852
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1277,7 +1277,7 @@ SOURCE=..\Kernel\os_beason.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=2036858972
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group
@@ -1285,14 +1285,14 @@ SPECIFICFLAG=0
 #PROP Default_Filter=
 USEPARAM=FALSE
 PARAM=
-EXPORT=3
+EXPORT=1886388316
 SPECIFICFLAG=0
 # Begin Source File
 SOURCE=..\Apps\app_operate.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1886388316
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # Begin Source File
@@ -1300,7 +1300,7 @@ SOURCE=..\Apps\app_shell.c
 USEPARAM=FALSE
 PARAM=
 ID=
-EXPORT=1886388316
+EXPORT=3
 SPECIFICFLAG=0
 # End Source File
 # End Group

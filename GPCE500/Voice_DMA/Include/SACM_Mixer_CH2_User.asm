@@ -564,8 +564,10 @@ F_ISR_Service_SACM_Mixer_CH2:
 // Return      : 
 // Note        : 
 //**************************************************************** 	
+.external _test_irq3_period
 .public F_ISR_DMA_Ser_SACM_Mixer_Ch2
 F_ISR_DMA_Ser_SACM_Mixer_Ch2:	.proc
+  call _test_irq3_period
 	setb [R_SACM_Mixer_Play_Flag], C_SACM_MIXER_DECODE_WORK_Num	// not play end, set DECODE_WORK flag
 	retf; 	
 	.endp

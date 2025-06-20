@@ -94,31 +94,33 @@ void close_interrupt_global(void)
  * Argument out :
  * Description  :
  */
-
-extern void _play_a1800_manually(u16 inx);
 void init_board_global(void)
 {
+  // system layer
   System_Initial();
-  power_on_circuit();
   init_soft_link();
 
+  // power control
+  power_on_circuit();
+
+  // physical module
+  init_adc_equipment();
 #if CAP_TOUCH_EN
   enable_cap_touch();
 #endif
-  init_adc_equipment();
-
 #if SHELL_LOG_EN
   init_uart_equipment(Baud_460800);
 #endif
 
+  // device layer
   init_audio_equipment();
+  init_operate_app();
 
+  // schedule
   open_2048hz_irq();
   open_interrupt_global();
 
-  _play_a1800_manually(N000_A18);
-
-  // play_a1800_music(_IAMCOMING_16K_WAV, true);
+  // play_a1800_music(N000_A18, true);
 }
 
 /*

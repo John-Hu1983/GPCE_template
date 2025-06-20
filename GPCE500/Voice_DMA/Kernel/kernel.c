@@ -2,7 +2,7 @@
 
 task_t APPS[] = {
     {0, 0, task_idle_process},
-    {20, 20, task_operate_event},
+    {5, 5, task_operate_event},
 };
 const u16 TASK_SIZE = sizeof(APPS) / sizeof(APPS[0]);
 

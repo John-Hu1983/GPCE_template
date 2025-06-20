@@ -263,23 +263,23 @@ bool_t is_a1800_free(void)
  */
 void Kernel_SACM_Process(void)
 {
-  // char read;
+  char read;
   _sacm_running_core();
-  // if (audio_silent.timer.member.ms)
-  // {
-  //   return;
-  // }
+  if (audio_silent.timer.member.ms)
+  {
+    return;
+  }
 
-  // if (_is_sacm_a18_free() > -1 && _pull_(&a18, &read) > -1)
-  // {
-  //   if (read == SILENT_SEVERAL)
-  //   {
-  //     audio_silent.timer.member.ms = 100;
-  //     return;
-  //   }
-  //   else
-  //   {
-  //     _play_a1800_manually(read);
-  //   }
-  // }
+  if (_is_sacm_a18_free() > -1 && _pull_(&a18, &read) > -1)
+  {
+    if (read == SILENT_SEVERAL)
+    {
+      audio_silent.timer.member.ms = 100;
+      return;
+    }
+    else
+    {
+      _play_a1800_manually(read);
+    }
+  }
 }

@@ -22,12 +22,12 @@
 /*
 ========================voice==================================
 */
-#define A1800_OPEN                (1)
-#define VOLUME_A1800              (10)  // maximum :15
+#define A1800_OPEN                (1)   // forbidden or not
+#define VOLUME_A1800              (2)   // maximum :15
 #define A1800_EVENT               (0)
 #define A1800_DMA_EN              (1)  
 
-#define A3400_OPEN                (0)
+#define A3400_OPEN                (0)   // forbidden or not
 #define VOLUME_A3400              (10)  // maximum :15
 #define A3400_EVENT               (0)  
 #define A3400_DMA_EN              (0)  

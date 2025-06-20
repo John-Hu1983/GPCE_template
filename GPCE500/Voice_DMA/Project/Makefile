@@ -1,6 +1,6 @@
 #####################################################################
 #																	 
-#	Created by u'nSP IDE V4.1.1		14:52:40	06/19/25
+#	Created by u'nSP IDE V4.1.1		09:12:53	06/20/25
 #
 #####################################################################
 
@@ -294,46 +294,46 @@ OBJFILES	= \
 "$(OUTDIR)\Resource.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\Resource.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
 
-"$(OUTDIR)\system.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\system.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\system.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\system.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\system.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\system.asm" 
 
-"$(OUTDIR)\BootCode_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\BootCode_User.asm" ".\GPCE36_CE5.inc" ".\GPCE36_CE5_Body.inc" 
+"$(OUTDIR)\BootCode_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\BootCode_User.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\BootCode_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\BootCode_User.asm" 
 
-"$(OUTDIR)\GEO_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\GEO_User.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\GEO_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\GEO_User.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\GEO_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\GEO_User.asm" 
 
-"$(OUTDIR)\SACM_A34Pro_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A34Pro_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\A34Pro_fptr.inc" "GPCE36_CE5.inc" 
+"$(OUTDIR)\SACM_A34Pro_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A34Pro_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\A34Pro_fptr.inc" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A34Pro_fptr_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A34Pro_fptr_User.asm" 
 
-"$(OUTDIR)\SACM_A1800_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A1800_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\A1800_fptr.inc" "GPCE36_CE5.inc" "Resource.inc" 
+"$(OUTDIR)\SACM_A1800_fptr_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A1800_fptr_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\A1800_fptr.inc" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_A1800_fptr_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_A1800_fptr_User.asm" 
 
 "$(OUTDIR)\VolCompress_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\VolCompress_User.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\VolCompress_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\VolCompress_User.asm" 
 
-"$(OUTDIR)\MIDI.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\MIDI.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\MIDI.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI.asm" 
 
-"$(OUTDIR)\MIDI_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI_User.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\MIDI_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI_User.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\MIDI_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\MIDI_User.asm" 
 
-"$(OUTDIR)\SPU.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPU.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\SPU.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPU.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPU.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPU.asm" 
 
-"$(OUTDIR)\SPUSpeech.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPUSpeech.asm" "GPCE36_CE5.inc" 
+"$(OUTDIR)\SPUSpeech.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPUSpeech.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPUSpeech.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SPUSpeech.asm" 
 
 "$(OUTDIR)\ORAM_Arrangement.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\ORAM_Arrangement.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\ORAM_Arrangement.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\ORAM_Arrangement.asm" 
 
-"$(OUTDIR)\SPI_Flash.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\SPI_Flash.asm" ".\GPCE36_CE5.inc" ".\GPCE36_CE5_Body.inc" 
+"$(OUTDIR)\SPI_Flash.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\SPI_Flash.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPI_Flash.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\SPI_Flash.asm" 
 
 "$(OUTDIR)\SACM_Mixer_CH2_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_Constant.inc" "GPCE36_CE5.inc" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_Mixer_CH2_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_User.asm" 
 
-"$(OUTDIR)\SACM_Mixer_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_Constant.inc" "GPCE36_CE5.inc" 
+"$(OUTDIR)\SACM_Mixer_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_Constant.inc" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_Mixer_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_User.asm" 
 
 "$(OUTDIR)\main.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Main\main.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_timer.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_ccp.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_audio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_sleep.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Apps\app_shell.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Apps\app_operate.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "..\Include\System.h" "GPCE36_CE5.h" "..\Include\SACM.h" "Resource.h" "..\Include\GEO.h" 
@@ -343,7 +343,7 @@ OBJFILES	= \
 "$(OUTDIR)\main.obj": "$(OUTDIR)\main.asm"
 	$(AS) $(CASFLAGS) $(INCLUDES) -o "$(OUTDIR)\main.obj" "$(OUTDIR)\main.asm" 
 
-"$(OUTDIR)\isr.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Main\isr.asm" "GPCE36_CE5.inc" "..\Include\A34Pro_fptr.inc" "..\Include\GEO.inc" 
+"$(OUTDIR)\isr.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Main\isr.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\isr.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Main\isr.asm" 
 
 "$(OUTDIR)\dev_audio.asm": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_audio.c" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Inc\includes.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Inc\typedef.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Inc\usr_config.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_adc.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_timer.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_gpio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_iopwm.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_uart.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_spi.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_ext.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_ccp.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Phy\phy_i2c.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\board.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_audio.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_cap_touch.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_sleep.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Device\dev_button.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Apps\app_shell.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Apps\app_operate.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Kernel\os_beason.h" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Kernel\kernel.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\string.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdio.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\_ansi.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdarg.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stdlib.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\sys\reent.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine/_types.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\assert.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\limits.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\stddef.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\math.h" "C:\Program Files (x86)\Generalplus\unSPIDE_4.1.1\library\include\machine\ieeefp.h" "..\Include\System.h" "GPCE36_CE5.h" "..\Include\SACM.h" "Resource.h" "..\Include\GEO.h" 

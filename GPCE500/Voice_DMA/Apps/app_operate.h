@@ -11,6 +11,7 @@ typedef union
   };
 } finger_alarm_t;
  
+void init_operate_app(void);
 void task_operate_event(osvar_t ms);
 #endif
 
