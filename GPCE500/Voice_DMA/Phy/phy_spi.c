@@ -73,9 +73,9 @@ void start_spidma_sent(u8 *dat, u16 len)
  * argument out :
  * description  :
  */
-bool_t is_spidma_sent_over(void)
+bool is_spidma_sent_over(void)
 {
-    bool_t res = TRUE;
+    bool res = TRUE;
     if (*P_DMA1_CTRL1 & C_DMA_Busy_Flag || *P_SPI2_Misc & C_SPI_Busy_Flag)
     {
         res = FALSE;

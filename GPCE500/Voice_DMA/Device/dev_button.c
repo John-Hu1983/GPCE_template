@@ -17,7 +17,7 @@ enum
 btnval_t scan_btn_object(btn_obj *btn, osvar_t ms)
 {
     btnval_t res = BTN_IDLE;
-    bool_t level;
+    bool level;
     level = gpio_read_level(btn->pin->io.port, btn->pin->io.pin);
     switch (btn->step)
     {

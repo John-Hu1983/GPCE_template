@@ -74,9 +74,9 @@ void cb_ext_irq5(void)
  * argument out :
  * description  :
  *********************************************************************************/
-bool_t is_ext_has_been_occured(ext_cn_t cn)
+bool is_ext_has_been_occured(ext_cn_t cn)
 {
-    bool_t val = FALSE;
+    bool val = FALSE;
     if (cn == Ext1_IO_B11)
     {
         if (flag.bits.cn1)

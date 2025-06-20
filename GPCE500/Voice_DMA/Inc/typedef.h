@@ -44,7 +44,7 @@ typedef enum
     false = 0,
     TRUE = 1,
     true = 1,
-} bool_t;
+} bool;
 
 typedef enum
 {

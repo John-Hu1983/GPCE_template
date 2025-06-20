@@ -334,6 +334,14 @@ ID=RES_TAILOR3_16K_A18
 EXPORT=3
 SPECIFICFLAG=0
 # End Source File
+# Begin Source File
+SOURCE=voice\music\a18\michael_16K_wav.a18
+USEPARAM=FALSE
+PARAM=
+ID=RES_MICHAEL_16K_WAV_A18
+EXPORT=3
+SPECIFICFLAG=0
+# End Source File
 # End Group
 # End SubItem
 # End Project

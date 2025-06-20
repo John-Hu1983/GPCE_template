@@ -42,6 +42,6 @@ void write_spi_batch(u8 *buf, u16 len);
 void read_spi_batch(u8 *buf, u16 len);
 
 void start_spidma_sent(u8 *dat, u16 len);
-bool_t is_spidma_sent_over(void);
+bool is_spidma_sent_over(void);
 void cb_resume_cs_for_gpio(void);
 #endif

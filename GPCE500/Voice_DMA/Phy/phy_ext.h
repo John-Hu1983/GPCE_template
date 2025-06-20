@@ -25,5 +25,5 @@ typedef union
 } ext_flag_t;
 
 void init_ext_detection(ext_cn_t cn, ext_edge_t edge);
-bool_t is_ext_has_been_occured(ext_cn_t cn);
+bool is_ext_has_been_occured(ext_cn_t cn);
 #endif

@@ -154,7 +154,7 @@ void cb_uart_irq7(void)
  * Argument out :
  * Description  :
  */
-bool_t is_uart_tx_free(void)
+bool is_uart_tx_free(void)
 {
     return (tx_fifo.size) ? false : true;
 }

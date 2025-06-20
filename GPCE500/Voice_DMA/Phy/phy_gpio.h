@@ -29,8 +29,8 @@ typedef struct
 } gpio_obj;
 
 void gpio_init_pattern(handle_t *port, uint8_t pin, GPIO_Pattern pattern);
-bool_t gpio_read_level(handle_t *port, uint8_t pin);
-void gpio_write_level(handle_t *port, uint8_t pin, bool_t lev);
+bool gpio_read_level(handle_t *port, uint8_t pin);
+void gpio_write_level(handle_t *port, uint8_t pin, bool lev);
 void gpio_invert_level(handle_t *port, uint8_t pin);
-void gpio_setout_with_level(handle_t *port, uint8_t pin, bool_t lev);
+void gpio_setout_with_level(handle_t *port, uint8_t pin, bool lev);
 #endif

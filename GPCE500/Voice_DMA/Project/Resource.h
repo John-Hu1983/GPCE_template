@@ -86,5 +86,7 @@ extern unsigned long RES_HATCHSONG_16K_WAV_A18_SA;
 extern unsigned long RES_HATCHSONG_16K_WAV_A18_EA;
 extern unsigned long RES_TAILOR3_16K_A18_SA;
 extern unsigned long RES_TAILOR3_16K_A18_EA;
+extern unsigned long RES_MICHAEL_16K_WAV_A18_SA;
+extern unsigned long RES_MICHAEL_16K_WAV_A18_EA;
 
 // End Table

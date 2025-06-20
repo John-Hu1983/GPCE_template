@@ -1,6 +1,6 @@
 #####################################################################
 #																	 
-#	Created by u'nSP IDE V4.1.1		09:12:53	06/20/25
+#	Created by u'nSP IDE V4.1.1		14:43:42	06/20/25
 #
 #####################################################################
 
@@ -132,6 +132,7 @@ OBJFILES	= \
 	"$(OUTDIR)\danger_16K_wav_a18.res" \
 	"$(OUTDIR)\HATCHSONG_16K_wav_a18.res" \
 	"$(OUTDIR)\tailor3_16K_a18.res" \
+	"$(OUTDIR)\michael_16K_wav_a18.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\system.obj" \
 	"$(OUTDIR)\BootCode_User.obj" \
@@ -291,6 +292,9 @@ OBJFILES	= \
 "$(OUTDIR)\tailor3_16K_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\tailor3_16K.a18"
 	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\tailor3_16K.a18" "$(OUTDIR)\tailor3_16K_a18.res" RES_TAILOR3_16K_A18 
 
+"$(OUTDIR)\michael_16K_wav_a18.res": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\michael_16K_wav.a18"
+	$(RESC) "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\voice\music\a18\michael_16K_wav.a18" "$(OUTDIR)\michael_16K_wav_a18.res" RES_MICHAEL_16K_WAV_A18 
+
 "$(OUTDIR)\Resource.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\Resource.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\Resource.asm" 
 
@@ -330,7 +334,7 @@ OBJFILES	= \
 "$(OUTDIR)\SPI_Flash.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\SPI_Flash.asm" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SPI_Flash.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Project\SPI_Flash.asm" 
 
-"$(OUTDIR)\SACM_Mixer_CH2_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_Constant.inc" "GPCE36_CE5.inc" 
+"$(OUTDIR)\SACM_Mixer_CH2_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_Constant.inc" 
 	$(AS) $(ASFLAGS) $(INCLUDES) -o "$(OUTDIR)\SACM_Mixer_CH2_User.obj" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_CH2_User.asm" 
 
 "$(OUTDIR)\SACM_Mixer_User.obj": "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_User.asm" "D:\JohnHu\Github_private\GPCE_template\GPCE500\Voice_DMA\Include\SACM_Mixer_Constant.inc" 
@@ -555,6 +559,7 @@ CLEANFILES = \
 	"$(OUTDIR)\danger_16K_wav_a18.res" \
 	"$(OUTDIR)\HATCHSONG_16K_wav_a18.res" \
 	"$(OUTDIR)\tailor3_16K_a18.res" \
+	"$(OUTDIR)\michael_16K_wav_a18.res" \
 	"$(OUTDIR)\Resource.obj" \
 	"$(OUTDIR)\Resource.lst" \
 	"$(OUTDIR)\system.obj" \
@@ -658,7 +663,7 @@ CLEANFILES = \
 
 clean :
 	$(RM) $(wordlist 1,100,$(CLEANFILES))
-	$(RM) $(wordlist 101,142,$(CLEANFILES))
+	$(RM) $(wordlist 101,143,$(CLEANFILES))
 
 .c.asm:
 	$(CC) $(CFLAGS) $(INCLUDES) -o "$(OUTDIR)\$@" $<

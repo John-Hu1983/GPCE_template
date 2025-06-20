@@ -111,6 +111,7 @@ void init_board_global(void)
 #if SHELL_LOG_EN
   init_uart_equipment(Baud_460800);
 #endif
+  open_spi_module();
 
   // device layer
   init_audio_equipment();
@@ -120,7 +121,7 @@ void init_board_global(void)
   open_2048hz_irq();
   open_interrupt_global();
 
-  // play_a1800_music(N000_A18, true);
+  play_a1800_music(N000_A18, true);
 }
 
 /*

@@ -169,6 +169,10 @@
 .public _RES_TAILOR3_16K_A18_SA;
 .external __RES_TAILOR3_16K_A18_ea;
 .public _RES_TAILOR3_16K_A18_EA;
+.external __RES_MICHAEL_16K_WAV_A18_sa
+.public _RES_MICHAEL_16K_WAV_A18_SA;
+.external __RES_MICHAEL_16K_WAV_A18_ea;
+.public _RES_MICHAEL_16K_WAV_A18_EA;
 
 
 _RES_Table:
@@ -381,6 +385,11 @@ _RES_TAILOR3_16K_A18_SA:
 _RES_TAILOR3_16K_A18_EA:
 	.DW offset __RES_TAILOR3_16K_A18_ea,seg16 __RES_TAILOR3_16K_A18_ea;
 
+_RES_MICHAEL_16K_WAV_A18_SA:
+	.DW offset __RES_MICHAEL_16K_WAV_A18_sa,seg16 __RES_MICHAEL_16K_WAV_A18_sa;
+_RES_MICHAEL_16K_WAV_A18_EA:
+	.DW offset __RES_MICHAEL_16K_WAV_A18_ea,seg16 __RES_MICHAEL_16K_WAV_A18_ea;
+
 
 // End Table
 .public T_SACM_A1800_fptr_SpeechTable;
@@ -427,6 +436,7 @@ T_SACM_A1800_fptr_SpeechTable:
 	.DW offset __RES_HATCHSONG_16K_WAV_A18_sa,seg16 __RES_HATCHSONG_16K_WAV_A18_sa;
 	.DW offset __RES_TAILOR3_16K_A18_sa,seg16 __RES_TAILOR3_16K_A18_sa;
 	.DW offset __RES_DANGER_16K_WAV_A18_sa,seg16 __RES_DANGER_16K_WAV_A18_sa;
+	.DW offset __RES_MICHAEL_16K_WAV_A18_sa,seg16 __RES_MICHAEL_16K_WAV_A18_sa;
 	
 .public T_SACM_A34Pro_fptr_SpeechTable;
 T_SACM_A34Pro_fptr_SpeechTable:

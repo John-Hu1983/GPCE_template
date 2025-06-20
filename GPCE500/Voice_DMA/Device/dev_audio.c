@@ -172,7 +172,7 @@ void init_audio_equipment(void)
  * argument out :
  * description  :
  */
-void play_a1800_string(char *str, bool_t renew)
+void play_a1800_string(char *str, bool renew)
 {
   audio_t *audio = &a18;
   u8 ascll, ok;
@@ -221,7 +221,7 @@ void play_a1800_string(char *str, bool_t renew)
  * argument out :
  * description  :
  */
-void play_a1800_decimal(u16 dat, bool_t renew)
+void play_a1800_decimal(u16 dat, bool renew)
 {
   char buf[32];
   memset(buf, '\0', sizeof(buf));
@@ -234,7 +234,7 @@ void play_a1800_decimal(u16 dat, bool_t renew)
  * argument out :
  * description  :
  */
-void play_a1800_music(u16 music, bool_t renew)
+void play_a1800_music(u16 music, bool renew)
 {
   audio_t *audio = &a18;
   if (renew == true)
@@ -251,9 +251,22 @@ void play_a1800_music(u16 music, bool_t renew)
  * argument out :
  * description  :
  */
-bool_t is_a1800_free(void)
+bool is_a1800_free(void)
 {
   return (_is_sacm_a18_free() < 0 || a18.size > 0) ? false : true;
+}
+
+/*
+ * argument in  :   none
+ * argument out :
+ * description  :
+ */
+bool is_voice_free(void)
+{
+  if (is_a1800_free() == false)
+    return false;
+
+  return true;
 }
 
 /*

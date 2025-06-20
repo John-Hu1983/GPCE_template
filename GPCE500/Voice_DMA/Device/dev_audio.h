@@ -54,6 +54,9 @@ typedef enum
   DANGER_A18,
   HATCHSONG_A18,
   TAILOR3_A18,
+  MICHAEL_A18,
+
+
   SILENT_500MS,
 } a1800_menu_ascll;
 
@@ -89,8 +92,9 @@ void SACM_Mixer_CH2_Play(unsigned, unsigned);
 
 void init_audio_equipment(void);
 void Kernel_SACM_Process(void);
-bool_t is_a1800_free(void);
-void play_a1800_string(char *str, bool_t renew);
-void play_a1800_decimal(u16 dat, bool_t renew);
-void play_a1800_music(u16 music, bool_t renew);
+bool is_a1800_free(void);
+void play_a1800_string(char *str, bool renew);
+void play_a1800_decimal(u16 dat, bool renew);
+void play_a1800_music(u16 music, bool renew);
+bool is_voice_free(void);
 #endif

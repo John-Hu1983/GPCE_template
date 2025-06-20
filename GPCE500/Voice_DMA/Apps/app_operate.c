@@ -68,4 +68,9 @@ void task_operate_event(osvar_t ms)
       play_a1800_decimal(temp, true);
     }
   }
+
+  if (is_voice_free())
+  {
+    play_a1800_music(MICHAEL_A18, true);
+  }
 }

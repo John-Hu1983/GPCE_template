@@ -120,7 +120,7 @@ typedef union
 void init_uart_equipment(Baud_t baudround);
 void task_uart_process(osvar_t ms);
 void insert_tx_fifo(char *fifo);
-bool_t is_uart_tx_free(void);
+bool is_uart_tx_free(void);
 op_res extract_rx_byte(u8 *rd);
 
 #endif

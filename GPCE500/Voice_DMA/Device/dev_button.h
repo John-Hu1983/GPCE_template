@@ -5,7 +5,7 @@ typedef struct
 {
     gpio_obj io;
     GPIO_Pattern patt;
-    bool_t effective;
+    bool effective;
     u16 threshold;
     u16 release;
 } btn_io;

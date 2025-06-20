@@ -23,7 +23,7 @@
 ========================voice==================================
 */
 #define A1800_OPEN                (1)   // forbidden or not
-#define VOLUME_A1800              (2)   // maximum :15
+#define VOLUME_A1800              (5)   // maximum :15
 #define A1800_EVENT               (0)
 #define A1800_DMA_EN              (1)  
 

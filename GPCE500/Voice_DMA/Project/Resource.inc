@@ -87,5 +87,7 @@
 .external _RES_HATCHSONG_16K_WAV_A18_EA;
 .external _RES_TAILOR3_16K_A18_SA;
 .external _RES_TAILOR3_16K_A18_EA;
+.external _RES_MICHAEL_16K_WAV_A18_SA;
+.external _RES_MICHAEL_16K_WAV_A18_EA;
 
 // End Table

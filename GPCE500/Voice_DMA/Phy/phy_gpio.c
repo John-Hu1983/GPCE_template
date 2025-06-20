@@ -46,7 +46,7 @@ void gpio_init_pattern(handle_t *port, uint8_t pin, GPIO_Pattern pattern)
  * argument out	:	none
  * descrition	:
  */
-void gpio_setout_with_level(handle_t *port, uint8_t pin, bool_t lev)
+void gpio_setout_with_level(handle_t *port, uint8_t pin, bool lev)
 {
     gpio_init_pattern(port, pin, io_output_normal);
     gpio_write_level(port, pin, lev);
@@ -57,9 +57,9 @@ void gpio_setout_with_level(handle_t *port, uint8_t pin, bool_t lev)
  * argument out	:	none
  * descrition	:
  */
-bool_t gpio_read_level(handle_t *port, uint8_t pin)
+bool gpio_read_level(handle_t *port, uint8_t pin)
 {
-    bool_t lev = 0;
+    bool lev = 0;
     if (*((handle_t *)(port + io_data_read)) & bitset(pin))
         lev = 1;
 
@@ -71,7 +71,7 @@ bool_t gpio_read_level(handle_t *port, uint8_t pin)
  * argument out	:	none
  * descrition	:
  */
-void gpio_write_level(handle_t *port, uint8_t pin, bool_t lev)
+void gpio_write_level(handle_t *port, uint8_t pin, bool lev)
 {
     if (lev)
         *((handle_t *)(port + io_buff_rewr)) |= bitset(pin);
